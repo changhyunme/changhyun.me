@@ -1,7 +1,9 @@
 "use client";
 import { useRef, useEffect } from "react";
 
-export default function Starfield({ isActive = true }) {
+// 다 좋은데 성능이슈가 큼!
+
+export default function Starfield({ isActive = false }) {
   const canvasRef = useRef(null);
   const stars = useRef([]);
 
