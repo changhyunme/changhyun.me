@@ -1,13 +1,14 @@
 import ContentWrapper from "@/components/ContentWrapper";
 import ContentSide from "@/components/ContentSide";
 import ContentBody from "@/components/ContentBody";
+import NameCard from "@/components/NameCard";
 
 export default function Home() 
 {
   return (
     <ContentWrapper>
       <ContentSide>
-          HOME
+          <NameCard />
       </ContentSide>
       <ContentBody>
           <h1>My Embarrassing Personal Homepage</h1>

@@ -1,13 +1,8 @@
 import Link from 'next/link';
+import navItems from '@/app/nav.config.js';
 
 // A JSX Document by Changhyun Cho
 // Fenster v1.0.0 in 2025
-
-const navItems = [
-    { name: "home", href: "/" },
-    { name: "about", href: "/about" },
-    { name: "contact", href: "/contact" },
-];
 
 const Fenster = ( {children} ) => {
     return (
@@ -31,7 +26,7 @@ const Fenster = ( {children} ) => {
                         </li>
                     ))}
                 </ul>
-                <div className="ml-auto uppercase">
+                <div className="ml-auto uppercase text-green-400">
                     HTTPS
                 </div>
             </div>
