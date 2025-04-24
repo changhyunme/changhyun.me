@@ -1,15 +1,19 @@
+import ContentWrapper from "@/components/ContentWrapper";
+import ContentSide from "@/components/ContentSide";
+import ContentBody from "@/components/ContentBody";
+import NameCard from "@/components/NameCard";
+import Btn from "@/components/Button";
+
 export default function Home() 
 {
   return (
-    <div className="w-full flex flex-col md:flex-row text-neutral-600">
-      <div className="w-full md:w-[180px] md:border-r-1 border-neutral-800">
-        <div className="p-3">
-          Contact
-        </div>
-      </div>
-      <div className="w-full h-full md:flex-1 md:h-[486px] md:overflow-scroll scrollbar-hide">
-        <div className="p-3">
-          <p>But every time, I don't know how to finish it.</p>
+    <ContentWrapper>
+      <ContentSide>
+          <NameCard />
+          <Btn name="Ping" className="mt-5 md:mt-auto" />
+      </ContentSide>
+      <ContentBody className="text-white/80">
+      <p>But every time, I don't know how to finish it.</p>
           <p>However, I'm good at making websites for others.</p>
           <p>If you know how, please contact me at the email below.</p>
           <div className="flex flex-col md:flex-row md:gap-10 
@@ -25,8 +29,7 @@ export default function Home()
               </ul>
             </div>
           </div>
-        </div>
-      </div>
-    </div> 
+      </ContentBody>
+    </ContentWrapper> 
   );
 }
