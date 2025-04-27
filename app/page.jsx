@@ -2,7 +2,7 @@ import ContentWrapper from "@/components/ContentWrapper";
 import ContentSide from "@/components/ContentSide";
 import ContentBody from "@/components/ContentBody";
 import NameCard from "@/components/NameCard";
-import Btn from "@/components/Button";
+import PingBtn from "@/components/PingButton";
 import Grid from "@/components/ui/Grid";
 import GridTechItem from "@/components/ui/GridTechItem";
 
@@ -14,7 +14,7 @@ export default function Home()
     <ContentWrapper>
       <ContentSide>
           <NameCard />
-          <Btn name="Ping" className="mt-5 md:mt-auto" />
+          <PingBtn name="Ping" className="mt-5 md:mt-auto" />
       </ContentSide>
       <ContentBody className="text-white/80">
           <h1>My Embarrassing Personal Homepage</h1>
