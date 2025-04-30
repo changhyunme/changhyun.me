@@ -12,7 +12,6 @@ const PingButton = ({ name, className }) => {
       timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
       screen: `${window.screen.width}x${window.screen.height} @${window.devicePixelRatio}x`,
       referrer: document.referrer,
-      cookies: document.cookie,
       network: `${connection.effectiveType || 'unknown'}, ${connection.downlink || 'unknown'} Mbps`,
       battery: `Level: ${battery.level * 100}%, Charging: ${battery.charging}`,
     };

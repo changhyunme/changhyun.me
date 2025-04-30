@@ -19,7 +19,6 @@ export async function POST(request) {
   const clientTimeZone = clientInfo.timeZone || 'Unknown';
   const screen = clientInfo.screen || 'Unknown';
   const referrer = clientInfo.referrer || 'Unknown';
-  const cookies = clientInfo.cookies || 'Unknown';
   const currentURL = clientInfo.currentURL || 'Unknown';
   const network = clientInfo.network || 'Unknown';
   const battery = clientInfo.battery || 'Unknown';
