@@ -7,7 +7,7 @@ const nameCard = () => {
                      alt="profile iamge"/>
             </div>
             <div className="mt-3 text-center">
-                <h2 className="text-white text-lg capitalize">
+                <h2 className="text-white text-lg capitalize font-bold">
                     changhyun cho
                 </h2>
                 <p className="text-white/40 text-sm capitalize">

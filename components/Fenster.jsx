@@ -14,7 +14,7 @@ const Fenster = ( {children} ) => {
             <div className="flex px-3 py-2 border-b-1 
                           border-neutral-800 text-xs"
             >
-                <ul className="flex flex-row gap-2 uppercase">
+                <ul className="flex flex-row gap-2 uppercase font-bold">
                     {navItems.map((item) => (
                         <li className="text-neutral-600 hover:text-neutral-600/50 
                                         cursor-pointer"

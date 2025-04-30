@@ -13,7 +13,9 @@ export default function Home()
   return (
     <ContentWrapper>
       <ContentBody className="text-white/80">
-          Hi
+          <div className="h-[320px] flex items-center justify-center">
+            home
+          </div>
       </ContentBody>
     </ContentWrapper> 
   );
