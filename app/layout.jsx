@@ -1,5 +1,7 @@
 import "./globals.css";
 import Fenster from "../components/Fenster";
+import Szene from "@/components/Szene";
+import Kopf from "@/components/Kopf";
 import { Lato } from 'next/font/google';
 
 export const metadata = {
@@ -20,6 +22,8 @@ export default function RootLayout({ children }) {
         <div className="relative w-screen min-h-screen py-5 px-2
                         flex md:items-center justify-center"
         >
+          <Szene />
+          <Kopf />
           <Fenster>
             {children}
           </Fenster>
