@@ -3,6 +3,9 @@ import ContentSide from "@/components/ContentSide";
 import ContentBody from "@/components/ContentBody";
 import NameCard from "@/components/NameCard";
 import PingBtn from "@/components/PingButton";
+import Header from "@/components/ui/Header";
+import SpanBox from "@/components/ui/SpanBox";
+import Blockquote from "@/components/ui/Blockquote";  
 
 export default function Home() 
 {
@@ -13,22 +16,19 @@ export default function Home()
           <PingBtn name="Ping" className="mt-5 md:mt-auto" />
       </ContentSide>
       <ContentBody className="text-white/80">
-      <p>But every time, I don't know how to finish it.</p>
-          <p>However, I'm good at making websites for others.</p>
-          <p>If you know how, please contact me at the email below.</p>
-          <div className="flex flex-col md:flex-row md:gap-10 
-                          border-1 border-neutral-800 p-3 mt-3 rounded-lg"
-          >
-            <div className="">
-              [thumb]
-            </div>
-            <div className="">
-              <ul>
-                <li>email : changhyun.me@gmail.com</li>
-                <li>phone : +82 10 2381 3221</li>
-              </ul>
-            </div>
-          </div>
+        Got a question? Got something cool you want to build together? Hit me up through one of the contacts below. 💬
+        <ul className="list-disc pl-5 mt-2">
+          <li>🖥️ Modern web service builds</li>
+          <li>🧪 Experimental feature development</li>
+          <li>⚡ Rapid prototyping</li>
+          <li>🤔 Projects that seem simple — but somehow cost way too much</li>
+        </ul>
+        <Blockquote>
+          Things get messy, especially in web dev. I do my best to cut through the noise with fresh perspective and build clean solutions.
+        </Blockquote>
+        <Header>Contact</Header>
+          📧 E-mail : <a className="hover:underline" href="mailto:changhyun.me@gmail.com">changhyun.me@gmail.com</a>
+          <br />📸 Instagram : @changhyun.me
       </ContentBody>
     </ContentWrapper> 
   );
