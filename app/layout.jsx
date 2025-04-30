@@ -10,7 +10,7 @@ export default function RootLayout({ children }) {
   return (
     <html>
       <body>
-        <div className="relative w-screen min-h-screen p-5
+        <div className="relative w-screen min-h-screen py-5 px-2
                         flex md:items-center justify-center"
         >
           <Fenster>

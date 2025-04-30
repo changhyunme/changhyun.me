@@ -21,7 +21,6 @@ export async function POST(request) {
   const referrer = clientInfo.referrer || 'Unknown';
   const currentURL = clientInfo.currentURL || 'Unknown';
   const network = clientInfo.network || 'Unknown';
-  const battery = clientInfo.battery || 'Unknown';
 
   // Compose detailed message
   const message = `
@@ -36,10 +35,8 @@ Language: ${clientInfo.language}
 Timezone: ${clientTimeZone}
 Screen: ${screen}
 Referrer: ${referrer}
-Cookies: ${cookies}
 Current URL: ${currentURL}
 Network: ${network}
-Battery: ${battery}
   `;
 
   const formData = new URLSearchParams({

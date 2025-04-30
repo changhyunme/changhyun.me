@@ -2,7 +2,6 @@
 
 const PingButton = ({ name, className }) => {
   const handleClick = async () => {
-    const battery = await navigator.getBattery();
     const connection = navigator.connection || navigator.webkitConnection || {};
     
     const clientInfo = {
@@ -13,7 +12,6 @@ const PingButton = ({ name, className }) => {
       screen: `${window.screen.width}x${window.screen.height} @${window.devicePixelRatio}x`,
       referrer: document.referrer,
       network: `${connection.effectiveType || 'unknown'}, ${connection.downlink || 'unknown'} Mbps`,
-      battery: `Level: ${battery.level * 100}%, Charging: ${battery.charging}`,
     };
 
     const res = await fetch('/api/ping', {
