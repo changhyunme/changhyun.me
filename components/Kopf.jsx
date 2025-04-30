@@ -5,6 +5,7 @@ import KopfButton from "@/components/KopfButton";
 
 const Kopf = () => {
     const [dateTime, setDateTime] = useState("");
+    const [isFullScreen, setIsFullScreen] = useState(false);
 
     const updateDateTime = () => {
         const now = new Date();
@@ -19,10 +20,27 @@ const Kopf = () => {
 
     useEffect(() => {
         updateDateTime();
-        const interval = setInterval(updateDateTime, 1); // 10ms 단위 갱신
-        return () => clearInterval(interval);
+        const interval = setInterval(updateDateTime, 1);
+    
+        const onFullScreenChange = () => {
+            setIsFullScreen(!!document.fullscreenElement);
+        };
+    
+        document.addEventListener("fullscreenchange", onFullScreenChange);
+    
+        return () => {
+            clearInterval(interval);
+            document.removeEventListener("fullscreenchange", onFullScreenChange);
+        };
     }, []);
-
+    
+    const handleFullScreen = () => {
+        if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen?.();
+        } else {
+            document.exitFullscreen?.();
+        }
+    };
 
     return (
         <div className="hidden md:flex flex-row
@@ -31,6 +49,10 @@ const Kopf = () => {
                         border-b-1 border-neutral-700/30 shadow-md"
         >
             <KopfButton>Changhyun.me</KopfButton>
+            <KopfButton onClick={handleFullScreen}>
+                {isFullScreen ? "ExitScr" : "FullScr"}
+                
+            </KopfButton>
             <KopfButton className="ml-auto">
                 {dateTime}
             </KopfButton>
