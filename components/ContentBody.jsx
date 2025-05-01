@@ -1,6 +1,6 @@
 const ContentBody = ({ children, className }) => {
     return (
-        <div className={`w-full h-full md:flex-1 md:h-[486px] md:overflow-y-scroll scroll-smooth scrollbar-hide 
+        <div className={`cb w-full h-full md:flex-1 md:h-[486px] md:overflow-y-scroll scroll-smooth scrollbar-hide 
                         [&::-webkit-scrollbar]:w-2
                         [&::-webkit-scrollbar-track]:bg-transparent
                         [&::-webkit-scrollbar-thumb]:h-1

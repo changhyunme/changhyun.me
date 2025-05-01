@@ -6,7 +6,6 @@ import PingBtn from "@/components/PingButton";
 import Grid from "@/components/ui/Grid";
 import GridTechItem from "@/components/ui/GridTechItem";
 import Header from "@/components/ui/Header";
-import SpanBox from "@/components/ui/SpanBox";
 import Blockquote from "@/components/ui/Blockquote";  
 
 export default function Home() 
@@ -18,8 +17,12 @@ export default function Home()
           <PingBtn name="Ping" className="mt-5 md:mt-auto" />
       </ContentSide>
       <ContentBody className="text-white/80">
-          The Greeks said *“techne”* was more than craft — it was a way of understanding the world by making.  
-That still makes sense to me.
+        
+           <span>
+            The Greeks said *“techne”* was more than craft — 
+            it was a way of understanding the world by making.  
+            That still makes sense to me.
+          </span>
 
           <Header>About Me</Header>
             I like building things — not just coding for the sake of it, but actually figuring out <em>why</em> something should exist before touching the keyboard.<br /><br />
