@@ -154,7 +154,7 @@ export default function Home()
           <Header>Others</Header>
           <Grid>
             <GridTechItem name="jQuery" icon="jquery" size="30" />
-            <GridTechItem name="Wordpress" icon="PHP" size="30" />
+            <GridTechItem name="Wordpress" icon="wordpress" size="30" />
             <GridTechItem name="GNUBoard(legacy)" icon="PHP" size="30" />
             <GridTechItem name="XE(legacy)" icon="PHP" size="30" />
           </Grid>

@@ -4,7 +4,6 @@ import ContentBody from "@/components/ContentBody";
 import NameCard from "@/components/NameCard";
 import PingBtn from "@/components/PingButton";
 import Header from "@/components/ui/Header";
-import SpanBox from "@/components/ui/SpanBox";
 import Blockquote from "@/components/ui/Blockquote";  
 
 export default function Home() 
@@ -27,11 +26,19 @@ export default function Home()
           Things get messy, especially in web dev. I do my best to cut through the noise with fresh perspective and build clean solutions.
         </Blockquote>
         <Header>Contact</Header>
-          <div translate="no">
-            Location : Seoul<br />
-            📧 E-mail : <a className="hover:underline" href="mailto:changhyun.me@gmail.com">changhyun.me@gmail.com</a>
-            <br />📸 Instagram : @changhyun.me
+        <div className="grid gap-1 text-sm">
+          <div className="grid grid-cols-[90px_1fr]">
+            <span className="font-bold">Location</span>
+            <span>Seoul, Republic of Korea</span>
           </div>
+          <div className="grid grid-cols-[90px_1fr]">
+            <span className="font-bold"> E-mail</span>
+            <a className="hover:underline" href="mailto:changhyun.me@gmail.com">changhyun.me@gmail.com</a>
+          </div>
+        </div>
+        <Blockquote>
+          If it sounds interesting, let's talk — even if it's just to bounce some ideas around.
+        </Blockquote>
       </ContentBody>
     </ContentWrapper> 
   );
