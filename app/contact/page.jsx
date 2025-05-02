@@ -27,8 +27,11 @@ export default function Home()
           Things get messy, especially in web dev. I do my best to cut through the noise with fresh perspective and build clean solutions.
         </Blockquote>
         <Header>Contact</Header>
-          📧 E-mail : <a className="hover:underline" href="mailto:changhyun.me@gmail.com">changhyun.me@gmail.com</a>
-          <br />📸 Instagram : @changhyun.me
+          <div translate="no">
+            Location : Seoul<br />
+            📧 E-mail : <a className="hover:underline" href="mailto:changhyun.me@gmail.com">changhyun.me@gmail.com</a>
+            <br />📸 Instagram : @changhyun.me
+          </div>
       </ContentBody>
     </ContentWrapper> 
   );
