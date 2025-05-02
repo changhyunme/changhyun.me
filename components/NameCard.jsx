@@ -1,6 +1,6 @@
 const nameCard = () => {
     return (
-        <div className="">
+        <div className="" translate="no">
             <div className="max-w-24 mx-auto my-3 rounded-full overflow-hidden">
                 <img className="object-cover grayscale-100" 
                      src="profile.jpeg" 

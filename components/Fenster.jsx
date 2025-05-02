@@ -24,7 +24,7 @@ const Fenster = ({ children, className }) => {
                                         cursor-pointer"
                             key={item.href}
                         >
-                            <Link href={item.href}>
+                            <Link href={item.href} translate="no">
                                 {item.name}
                             </Link>
                         </li>

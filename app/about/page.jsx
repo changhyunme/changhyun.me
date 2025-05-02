@@ -18,13 +18,14 @@ export default function Home()
       </ContentSide>
       <ContentBody className="text-white/80">
         
-           <span>
+           <Blockquote>
             The Greeks said *“techne”* was more than craft — 
             it was a way of understanding the world by making.  
             That still makes sense to me.
-          </span>
+          </Blockquote>
 
-          <Header>About Me</Header>
+          <Header>Philosophy</Header>
+
             I like building things — not just coding for the sake of it, but actually figuring out <em>why</em> something should exist before touching the keyboard.<br /><br />
             I’m not the “move fast and break stuff” type. More like “think it through, then build fast — and make sure it doesn’t break later.”<br /><br />
             I enjoy finding the cleanest way to solve messy problems.<br />
@@ -34,6 +35,13 @@ export default function Home()
             If something’s confusing, I’ll simplify it.<br />
             If it needs to ship, I’ll get it done.<br /><br />
             Simple as that.
+
+          <Header>About Me</Header>
+
+            <Blockquote>
+              I didn’t start in tech. I studied music — until I realized I enjoyed tinkering with Linux and building little websites way more than practicing scales.<br /><br />
+              Turns out, composing and coding aren’t that different: both are about structure, flow, and knowing when to break the rules.
+            </Blockquote>
 
           {/* <Header>Interests</Header>
             Reading, music, motorcycles, fishing, and building personal websites — oh, and I play the violin 🎻 (plus I nerd out on scoring sheet music 🎼). */}
@@ -54,14 +62,14 @@ export default function Home()
             Built this site with <strong>Next.js + Tailwind</strong>. Pretty much my go-to stack these days. 
           </Blockquote>
 
-          <Header>Currently Exploring</Header>
+          <Header>Core Web: Experimental</Header>
           <Grid>
             <GridTechItem name="Astro" icon="astro" size="30" heart="1" />
             <GridTechItem name="SvelteKit" icon="svelte" size="30" />
           </Grid>
           <Blockquote>
             I usually reach for <strong>Astro</strong> when someone asks me to whip up a clean site fast.<br />
-            <strong>Svelte</strong>? Feels like React’s punk cousin — intuitive at first, weirdly cryptic later on.
+            <strong>Svelte</strong>? Looked easy at first... then it pooped on my expectations.
           </Blockquote>
           
           <Header>Core Web: Node.js</Header>
@@ -75,23 +83,25 @@ export default function Home()
             Might be past its prime, but I still use it a lot — still feels fresh and exciting every time.
           </Blockquote>
 
-          <Header>Other Languages</Header>
+          <Header>Core Web: Legacy Standard</Header>
           <Grid>
+            <GridTechItem name="apache" icon="apache" size="30" />
             <GridTechItem name="PHP" icon="php" size="30" />
-            <GridTechItem name="Python" icon="python" size="30" />
+            <GridTechItem name="MySQL" icon="mysql" size="30" />
           </Grid>
           <Blockquote>
-            <strong>PHP</strong> isn’t great for long-term use, but it’s still too useful to completely ditch.<br />
-            <strong>Python</strong>'s' cool and all, but I still don’t know where it fits in my workflow.
+            The <strong>APM</strong> was the first combo I met when I stepped into the world of code.
+            It was already legacy back then — now, it feels more like a trace left behind in time.
           </Blockquote>
 
-          <Header>Now Studying</Header>
+          <Header>Now Exploring: Languages</Header>
           <Grid>
+            <GridTechItem name="Python" icon="python" size="30" />
             <GridTechItem name="Go" icon="go" size="30" />
             <GridTechItem name="Clojure" icon="clojure" size="30" />
           </Grid>
           <Blockquote>
-            I’ve been eyeing a couple languages lately — <strong>Go</strong>, which people say is rock solid (just need the right excuse to dive in), and <strong>Clojure</strong>, which looks like black magic — cool, but kinda intimidating.
+            I’ve been eyeing <strong>Go</strong> for its solid rep, <strong>Clojure</strong> for its cryptic charm, and <strong>Python</strong>... well, still not sure where it fits in.
           </Blockquote>
 
           <Header>Styling & UI</Header>
@@ -125,7 +135,6 @@ export default function Home()
             <GridTechItem name="Firebase" icon="firebase" size="30" />
             <GridTechItem name="Clodflare" icon="clodflare" size="30" />
             <GridTechItem name="nginx" icon="nginx" size="30" />
-            <GridTechItem name="apache" icon="apache" size="30" />
           </Grid>
           <Blockquote>
             Kinda obsessed with serverless stuff lately — <strong>Vercel</strong>’s been a game changer.

@@ -4,7 +4,7 @@ const GridTechItem = ({ name, icon, size, star=0, heart=0 }) => {
     return (
         <div className="relative col-span-1 bg-neutral-800/30 rounded-sm p-3 flex flex-row items-center gap-3 text-sm">
             <TechIcon name={icon} size={size} />
-            <div>
+            <div translate="no">
                 {name}
             </div>
             <div className="absolute bottom-2 right-2 flex flex-row items-center gap-1">

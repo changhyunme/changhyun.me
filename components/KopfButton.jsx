@@ -5,6 +5,7 @@ const KopfButton = ({ children, onClick, className }) => {
                  transition-all duration-200 hover:bg-neutral-800/50 cursor-pointer hover:opacity-70
                  uppercase ${className}`}
       onClick={onClick}
+      translate="no"
     >
       {children}
     </button>
