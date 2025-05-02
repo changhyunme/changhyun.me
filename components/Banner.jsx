@@ -1,6 +1,6 @@
 const Banner = ({ children, onClick, className }) => {
     return (
-        <div className={`rounded-xl bg-gradient bg-neutral-800 p-8 ${className}`}
+        <div className={`rounded-sm bg-gradient bg-neutral-800/30 p-4 ${className}`}
              onClick={onClick}
         >
             {children}
