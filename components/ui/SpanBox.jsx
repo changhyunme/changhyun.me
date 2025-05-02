@@ -1,6 +1,6 @@
 const SpanBox = ({ children, className }) => {
     return (
-        <span className={`bg-zinc-800/30 rounded-sm p-3 text-sm ${className}`}>
+        <span className={`bg-neutral-800/30 rounded-sm p-3 text-sm ${className}`}>
             {children}
         </span>
     );
