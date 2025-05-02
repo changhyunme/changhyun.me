@@ -3,12 +3,11 @@
 import ContentWrapper from "@/components/ContentWrapper";
 import ContentSide from "@/components/ContentSide";
 import ContentBody from "@/components/ContentBody";
-import NameCard from "@/components/NameCard";
-import PingBtn from "@/components/PingButton";
 import Grid from "@/components/ui/Grid";
 import GridTechItem from "@/components/ui/GridTechItem";
 import Header from "@/components/ui/Header";
 import Blockquote from "@/components/ui/Blockquote";  
+import PageFooter from "@/components/ui/PageFooter";
 import { useSectionObserver } from "@/hooks/useSectionObserver";
 import { useSectionStore } from "@/store/sectionStore";
 
@@ -168,12 +167,12 @@ export default function Home() {
 
           <Header id="languages">Now Exploring: Languages</Header>
           <Grid>
-            <GridTechItem name="Python" icon="python" size="30" />
             <GridTechItem name="Go" icon="go" size="30" />
-            <GridTechItem name="Clojure" icon="clojure" size="30" />
+            <GridTechItem name="Python" icon="python" size="30" />
+            {/* <GridTechItem name="Clojure" icon="clojure" size="30" /> */}
           </Grid>
           <Blockquote>
-            I’ve been eyeing <strong>Go</strong> for its solid rep, <strong>Clojure</strong> for its cryptic charm, and <strong>Python</strong>... well, still not sure where it fits in.
+            I’ve been eyeing <strong>Go</strong> for its solid rep, {/*<strong>Clojure</strong> for its cryptic charm, */}and <strong>Python</strong>... well, still not sure where it fits in.
           </Blockquote>
 
           <Header id="ui">Styling & UI</Header>
@@ -234,6 +233,7 @@ export default function Home() {
             Once cutting-edge, now just tech fossils I used to swear by.<br />
             Wild fact: jQuery actually released version 4 in 2025.
           </Blockquote>
+          <PageFooter/>
       </ContentBody>
     </ContentWrapper> 
   );

@@ -19,7 +19,7 @@ export function useSectionObserver(sectionIds = []) {
         }
       },
       {
-        rootMargin: "0% 0px -60% 0px", // 상단 중심에 올 때 감지되게 함
+        rootMargin: "0% 0px -70% 0px", // 상단 중심에 올 때 감지되게 함
         threshold: 0.01,
       }
     );

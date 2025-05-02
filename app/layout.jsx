@@ -17,7 +17,7 @@ const lato = Lato({
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={lato.className}>
+    <html lang="en" className={`${lato.className}`}>
       <body>
         <div className="relative w-screen min-h-screen py-5 px-2
                         flex md:items-center justify-center"

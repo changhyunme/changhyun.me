@@ -34,9 +34,9 @@ const nameCard = () => {
             </div>
             <div className="py-3 flex flex-row gap-2 justify-center">
                 {sns.map((item, idx) => (
-                    <div className="text-white">
+                    <div className="text-white" key={idx}>
                         <a href={item.href} target="_blank" rel="noopener noreferrer"> 
-                            <TechIcon key={idx} name={item.icon} size={item.iconSize} />
+                            <TechIcon name={item.icon} size={item.iconSize} />
                         </a>
                     </div>
                 ))}

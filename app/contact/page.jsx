@@ -1,6 +1,7 @@
 import ContentWrapper from "@/components/ContentWrapper";
 import ContentSide from "@/components/ContentSide";
 import ContentBody from "@/components/ContentBody";
+import PageFooter from "@/components/ui/PageFooter";
 import NameCard from "@/components/NameCard";
 import PingBtn from "@/components/PingButton";
 import Header from "@/components/ui/Header";
@@ -39,6 +40,7 @@ export default function Home()
         <Blockquote>
           If it sounds interesting, let's talk — even if it's just to bounce some ideas around.
         </Blockquote>
+        <PageFooter/>
       </ContentBody>
     </ContentWrapper> 
   );
