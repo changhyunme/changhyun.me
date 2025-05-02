@@ -1,6 +1,8 @@
-const Header = ({children, type}) => {
+const Header = ({children, type, id}) => {
     return (
-        <h1 className="text-lg font-black italic text-white pb-1 my-3 first:mt-0 last:mb-0 border-b-1 border-neutral-800">
+        <h1 className="text-lg font-black italic text-white pb-1 my-3 first:mt-0 last:mb-0 border-b-1 border-neutral-800" 
+            id={id} 
+        >
             {children}
         </h1>
     )
