@@ -1,7 +1,7 @@
-import Link from 'next/link';
 import navItems from '@/app/nav.config.js';
 import FensterBewegt from '@/components/FensterBewegt';
 import FensterToggle from '@/components/FensterToggle';
+import NavItem from '@/components/ui/NavItem';
 
 // A JSX Document by Changhyun Cho
 // Fenster v1.0.0 in 2025
@@ -9,19 +9,12 @@ import FensterToggle from '@/components/FensterToggle';
 const Fenster = ({ children, className }) => {
     return (
         <FensterBewegt className={className} >
-            <div className="flex px-3 py-2 border-b-1 
-                          border-neutral-800 text-xs"
+            <div className="z-30 fixed bottom-0 left-0 md:relative w-full md:w-auto flex px-3 py-2 border-b-1 
+                          border-neutral-800 text-xs bg-white md:bg-inherit"
             >
-                <ul className="flex flex-row gap-2 uppercase font-bold">
+                <ul className="flex-1 md:flex-0 flex flex-row gap-2 uppercase font-bold jus">
                     {navItems.map((item) => (
-                        <li className="text-neutral-600 hover:text-neutral-600/50 
-                                        cursor-pointer"
-                            key={item.href}
-                        >
-                            <Link href={item.href} translate="no">
-                                {item.name}
-                            </Link>
-                        </li>
+                        <NavItem key={item.href} name={item.name} href={item.href}/>
                     ))}
                 </ul>
                 <FensterToggle />

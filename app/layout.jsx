@@ -19,11 +19,11 @@ const lato = Lato({
 });
 
 export const viewport = {
-  themeColor: "#181818",
+  themeColor: "oklch(0.208 0.042 265.755)",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  userScalable: true,
+  userScalable: false,
   viewportFit: "cover",
 };
 
@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${lato.className}`}>
       <body>
-        <div className="relative w-screen min-h-screen py-5 px-2
+        <div className="relative w-screen min-h-screen p-0 md:py-5 md:px-2
                         flex md:items-center justify-center"
         >
           <Szene />
