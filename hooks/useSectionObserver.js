@@ -19,7 +19,7 @@ export function useSectionObserver(sectionIds = []) {
         }
       },
       {
-        rootMargin: "0% 0px -70% 0px", // 상단 중심에 올 때 감지되게 함
+        rootMargin: "0% 0px -60% 0px", // Bottom을 Adjust해야하는데 FHD와 4K간 차이가 있음 잘 조절해야함 (now: MIN60 MAX70)
         threshold: 0.01,
       }
     );

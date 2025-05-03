@@ -11,12 +11,14 @@ export const generateMetadata = () => {
     description: info.description,
     keywords: info.keywords,
     robots: info.robots,
+    copyright: info.copyright,
     themeColor: info.theme_color,
+    colorScheme: info.color_schema,
     authors: [{ name: info.author, url: `mailto:${info.author_email}` }],
     openGraph: {
-      title: info.opengraph.title,
+      title: `About: ${info.title}`,
       description: info.opengraph.description,
-      url: info.opengraph.url,
+      url: `${info.opengraph.url}/contact`,
       siteName: info.opengraph.site_name || info.title,
       images: [
         {
@@ -29,10 +31,17 @@ export const generateMetadata = () => {
     },
     twitter: {
       card: info.twitter.card,
-      title: info.twitter.title,
+      title: `About: ${info.title}`,
       description: info.twitter.description,
       creator: info.twitter.creator,
       images: [info.twitter.image],
+    },
+    viewport: {
+      width: "device-width",
+      initialScale: 1,
+      maximumScale: 5,
+      userScalable: true,
+      viewportFit: "cover", // 🔥 notch 영역까지 안전하게 사용
     },
     metadataBase: new URL("https://changhyun.me/about"), // 이거 없으면 절대경로 에러 남
   };

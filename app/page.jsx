@@ -13,13 +13,15 @@ export const generateMetadata = () => {
     title: `${info.title}`,
     description: info.description,
     keywords: info.keywords,
-    robots: info.robots,
+    copyright: info.copyright,
     themeColor: info.theme_color,
+    colorScheme: info.color_schema,
+    robots: info.robots,
     authors: [{ name: info.author, url: `mailto:${info.author_email}` }],
     openGraph: {
       title: info.opengraph.title,
       description: info.opengraph.description,
-      url: info.opengraph.url,
+      url: `${info.opengraph.url}/contact`,
       siteName: info.opengraph.site_name || info.title,
       images: [
         {
@@ -36,6 +38,13 @@ export const generateMetadata = () => {
       description: info.twitter.description,
       creator: info.twitter.creator,
       images: [info.twitter.image],
+    },
+    viewport: {
+      width: "device-width",
+      initialScale: 1,
+      maximumScale: 5,
+      userScalable: true,
+      viewportFit: "cover", // 🔥 notch 영역까지 안전하게 사용
     },
     metadataBase: new URL("https://changhyun.me"), // 이거 없으면 절대경로 에러 남
   };
@@ -145,6 +154,8 @@ export default function Home()
                 key={version}
                 className="flex flex-row gap-2 text-sm text-neutral-300"
               >
+                <h2 className="hidden">{version} · {year} — built using {stack}</h2>
+
                 <div className="w-30 flex flex-col md:flex-row gap-2" translate="no">
                   <span className="w-10 font-bold text-neutral-100">{version}</span>
                   <span className="w-20">{year}</span>
