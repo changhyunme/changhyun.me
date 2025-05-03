@@ -16,8 +16,8 @@
   ],
   "technologies": [
     {
-      "name": "Node.js",
-      "icon": "nodejs"
+      "name": "javascript",
+      "icon": "js"
     }
   ],
   "content": [
@@ -37,7 +37,7 @@
   },
   {
     "type": "p",
-    "content": "In May 2024, fresh green plums were handpicked in Goyang, Korea. Each plum was carefully cleaned and dried to prevent bruising. The base was created using a 1:1:1 ratio of plums, sugar, and refined soju, then sealed in a sterilized glass jar."
+    "content": "In May 2024, fresh red plums were handpicked in Goyang, Korea. Each plum was carefully cleaned and dried to prevent bruising. The base was created using a 1:1:1 ratio of plums, sugar, and refined soju, then sealed in a sterilized glass jar."
   },
   {
     "type": "p",
