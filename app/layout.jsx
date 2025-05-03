@@ -1,8 +1,11 @@
 import "./globals.css";
+
+import { Lato } from 'next/font/google';
+import { Analytics } from "@vercel/analytics/react"
+
 import Fenster from "../components/Fenster";
 import Szene from "@/components/Szene";
 import Kopf from "@/components/Kopf";
-import { Lato } from 'next/font/google';
 
 // export const metadata = {
 //   title: "changhyun.me",
