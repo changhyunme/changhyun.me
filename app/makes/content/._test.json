@@ -1,0 +1,39 @@
+{
+  "title": "Test",
+  "slug" : "/",
+  "description": "Test is a test website for testing purposes.",
+  "keywords": ["test", "testing", "example"],
+  "datetime": "2023-10-01T00:00:00Z",
+  "thumbnails" :[
+    {
+      "path": "/thumbs/blackwing.jpg",
+      "alt": "BlackWing"
+    },
+    {
+      "path": "/thumbs/blackwing.jpg",
+      "alt": "BlackWing"
+    }
+  ],
+  "technologies": [
+    {
+      "name": "React",
+      "icon": "react"
+    },
+    {
+      "name": "Node.js",
+      "icon": "nodejs"
+    }
+  ],
+  "content" : [
+    {
+      "type": "text",
+      "content": "This is a test content."
+    },
+    {
+      "type": "image",
+      "src": "/images/test.jpg",
+      "alt": "Test Image"
+    }
+  ]
+}
+  
