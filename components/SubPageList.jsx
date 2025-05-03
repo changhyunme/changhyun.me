@@ -8,7 +8,7 @@ import TechIcon from "@/components/ui/TechIcon";
 
 const SubPageList = ({ data, href }) => {
     return (
-        <Link href={`/makes/${data.slug || ""}`}>
+        <Link href={`/journal/${data.slug || ""}`}>
             <div className="flex flex-col gap-1 cursor-pointer hover:opacity-90">
                 <div className="flex flex-col-reverse md:flex-row gap-1">
                     <div className="flex-1 px-2 py-2 md:px-3 md:rounded-tl-md bg-neutral-700/70">

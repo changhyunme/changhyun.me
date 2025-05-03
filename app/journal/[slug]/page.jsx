@@ -67,7 +67,7 @@ export async function generateMetadata({ params }) {
   }
   
 export async function generateStaticParams() {
-  const contentDir = path.join(process.cwd(), "app/makes/content");
+  const contentDir = path.join(process.cwd(), "app/journal/content");
   const files = await fs.readdir(contentDir);
   return files
     .filter((f) => f.endsWith(".json"))
@@ -76,7 +76,7 @@ export async function generateStaticParams() {
 
 export default async function Page({ params }) {
   const { slug } = params;
-  const filePath = path.join(process.cwd(), "app/makes/content", `${slug}.json`);
+  const filePath = path.join(process.cwd(), "app/journal/content", `${slug}.json`);
 
   let data;
   try {

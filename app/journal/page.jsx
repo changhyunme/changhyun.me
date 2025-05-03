@@ -12,16 +12,16 @@ import info from "@/app/info.config.js";
 
 export const generateMetadata = () => {
   return {
-    title: `Makes: ${info.title}`,
+    title: `Journal: ${info.title}`,
     description: info.description,
     keywords: info.keywords,
     copyright: info.copyright,
     robots: info.robots,
     authors: [{ name: info.author, url: `mailto:${info.author_email}` }],
     openGraph: {
-      title: `Makes: ${info.title}`,
+      title: `Journal: ${info.title}`,
       description: info.opengraph.description,
-      url: `${info.opengraph.url}/makes`,
+      url: `${info.opengraph.url}/journal`,
       siteName: info.opengraph.site_name || info.title,
       images: [
         {
@@ -34,12 +34,12 @@ export const generateMetadata = () => {
     },
     twitter: {
       card: info.twitter.card,
-      title: `Makes: ${info.title}`,
+      title: `Journal: ${info.title}`,
       description: info.twitter.description,
       creator: info.twitter.creator,
       images: [info.twitter.image],
     },
-    metadataBase: new URL("https://changhyun.me/makes"),
+    metadataBase: new URL("https://changhyun.me/journal"),
   };
 };
 

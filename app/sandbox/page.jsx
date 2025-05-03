@@ -47,12 +47,9 @@ export default function Home()
   return (
     <>
         <ContentWrapper>
-            <ContentSide>
-                asd
-            </ContentSide>
             <ContentBody>
-                <Header>Sandbox</Header>
-                asd
+                Sandbox no items
+                <br/>.
                 <PageFooter/>
             </ContentBody>
         </ContentWrapper> 

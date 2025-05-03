@@ -1,7 +1,7 @@
 import fs from "fs/promises";
 import path from "path";
 
-const contentDir = path.join(process.cwd(), "app/makes/content");
+const contentDir = path.join(process.cwd(), "app/journal/content");
 
 export async function getHeaders() {
   const files = await fs.readdir(contentDir);
