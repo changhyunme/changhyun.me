@@ -14,8 +14,6 @@ export const generateMetadata = () => {
     description: info.description,
     keywords: info.keywords,
     copyright: info.copyright,
-    themeColor: info.theme_color,
-    colorScheme: info.color_schema,
     robots: info.robots,
     authors: [{ name: info.author, url: `mailto:${info.author_email}` }],
     openGraph: {
@@ -38,13 +36,6 @@ export const generateMetadata = () => {
       description: info.twitter.description,
       creator: info.twitter.creator,
       images: [info.twitter.image],
-    },
-    viewport: {
-      width: "device-width",
-      initialScale: 1,
-      maximumScale: 5,
-      userScalable: true,
-      viewportFit: "cover", // 🔥 notch 영역까지 안전하게 사용
     },
     metadataBase: new URL("https://changhyun.me"), // 이거 없으면 절대경로 에러 남
   };
@@ -129,11 +120,35 @@ export default function Home()
       <ContentWrapper>
         <ContentBody className="text-white/80">
           <div>
-            <Header translate="no" depth="1">CHANGHYUN.me</Header>
+            <Header translate="no" depth="1">Welcome</Header>
             <div className="text-white/80 leading-relaxed space-y-4">
+
+            <p>✍️ This site isn’t just a portfolio.</p>
               <p>
-                This is my personal website — a space for my portfolio, notes, and general thoughts on building things.
+                It’s a place where I reflect on what I’ve built — and more importantly, why I built it.<br />
+                Tech is just a tool. Direction and intention always come first.
               </p>
+
+              <p>💡 I care more about <strong>why</strong> something should exist than how fast I can build it.</p>
+              <p>
+                Structure over UI, maintainability over speed, context over features.<br />
+                Clean code helps me think clearly — and that’s the real goal.
+              </p>
+
+              <p>🛠️ Lately, I’ve been focused on full-stack JavaScript, performance tuning, and UX flow design.</p>
+              <p>
+                I run side projects regularly and rebuild things often, sometimes just to see if I can do it better.
+              </p>
+
+              <p>💬 This page isn’t a highlight reel — it’s a record, made to be shared.</p>
+              <p>
+                You’ll find code, context, and probably a few mistakes along the way.<br />
+                Got questions? I’m always up for a conversation. DMs are open 🙌
+              </p>
+
+            </div>
+            <Header>History of CHANGHYUN.me</Header>
+            <div className="text-white/80 leading-relaxed space-y-4">
               <p>
                 <strong className="font-black italic" translate="no">CHANGHYUN.me</strong> has been built, scrapped, and rebuilt probably ten times since 2015 — not even kidding.
               </p>
@@ -148,17 +163,24 @@ export default function Home()
             </div>
           </div>
 
+          <Header>Version Log</Header>
+
           <div className="flex flex-col gap-4 my-6">
             {versions.map(({ version, year, stack, desc, quote }) => (
               <div
                 key={version}
-                className="flex flex-row gap-2 text-sm text-neutral-300"
+                className="flex flex-row gap-2 py-1 text-sm text-neutral-300 hover:bg-white/3"
               >
-                <h2 className="hidden">{version} · {year} — built using {stack}</h2>
+                <h3 className="hidden">{version} · {year} — built using {stack}</h3>
 
-                <div className="w-30 flex flex-col md:flex-row gap-2" translate="no">
-                  <span className="w-10 font-bold text-neutral-100">{version}</span>
-                  <span className="w-20">{year}</span>
+                <div className="relative w-20 md:w-30 flex flex-col gap-1" translate="no">
+                  <div className="flex flex-col md:flex-row">
+                    <span className="w-auto md:w-10 font-bold text-neutral-100">{version}</span>
+                    <span className="w-auto md:w-20">{year}</span>
+                  </div>
+                  <div className="flex-1 flex flex-row">
+                    <div className="mt-2 w-[5px] border-1 border-white/10 bg-white/5 rounded-xl"></div>
+                  </div>
                 </div>
                 <div className="flex-1 flex flex-col gap-2">
                   <div className="font-semibold text-white" translate="no">{stack}</div>
