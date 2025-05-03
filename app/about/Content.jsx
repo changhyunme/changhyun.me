@@ -9,6 +9,7 @@ import Blockquote from "@/components/ui/Blockquote";
 import PageFooter from "@/components/ui/PageFooter";
 import { useSectionObserver } from "@/hooks/useSectionObserver";
 import { useSectionStore } from "@/store/sectionStore";
+import useStore from "@/store/uiStore";
 
 const menuItems = [
   { id: "philosophy", label: "Philosophy" },
@@ -39,11 +40,14 @@ export default function Content() {
   ];
   useSectionObserver(sections);
   const activeId = useSectionStore((state) => state.activeId);
+  const { breitbild } = useStore();
 
   const scrollToSection = (id) => {
     const el = document.getElementById(id);
     if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      const yOffset = window.innerHeight * (breitbild ? 0.05 : 0.1);
+      const y = el.getBoundingClientRect().top + window.scrollY - yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
     }
   };
 
