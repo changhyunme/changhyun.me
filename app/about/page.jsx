@@ -1,240 +1,49 @@
-"use client";
-
+// app/about/page.jsx
 import ContentWrapper from "@/components/ContentWrapper";
-import ContentSide from "@/components/ContentSide";
-import ContentBody from "@/components/ContentBody";
-import Grid from "@/components/ui/Grid";
-import GridTechItem from "@/components/ui/GridTechItem";
-import Header from "@/components/ui/Header";
-import Blockquote from "@/components/ui/Blockquote";  
-import PageFooter from "@/components/ui/PageFooter";
-import { useSectionObserver } from "@/hooks/useSectionObserver";
-import { useSectionStore } from "@/store/sectionStore";
+import Content from "@/app/about/Content";
 
+{/* Metadata */}
+import info from "@/app/info.config.js";
 
-const menuItems = [
-  { id: "philosophy", label: "Philosophy" },
-  { id: "about", label: "About Me" },
-  {
-    id: "stack",
-    label: "What I Use",
-    children: [
-      { id: "modern", label: "Modern Framework" },
-      { id: "experimental", label: "Experimental" },
-      { id: "node", label: "Node.js" },
-      { id: "legacy", label: "Legacy Standard" },
-      { id: "languages", label: "Languages" },
-      { id: "ui", label: "Styling & UI" },
-      { id: "databases", label: "Databases" },
-      { id: "infra", label: "Infra & DevOps" },
-      { id: "tools", label: "Tools" },
-      { id: "others", label: "Others" },
-    ],
-  }
-];
-
-
-export default function Home() {
-  const sections = [
-    "philosophy", "about", "stack", "modern", "experimental",
-    "node", "legacy", "languages", "ui", "databases",
-    "infra", "tools", "others",
-  ];
-  useSectionObserver(sections);
-  const activeId = useSectionStore((state) => state.activeId);
-
-  const scrollToSection = (id) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+export const generateMetadata = () => {
+  return {
+    title: `About: ${info.title}`,
+    description: info.description,
+    keywords: info.keywords,
+    robots: info.robots,
+    themeColor: info.theme_color,
+    authors: [{ name: info.author, url: `mailto:${info.author_email}` }],
+    openGraph: {
+      title: info.opengraph.title,
+      description: info.opengraph.description,
+      url: info.opengraph.url,
+      siteName: info.opengraph.site_name || info.title,
+      images: [
+        {
+          url: info.opengraph.image,
+          alt: info.opengraph.image_alt,
+        },
+      ],
+      locale: info.opengraph.locale,
+      type: info.opengraph.type,
+    },
+    twitter: {
+      card: info.twitter.card,
+      title: info.twitter.title,
+      description: info.twitter.description,
+      creator: info.twitter.creator,
+      images: [info.twitter.image],
+    },
+    metadataBase: new URL("https://changhyun.me/about"), // 이거 없으면 절대경로 에러 남
   };
+};
 
-  const renderMenu = (items) => (
-    <ul className="ml-3 space-y-1 text-sm">
-      {items.map(({ id, label, children }) => (
-        <li key={id} className="list-disc">
-          <div
-            className={`cursor-pointer ${
-              activeId === id ? "text-orange-400 font-semibold" : "font-medium"
-            }`}
-            onClick={() => scrollToSection(id)}
-          >
-            {label}
-          </div>
-          {children && (
-            <ul className="list-decimal ml-3 mt-1 space-y-1">
-              {children.map(({ id, label }) => (
-                <li
-                  key={id}
-                  className={`cursor-pointer ${
-                    activeId === id ? "text-orange-400 font-semibold" : ""
-                  }`}
-                  onClick={() => scrollToSection(id)}
-                >
-                  {label}
-                </li>
-              ))}
-            </ul>
-          )}
-        </li>
-      ))}
-    </ul>
-  );
+{/* Page Start */}
 
+export default function AboutPage() {
   return (
     <ContentWrapper>
-      <ContentSide className="hidden md:block">
-        {renderMenu(menuItems)}
-      </ContentSide>
-      <ContentBody className="text-white/80">
-        
-           <Blockquote>
-            The Greeks said *“techne”* was more than craft — 
-            it was a way of understanding the world by making.  
-            That still makes sense to me.
-          </Blockquote>
-
-          <Header id="philosophy">Philosophy</Header>
-
-            I like building things — not just coding for the sake of it, but actually figuring out <em>why</em> something should exist before touching the keyboard.<br /><br />
-            I’m not the “move fast and break stuff” type. More like “think it through, then build fast — and make sure it doesn’t break later.”<br /><br />
-            I enjoy finding the cleanest way to solve messy problems.<br />
-            I believe good tools matter, but clear thinking matters more.<br />
-            Also, I probably spend too much time tweaking things no one else notices. And I’m fine with that.<br /><br />
-            If something feels off, I’ll refactor it.<br />
-            If something’s confusing, I’ll simplify it.<br />
-            If it needs to ship, I’ll get it done.<br /><br />
-            Simple as that.
-
-          <Header id="about">About Me</Header>
-
-            <Blockquote>
-              I didn’t start in tech. I studied music — until I realized I enjoyed tinkering with Linux and building little websites way more than practicing scales.<br /><br />
-              Turns out, composing and coding aren’t that different: both are about structure, flow, and knowing when to break the rules.
-            </Blockquote>
-
-          {/* <Header>Interests</Header>
-            Reading, music, motorcycles, fishing, and building personal websites — oh, and I play the violin 🎻 (plus I nerd out on scoring sheet music 🎼). */}
-
-          <Header id="stack">What I Use</Header>
-            Here’s a look at the stacks I’ve chosen so far — and the languages I’m currently exploring.
-          <Blockquote>
-            Here’s a rundown of the stacks I genuinely enjoy working with.
-          </Blockquote>
-          
-          <Header id="modern">Core Web: Modern Framework</Header>
-          <Grid>
-            <GridTechItem name="Next.js" icon="nextjs" size="30" star="1" />
-            <GridTechItem name="React" icon="react" size="30" star="1" />
-            <GridTechItem name="Tailwind CSS" icon="tailwind" size="30" star="1" />
-          </Grid>
-          <Blockquote>
-            Built this site with <strong>Next.js + Tailwind</strong>. Pretty much my go-to stack these days. 
-          </Blockquote>
-
-          <Header id="experimental">Core Web: Experimental</Header>
-          <Grid>
-            <GridTechItem name="Astro" icon="astro" size="30" heart="1" />
-            <GridTechItem name="SvelteKit" icon="svelte" size="30" />
-          </Grid>
-          <Blockquote>
-            I usually reach for <strong>Astro</strong> when someone asks me to whip up a clean site fast.<br />
-            <strong>Svelte</strong>? Looked easy at first... then it pooped on my expectations.
-          </Blockquote>
-          
-          <Header id="node">Core Web: Node.js</Header>
-          <Grid>
-            <GridTechItem name="Node.js" icon="nodejs" size="30" />
-            <GridTechItem name="Express" icon="nodejs" size="30" star="1" />
-            <GridTechItem name="Socket.io" icon="nodejs" size="30" star="1" />
-            <GridTechItem name="ejs" icon="nodejs" size="30"/>
-          </Grid>
-          <Blockquote>
-            Might be past its prime, but I still use it a lot — still feels fresh and exciting every time.
-          </Blockquote>
-
-          <Header id="legacy">Core Web: Legacy Standard</Header>
-          <Grid>
-            <GridTechItem name="apache" icon="apache" size="30" />
-            <GridTechItem name="PHP" icon="php" size="30" />
-            <GridTechItem name="MySQL" icon="mysql" size="30" />
-          </Grid>
-          <Blockquote>
-            The <strong>APM</strong> was the first combo I met when I stepped into the world of code.
-            It was already legacy back then — now, it feels more like a trace left behind in time.
-          </Blockquote>
-
-          <Header id="languages">Now Exploring: Languages</Header>
-          <Grid>
-            <GridTechItem name="Go" icon="go" size="30" />
-            <GridTechItem name="Python" icon="python" size="30" />
-            {/* <GridTechItem name="Clojure" icon="clojure" size="30" /> */}
-          </Grid>
-          <Blockquote>
-            I’ve been eyeing <strong>Go</strong> for its solid rep, {/*<strong>Clojure</strong> for its cryptic charm, */}and <strong>Python</strong>... well, still not sure where it fits in.
-          </Blockquote>
-
-          <Header id="ui">Styling & UI</Header>
-          <Grid>
-            <GridTechItem name="Tailwind CSS" icon="tailwind" size="30" star="1" />
-            <GridTechItem name="Sass" icon="sass" size="30" />
-            <GridTechItem name="less" icon="less" size="30" heart="1"/>
-            <GridTechItem name="Bootstrap" icon="bootstrap" size="30" />
-            <GridTechItem name="CSS" icon="css3" size="30" />
-          </Grid>
-          <Blockquote>
-            Been rocking <strong>Less</strong> for like a decade. Still hits different.<br />
-            <strong>Bootstrap</strong> feels legacy, but hey — they’re still shipping updates.
-          </Blockquote>
-
-          <Header id="databases">Databases</Header>
-          <Grid>
-            <GridTechItem name="MongoDB" icon="mongodb" size="30" />
-            <GridTechItem name="PostgreSQL" icon="postgres" size="30" />
-            <GridTechItem name="MySQL" icon="mysql" size="30" />
-          </Grid>
-          <Blockquote>
-            I prefer seals over dolphins. Elephants? Still too much, every time.
-          </Blockquote>
-
-          <Header id="infra">Infra & DevOps</Header>
-          <Grid>
-            <GridTechItem name="Vercel" icon="vercel" size="30" star="2" heart="1" />
-            <GridTechItem name="Serverless" icon="serverless" size="30" />
-            <GridTechItem name="AWS" icon="aws" size="30" />
-            <GridTechItem name="Firebase" icon="firebase" size="30" />
-            <GridTechItem name="Clodflare" icon="clodflare" size="30" />
-            <GridTechItem name="nginx" icon="nginx" size="30" />
-          </Grid>
-          <Blockquote>
-            Kinda obsessed with serverless stuff lately — <strong>Vercel</strong>’s been a game changer.
-          </Blockquote>
-
-          <Header id="tools">Tools</Header>
-          <Grid>
-          <GridTechItem name="Figma" icon="figma" size="30" />
-            <GridTechItem name="Designer" icon="affinityDesigner" size="30" star="1" />
-            <GridTechItem name="Publisher" icon="affinityPublisher" size="30" />
-            <GridTechItem name="Illustrator" icon="illustrator" size="30" />
-          </Grid>
-          <Blockquote>
-            <strong>Affinity Designer</strong> is way cheaper than Illustrator — and honestly, it’s the only tool I’ve ever gotten 100x my money’s worth from.
-          </Blockquote>
-
-          <Header id="others">Others</Header>
-          <Grid>
-            <GridTechItem name="jQuery" icon="jquery" size="30" />
-            <GridTechItem name="Wordpress" icon="wordpress" size="30" />
-            <GridTechItem name="GNUBoard(legacy)" icon="PHP" size="30" />
-            <GridTechItem name="XE(legacy)" icon="PHP" size="30" />
-          </Grid>
-          <Blockquote>
-            Once cutting-edge, now just tech fossils I used to swear by.<br />
-            Wild fact: jQuery actually released version 4 in 2025.
-          </Blockquote>
-          <PageFooter/>
-      </ContentBody>
-    </ContentWrapper> 
+      <Content />
+    </ContentWrapper>
   );
 }

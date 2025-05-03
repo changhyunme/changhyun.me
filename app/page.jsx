@@ -1,9 +1,47 @@
+
 import ContentWrapper from "@/components/ContentWrapper";
 import ContentBody from "@/components/ContentBody";
 import Blockquote from "@/components/ui/Blockquote";  
 import PageFooter from "@/components/ui/PageFooter";
 import Header from "@/components/ui/Header";
-import Banner from "@/components/Banner";
+
+{/* Metadata */}
+import info from "@/app/info.config.js";
+
+export const generateMetadata = () => {
+  return {
+    title: `${info.title}`,
+    description: info.description,
+    keywords: info.keywords,
+    robots: info.robots,
+    themeColor: info.theme_color,
+    authors: [{ name: info.author, url: `mailto:${info.author_email}` }],
+    openGraph: {
+      title: info.opengraph.title,
+      description: info.opengraph.description,
+      url: info.opengraph.url,
+      siteName: info.opengraph.site_name || info.title,
+      images: [
+        {
+          url: info.opengraph.image,
+          alt: info.opengraph.image_alt,
+        },
+      ],
+      locale: info.opengraph.locale,
+      type: info.opengraph.type,
+    },
+    twitter: {
+      card: info.twitter.card,
+      title: info.twitter.title,
+      description: info.twitter.description,
+      creator: info.twitter.creator,
+      images: [info.twitter.image],
+    },
+    metadataBase: new URL("https://changhyun.me"), // 이거 없으면 절대경로 에러 남
+  };
+};
+
+{/* Page Start */}
 
 const versions = [
   {
@@ -77,54 +115,53 @@ const versions = [
 
 export default function Home() 
 {
-
   return (
-    <ContentWrapper>
-      <ContentBody className="text-white/80">
-        {/* <Blockquote>1+1</Blockquote> */}
-
-        <div>
-          <Header translate="no">CHANGHYUN.me</Header>
-          <div className="text-white/80 leading-relaxed space-y-4">
-            <p>
-              This is my personal website — a space for my portfolio, notes, and general thoughts on building things.
-            </p>
-            <p>
-              <strong className="font-black italic" translate="no">CHANGHYUN.me</strong> has been built, scrapped, and rebuilt probably ten times since 2015 — not even kidding.
-            </p>
-            <p>
-              It all started with just HTML and CSS, until I hit a wall and jumped into PHP.  
-              From there, I wandered through Wordpress and Node.js, and now?  
-              It’s running on <strong>Next.js</strong> with a little help from <strong>Vercel</strong>.
-            </p>
-            <p>
-              Below is a rough timeline of each version — mostly based on memory, so take it with a grain of salt.
-            </p>
-          </div>
-        </div>
-
-        <div className="flex flex-col gap-4 my-6">
-          {versions.map(({ version, year, stack, desc, quote }) => (
-            <div
-              key={version}
-              className="flex flex-row gap-2 text-sm text-neutral-300"
-            >
-              <div className="w-30 flex flex-col md:flex-row gap-2" translate="no">
-                <span className="w-10 font-bold text-neutral-100">{version}</span>
-                <span className="w-20">{year}</span>
-              </div>
-              <div className="flex-1 flex flex-col gap-2">
-                <div className="font-semibold text-white" translate="no">{stack}</div>
-                <div className="text-neutral-400">{desc}</div>
-                {quote && quote.trim() !== "" && (
-                  <Blockquote className="mt-1">{quote}</Blockquote>
-                )}
-              </div>
+    <>
+      <ContentWrapper>
+        <ContentBody className="text-white/80">
+          <div>
+            <Header translate="no" depth="1">CHANGHYUN.me</Header>
+            <div className="text-white/80 leading-relaxed space-y-4">
+              <p>
+                This is my personal website — a space for my portfolio, notes, and general thoughts on building things.
+              </p>
+              <p>
+                <strong className="font-black italic" translate="no">CHANGHYUN.me</strong> has been built, scrapped, and rebuilt probably ten times since 2015 — not even kidding.
+              </p>
+              <p>
+                It all started with just HTML and CSS, until I hit a wall and jumped into PHP.  
+                From there, I wandered through Wordpress and Node.js, and now?  
+                It’s running on <strong>Next.js</strong> with a little help from <strong>Vercel</strong>.
+              </p>
+              <p>
+                Below is a rough timeline of each version — mostly based on memory, so take it with a grain of salt.
+              </p>
             </div>
-          ))}
-        </div>
-        <PageFooter/>
-      </ContentBody>
-    </ContentWrapper> 
+          </div>
+
+          <div className="flex flex-col gap-4 my-6">
+            {versions.map(({ version, year, stack, desc, quote }) => (
+              <div
+                key={version}
+                className="flex flex-row gap-2 text-sm text-neutral-300"
+              >
+                <div className="w-30 flex flex-col md:flex-row gap-2" translate="no">
+                  <span className="w-10 font-bold text-neutral-100">{version}</span>
+                  <span className="w-20">{year}</span>
+                </div>
+                <div className="flex-1 flex flex-col gap-2">
+                  <div className="font-semibold text-white" translate="no">{stack}</div>
+                  <div className="text-neutral-400">{desc}</div>
+                  {quote && quote.trim() !== "" && (
+                    <Blockquote className="mt-1">{quote}</Blockquote>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+          <PageFooter/>
+        </ContentBody>
+      </ContentWrapper> 
+    </>
   );
 }

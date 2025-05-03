@@ -4,10 +4,10 @@ import Szene from "@/components/Szene";
 import Kopf from "@/components/Kopf";
 import { Lato } from 'next/font/google';
 
-export const metadata = {
-  title: "changhyun.me",
-  description: "changhyun official website",
-};
+// export const metadata = {
+//   title: "changhyun.me",
+//   description: "changhyun official website",
+// };
 
 const lato = Lato({
   weight: ['100', '300', '700', '900'],
