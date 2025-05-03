@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "genthumbs": "node scripts/genThumbs.js"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",
@@ -23,6 +24,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-syntax-highlighter": "^15.6.1",
+    "sharp": "^0.34.1",
     "zustand": "^5.0.3"
   },
   "devDependencies": {

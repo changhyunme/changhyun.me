@@ -1,3 +1,5 @@
+
+import Image from "next/image";
 import TechIcon from "@/components/ui/TechIcon";
 
 const nameCard = () => {
@@ -20,9 +22,17 @@ const nameCard = () => {
     return (
         <div className="" translate="no">
             <div className="max-w-36 md:max-w-24 mx-auto my-3 rounded-full overflow-hidden">
-                <img className="object-cover grayscale-100" 
-                     src="profile.jpeg" 
-                     alt="profile iamge"/>
+                <Image
+                    src="/thumbs/profile.jpeg"
+                    alt="profile image"
+                    width={800} // 실제 이미지 비율에 맞춰 조정 필요
+                    height={800}
+                    placeholder="blur"
+                    blurDataURL="/thumbs/temp/profile.jpeg"
+                    loading="lazy"
+                    className={`saturate-60`}
+                    unoptimized
+                />
             </div>
             <div className="mt-3 text-center">
                 <h2 className="text-white text-lg capitalize font-bold">

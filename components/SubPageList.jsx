@@ -1,4 +1,6 @@
 import Link from "next/link"
+import Image from "next/image";
+
 import { formatDistanceToNow } from "date-fns";
 
 import TechIcon from "@/components/ui/TechIcon";
@@ -25,7 +27,17 @@ const SubPageList = ({ data, href }) => {
                     <div className="flex flex-row gap-1">
                         {data.thumbnails && data.thumbnails.map((thumb, i) => (
                             <div key={i} className="aspect-sqare flex-1 w-32 rounded-t-md md:rounded-t-none last:rounded-tr-md overflow-hidden">
-                                <img src={thumb.path} alt={thumb.alt} className="saturate-60"/>
+                                <Image
+                                    src={thumb.path}
+                                    alt={thumb.alt}
+                                    width={800} // 실제 이미지 비율에 맞춰 조정 필요
+                                    height={800}
+                                    placeholder="blur"
+                                    blurDataURL={thumb.blur || `/thumbs/temp/${thumb.path.split('/').pop()}`}
+                                    loading="lazy"
+                                    className={`saturate-60`}
+                                    unoptimized
+                                />
                             </div>
                         ))}
                     </div>

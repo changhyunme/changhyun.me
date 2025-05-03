@@ -1,3 +1,4 @@
+import Image from "next/image";
 import fs from "fs/promises";
 import path from "path";
 import { notFound } from "next/navigation";
@@ -144,14 +145,21 @@ export default async function Page({ params }) {
             if (block.type === "image") {
               return (
                 <div key={i} className="my-4">
-                  <img
-                    src={block.src}
-                    alt={block.alt}
-                    className={`rounded-md max-w-3xl cursor-crosshair saturate-60 hover:saturate-100
-                        ${block.float === "left" ? "w-full md:w-1/3 float-left mr-4 mb-4" : 
-                        block.float === "right" ? "w-full md:w-1/3 float-right ml-4 mb-4" : 
-                        "w-full my-4"} md:hover:w-1/2 md:active:w-4/6 transition-all duration-300`}
-                    />
+                  
+                <Image
+                  src={block.src}
+                  alt={block.alt}
+                  width={800} // 실제 이미지 비율에 맞춰 조정 필요
+                  height={800}
+                  placeholder="blur"
+                  blurDataURL={block.blur || `/thumbs/temp/${block.src.split('/').pop()}`}
+                  loading="lazy"
+                  className={`rounded-md max-w-3xl cursor-crosshair saturate-60 hover:saturate-100
+                    ${block.float === "left" ? "w-full md:w-1/3 float-left mr-4 mb-4" : 
+                    block.float === "right" ? "w-full md:w-1/3 float-right ml-4 mb-4" : 
+                    "w-full my-4"} md:hover:w-1/2 md:active:w-4/6 transition-all duration-300`}
+                  unoptimized
+                />
                 </div>
               );
             }
