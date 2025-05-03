@@ -139,7 +139,7 @@ export default async function Page({ params }) {
             if (block.type === "h4") return <Header key={i} depth="4">{block.content}</Header>;
             if (block.type === "h5") return <Header key={i} depth="5">{block.content}</Header>;
             if (block.type === "h6") return <Header key={i} depth="6">{block.content}</Header>;
-            if (block.type === "p") return <p key={i}>{block.content}</p>;
+            if (block.type === "p") return <p key={i} className="font-light">{block.content}</p>;
             if (block.type === "blockquote") return <Blockquote key={i}>{block.content}</Blockquote>;
             if (block.type === "image") {
               return (

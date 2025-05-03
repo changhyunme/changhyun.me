@@ -74,8 +74,8 @@ const versions = [
     version: "v2.2",
     year: "Late 2013",
     stack: "Apache + PHP + MySQL / JS / CSS",
-    desc: "I built a basic message board with comments using a MySQL backend. It was also my first attempt at responsive design with CSS media queries. I remember trying to create my own utility class system — kind of a DIY Tailwind before Tailwind. Bootstrap was big back then, but I opted for a 12-column layout instead of Bootstrap's 10. It just made more sense design-wise. (Also, shoutout to metric vs imperial units — I finally understood what Americans feel like using inches.)",
-    quote: "CSS libraries never really clicked with me — at least, not until I met Tailwind."
+    desc: "I built a basic message board with comments using a MySQL backend. It was my first stab at responsive design with CSS media queries. I created my own utility class system — think q (1/4, 2q=2/4, 3q=3/4), t (1/3, 2t=2/3), h (1/2), and f (1) — a DIY Tailwind before Tailwind was a thing. I was more into pure CSS and nesting with tools like LESS, so Bootstrap’s pre-designed 12-column grid, while popular, didn’t quite vibe with me. Still, I went with a 12-column layout for its design flexibility.",
+    quote: "I wasn’t big on pre-designed CSS frameworks — I was more excited about crafting my own styles with pure CSS and tools like LESS."
   },
   {
     version: "v3",

@@ -1,17 +1,17 @@
 {
-  "title": "Miuju 2024 : Maesil Liquor",
-  "slug" : "miuju-2024",
+  "title": "Miuju 2024: Maesil Liquor",
+  "slug": "miuju-2024",
   "description": "Miuju is a fruit liqueur made with 2024 Goyang-grown plums. 'Miu' is the creator’s cat, and 'uju' reflects the endless inspiration she brings.",
-  "keywords": ["Beverage","Maesilju","Miuju"],
+  "keywords": ["Beverage", "Homemade", "Maesilju"],
   "datetime": "2025-05-01T12:08:27Z",
-  "thumbnails" :[
+  "thumbnails": [
     {
       "path": "/thumbs/miuju24_3.jpg",
-      "alt": "Miuju Image"
+      "alt": "Miuju 2024 bottle with minimalist Korean label"
     },
     {
       "path": "/thumbs/miuju24_1.jpg",
-      "alt": "Miuju Image"
+      "alt": "Miuju 2024 bottle in a cozy setting"
     }
   ],
   "technologies": [
@@ -21,76 +21,98 @@
     }
   ],
   "content": [
-  {
-    "type": "h1",
-    "content": "Miuju"
-  },
-  {
-    "type": "image",
-    "src": "/thumbs/miuju24_3.jpg",
-    "alt": "Miuju Bottle",
-    "float": "right"
-  },
-  {
-    "type": "p",
-    "content": "Miuju is not just a fruit liqueur — it is a personal archive of time, craftsmanship, and sentiment. Created by a developer and musician, this project began with an intention to capture emotion in a bottle."
-  },
-  {
-    "type": "p",
-    "content": "In May 2024, fresh red plums were handpicked in Goyang, Korea. Each plum was carefully cleaned and dried to prevent bruising. The base was created using a 1:1:1 ratio of plums, sugar, and refined soju, then sealed in a sterilized glass jar."
-  },
-  {
-    "type": "p",
-    "content": "The mixture was aged undisturbed for one full year in a dark, cool environment. This slow infusion process gently extracted the natural essence of the plums — yielding a deep, smooth profile without artificial intervention."
-  },
-  {
-    "type": "h2",
-    "content": "Design & Packaging"
-  },
-  {
-    "type": "image",
-    "src": "/thumbs/miuju24_2.jpg",
-    "alt": "Miuju Bottle",
-    "float": "left"
-  },
-  {
-    "type": "p",
-    "content": "The bottle and label were designed to reflect the calm and intentional nature of the project. A limited run of bottles was custom-made at a local Korean glass workshop, and each label was designed and applied by hand by the creator."
-  },
-  {
-    "type": "p",
-    "content": "The label features minimalist Korean typography and ink-inspired plum blossom motifs. It is printed on water-resistant material, and every bottle is individually labeled — one by one. The total production run remains under 100 bottles."
-  },
-  {
-    "type": "p",
-    "content": "The logo silhouette was inspired by the creator’s cat gazing out the window around the age of one. That calm, curious moment became the symbol of Miuju’s quiet elegance."
-  },
-  {
-    "type": "h2",
-    "content": "Recipe (in JavaScript)"
-  },
-  {
-    "type": "p",
-    "content": "Below is a conceptual recipe for Miuju, written as playful JS-style pseudocode:"
-  },
-  {
-    "type": "code",
-    "language": "javascript",
-    "content": "const plumJar = {};\n\nlet sugar = 0;\n\nwhile (sugar < 100) {\n  sugar++;\n  if (sugar % 10 === 0) {\n    plumJar[`plum-${sugar / 10}`] = 30;\n  }\n}\n\nif (Object.keys(plumJar).length >= 10) {\n  plumJar.liquor = 'refined soju';\n  plumJar.sealed = true;\n  console.log('Jar sealed. Aging begins...');\n}\n\nconst waitOneYear = () => {\n  return new Promise((resolve) => {\n    setTimeout(() => {\n      resolve('Miuju has aged gracefully for one year.');\n    }, 1000);\n  });\n};\n\n(async () => {\n  const msg = await waitOneYear();\n  console.log(msg);\n  console.log('Cheers! 🍶');\n})();"
-  },
-  
-  {
-    "type": "h2",
-    "content": "Flavor Profile & Alcohol"
-  },
-  {
-    "type": "p",
-    "content": "Miuju is estimated to contain around 34% alcohol by volume. Despite its high proof, it delivers a surprisingly smooth and gentle drinking experience. The initial notes are subtle — soft plum aroma with natural sweetness and a touch of acidity from long-term aging."
-  },
-  {
-    "type": "blockquote",
-    "content": "It’s a liquor that doesn’t taste like liquor. Light on the tongue, but warm on the mind."
-  }
-]
-
+    {
+      "type": "h1",
+      "content": "Miuju: A Sip of Code and Plums"
+    },
+    {
+      "type": "p",
+      "content": "Miuju isn’t just a fruit liqueur—it’s a little piece of my heart, bottled up with care. As a developer and musician, I poured my love for creating into this project, blending the juicy plums of Goyang, Korea, with a touch of traditional Maesilju magic. The name ‘Miuju’ comes from my cat, Miu, whose curious eyes and endless inspiration (that’s the ‘uju,’ meaning universe in Korean) sparked this whole adventure. With fewer than 100 bottles made, each one holds a story of time, craft, and a whole lot of feeling."
+    },
+    {
+      "type": "image",
+      "src": "/thumbs/miuju24_3.jpg",
+      "alt": "Miuju 2024 bottle with minimalist Korean label",
+      "float": "right"
+    },
+    {
+      "type": "p",
+      "content": "Picture this: it’s May 2024, and I’m out in the orchards of Goyang, picking the ripest, reddest plums under the spring sun. Every plum was hand-checked, gently washed, and air-dried to keep it perfect—like cleaning up code before a big commit. I mixed those plums with sugar and refined soju, stirring them together just right to let the flavors meld. Then, into glass jars they went, sealed up tight and ready for a year of quiet transformation."
+    },
+    {
+      "type": "p",
+      "content": "For 12 months, those jars sat in a cool, dark corner, letting time work its magic. No rushing, no shortcuts—just the slow, natural infusion of plum goodness into the soju. It’s like waiting for a long-running script to finish: you trust the process and let it unfold. The result? A liqueur that’s deep, smooth, and full of soul, with the plums’ tart sweetness shining through in every drop."
+    },
+    {
+      "type": "h2",
+      "content": "The Spark Behind Miuju"
+    },
+    {
+      "type": "p",
+      "content": "Miuju started with a moment that stuck with me: my cat Miu, barely a year old, staring out the window with those big, curious eyes. Her silhouette against the light felt like a tiny universe of ideas waiting to happen. That’s where ‘Miuju’ was born—Miu plus ‘uju,’ a nod to the endless inspiration she brings. As a developer, I’m always chasing those sparks, whether it’s a clever line of code or a new project like this. Miuju is my way of bottling that feeling, blending craft with creativity."
+    },
+    {
+      "type": "image",
+      "src": "/thumbs/miuju24_2.jpg",
+      "alt": "Miuju 2024 bottle in a cozy setting",
+      "float": "left"
+    },
+    {
+      "type": "h2",
+      "content": "Design & Packaging: Crafted with Soul"
+    },
+    {
+      "type": "p",
+      "content": "Miuju’s look is as captivating as the liqueur inside. I collaborated with a handcrafted glass atelier in Goyang, where skilled artisans breathe life into molten glass, shaping each bottle with a mystical touch. These bottles, with their smooth curves and understated elegance, seem to glow with the quiet magic of traditional glasscraft. They’re not just containers—they’re vessels for Miuju’s story, designed to hold the essence of a fleeting moment."
+    },
+    {
+      "type": "p",
+      "content": "The labels are my own creation, drawn with the same care I put into coding a clean UI. Each one features a single, striking element: the silhouette of my cat, Miu, gazing out a window, etched in minimalist Korean typography. Printed on water-resistant paper, these labels are hand-applied, one by one, like perfecting the last pixel of a webpage. With only a handful of bottles crafted, each feels like a unique piece of art, whispering Miuju’s story of curiosity and craft."
+    },
+    {
+      "type": "h2",
+      "content": "Recipe: A JavaScript Vibe"
+    },
+    {
+      "type": "p",
+      "content": "Being a developer, I couldn’t resist turning the Miuju recipe into something playful—like a snippet of JavaScript pseudocode. This little ‘program’ captures the spirit of making Miuju: mixing ingredients, checking the vibe, and waiting patiently for the magic to happen. It’s a nod to how I approach both coding and crafting—structured, but with room for creativity."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "content": "const plumJar = {};\n\nlet sugar = 0;\n\nwhile (sugar < 100) {\n  sugar++;\n  if (sugar % 10 === 0) {\n    plumJar[`plum-${sugar / 10}`] = 'a handful of plums';\n    console.log(`Tossed in some plums at sugar level ${sugar}`);\n  }\n}\n\nif (Object.keys(plumJar).length >= 10) {\n  plumJar.liquor = 'refined soju';\n  plumJar.sealed = true;\n  console.log('Jar sealed. Ready to chill...');\n}\n\nconst waitOneYear = () => {\n  return new Promise((resolve) => {\n    setTimeout(() => {\n      resolve('Miuju’s ready, aged to perfection!');\n    }, 365 * 24 * 60 * 60 * 1000); // One year, give or take\n  });\n};\n\n(async () => {\n  const msg = await waitOneYear();\n  console.log(msg);\n  console.log('Cheers! 🍶');\n})();"
+    },
+    {
+      "type": "p",
+      "content": "This code is like Miuju itself: a loop of adding ingredients, a check to make sure everything’s good, and a long wait for the flavors to come together. It’s the same patience I bring to debugging a tricky bug or tweaking a Next.js app. The result is something that feels just right, like a perfectly timed console.log. This page, by the way, was built with Next.js and Tailwind CSS—my go-to tools for bringing ideas to life."
+    },
+    {
+      "type": "h2",
+      "content": "Flavor Profile & Alcohol Content"
+    },
+    {
+      "type": "p",
+      "content": "Miuju clocks in at about 34% alcohol by volume, but don’t let that number scare you—it’s smooth as can be. The first sip hits you with a soft plum aroma, followed by a natural sweetness that’s bright but never overpowering. There’s a touch of tartness from the year-long aging, plus hints of stone fruit and a faint floral vibe. It’s strong but gentle, warming you up like a cozy evening with friends."
+    },
+    {
+      "type": "blockquote",
+      "content": "It’s a liquor that sneaks up on you—light and easy on the tongue, but it leaves a warm glow in your mind."
+    },
+    {
+      "type": "h2",
+      "content": "Serving Suggestions & Pairings"
+    },
+    {
+      "type": "p",
+      "content": "Miuju’s got this versatile vibe that makes it fun to play with. Try it chilled in a small cup to let the plum flavors shine, or pour it over ice for a softer, floral kick. Feeling fancy? Mix it with soda water and a squeeze of lime for a fizzy spritzer, or shake it with gin and a splash of elderflower for a cocktail that’s pure elegance. It’s the kind of drink that feels right whether you’re winding down or celebrating."
+    },
+    {
+      "type": "p",
+      "content": "After some experimenting, I found my favorite way to enjoy Miuju: one shot in a soju glass, mixed with 100ml of tonic water and a handful of ice—crisp, refreshing, and just perfect. It’s also great straight up, with the plum’s zing front and center. Sip it after a meal, and it works like a charm to settle your stomach. A small glass before bed? You’ll drift off into the coziest sleep. Honestly, it’s like a magic potion—tummy aches, sore throats, you name it, Miuju seems to make it better. Call it my homemade cure-all!"
+    },
+    {
+      "type": "blockquote",
+      "content": "Want some Miuju vibes? Shoot me a DM!"
+    }
+  ]
 }
