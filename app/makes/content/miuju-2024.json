@@ -6,70 +6,91 @@
   "datetime": "2025-05-01T12:08:27Z",
   "thumbnails" :[
     {
-      "path": "/thumbs/blackwing.jpg",
-      "alt": "BlackWing"
+      "path": "/thumbs/miuju24_3.jpg",
+      "alt": "Miuju Image"
     },
     {
-      "path": "/thumbs/blackwing.jpg",
-      "alt": "BlackWing"
+      "path": "/thumbs/miuju24_1.jpg",
+      "alt": "Miuju Image"
     }
   ],
   "technologies": [
     {
       "name": "Node.js",
       "icon": "nodejs"
-    },
-    {
-      "name": "Next.js",
-      "icon": "nextjs"
     }
   ],
-  "content" : [
-    {
-      "type": "h1",
-      "content": "Miuju"
-    },
-    {
-      "type": "image",
-      "src": "/thumbs/blackwing.jpg",
-      "alt": "Miuju Bottle",
-      "float" : "right"
-    },
-    {
-      "type": "p",
-      "content": "Miuju is not just a fruit liqueur — it is a personal archive of time, craftsmanship, and sentiment. Created by a developer and musician, this project began with an intention to capture emotion in a bottle."
-    },
-    {
-      "type": "p",
-      "content": "In May 2024, fresh green plums were handpicked in Goyang, Korea. Each plum was carefully cleaned and dried to prevent bruising. The base was created using a 1:1:1 ratio of plums, sugar, and refined soju, then sealed in a sterilized glass jar."
-    },
-    {
-      "type": "p",
-      "content": "The mixture was aged undisturbed for one full year in a dark, cool environment. This slow infusion process gently extracted the natural essence of the plums — yielding a deep, smooth profile without artificial intervention."
-    },
-    {
-      "type": "h2",
-      "content": "Design & Packaging"
-    },
-    {
-      "type": "p",
-      "content": "The bottle and label were designed to reflect the calm and intentional nature of the project. A limited run of bottles was custom-made at a local Korean glass workshop, and each label was designed and applied by hand by the creator."
-    },
-    {
-      "type": "p",
-      "content": "The label features minimalist Korean typography and ink-inspired plum blossom motifs. It is printed on water-resistant material, and every bottle is individually labeled — one by one. The total production run remains under 100 bottles."
-    },
-    {
-      "type": "h2",
-      "content": "Flavor Profile & Alcohol"
-    },
-    {
-      "type": "p",
-      "content": "Miuju is estimated to contain around 34% alcohol by volume. Despite its high proof, it delivers a surprisingly smooth and gentle drinking experience. The initial notes are subtle — soft plum aroma with natural sweetness and a touch of acidity from long-term aging."
-    },
-    {
-      "type": "blockquote",
-      "content": "It’s a liquor that doesn’t taste like liquor. Light on the tongue, but warm on the mind."
-    }
-  ]  
+  "content": [
+  {
+    "type": "h1",
+    "content": "Miuju"
+  },
+  {
+    "type": "image",
+    "src": "/thumbs/miuju24_3.jpg",
+    "alt": "Miuju Bottle",
+    "float": "right"
+  },
+  {
+    "type": "p",
+    "content": "Miuju is not just a fruit liqueur — it is a personal archive of time, craftsmanship, and sentiment. Created by a developer and musician, this project began with an intention to capture emotion in a bottle."
+  },
+  {
+    "type": "p",
+    "content": "In May 2024, fresh green plums were handpicked in Goyang, Korea. Each plum was carefully cleaned and dried to prevent bruising. The base was created using a 1:1:1 ratio of plums, sugar, and refined soju, then sealed in a sterilized glass jar."
+  },
+  {
+    "type": "p",
+    "content": "The mixture was aged undisturbed for one full year in a dark, cool environment. This slow infusion process gently extracted the natural essence of the plums — yielding a deep, smooth profile without artificial intervention."
+  },
+  {
+    "type": "h2",
+    "content": "Design & Packaging"
+  },
+  {
+    "type": "image",
+    "src": "/thumbs/miuju24_2.jpg",
+    "alt": "Miuju Bottle",
+    "float": "left"
+  },
+  {
+    "type": "p",
+    "content": "The bottle and label were designed to reflect the calm and intentional nature of the project. A limited run of bottles was custom-made at a local Korean glass workshop, and each label was designed and applied by hand by the creator."
+  },
+  {
+    "type": "p",
+    "content": "The label features minimalist Korean typography and ink-inspired plum blossom motifs. It is printed on water-resistant material, and every bottle is individually labeled — one by one. The total production run remains under 100 bottles."
+  },
+  {
+    "type": "p",
+    "content": "The logo silhouette was inspired by the creator’s cat gazing out the window around the age of one. That calm, curious moment became the symbol of Miuju’s quiet elegance."
+  },
+  {
+    "type": "h2",
+    "content": "Recipe (in JavaScript)"
+  },
+  {
+    "type": "p",
+    "content": "Below is a conceptual recipe for Miuju, written as playful JS-style pseudocode:"
+  },
+  {
+    "type": "code",
+    "language": "javascript",
+    "content": "const plumJar = {};\n\nlet sugar = 0;\n\nwhile (sugar < 100) {\n  sugar++;\n  if (sugar % 10 === 0) {\n    plumJar[`plum-${sugar / 10}`] = 30;\n  }\n}\n\nif (Object.keys(plumJar).length >= 10) {\n  plumJar.liquor = 'refined soju';\n  plumJar.sealed = true;\n  console.log('Jar sealed. Aging begins...');\n}\n\nconst waitOneYear = () => {\n  return new Promise((resolve) => {\n    setTimeout(() => {\n      resolve('Miuju has aged gracefully for one year.');\n    }, 1000);\n  });\n};\n\n(async () => {\n  const msg = await waitOneYear();\n  console.log(msg);\n  console.log('Cheers! 🍶');\n})();"
+  },
+  
+  {
+    "type": "h2",
+    "content": "Flavor Profile & Alcohol"
+  },
+  {
+    "type": "p",
+    "content": "Miuju is estimated to contain around 34% alcohol by volume. Despite its high proof, it delivers a surprisingly smooth and gentle drinking experience. The initial notes are subtle — soft plum aroma with natural sweetness and a touch of acidity from long-term aging."
+  },
+  {
+    "type": "blockquote",
+    "content": "It’s a liquor that doesn’t taste like liquor. Light on the tongue, but warm on the mind."
+  }
+]
+
 }

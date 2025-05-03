@@ -1,6 +1,10 @@
 import fs from "fs/promises";
 import path from "path";
 import { notFound } from "next/navigation";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { okaidia } from "react-syntax-highlighter/dist/cjs/styles/prism";
+
 
 import ContentWrapper from "@/components/ContentWrapper";
 import ContentBody from "@/components/ContentBody";
@@ -10,6 +14,57 @@ import Blockquote from "@/components/ui/Blockquote";
 import TechIcon from "@/components/ui/TechIcon";
 import { formatDistanceToNow } from "date-fns";
 
+
+import info from "@/app/info.config.js";
+export async function generateMetadata({ params }) {
+    const { slug } = params;
+    const filePath = path.join(process.cwd(), "app/makes/content", `${slug}.json`);
+  
+    try {
+      const raw = await fs.readFile(filePath, "utf-8");
+      const data = JSON.parse(raw);
+  
+      return {
+        title: `${data.title} – Makes by ${info.title}`,
+        description: data.description,
+        keywords: data.keywords,
+        openGraph: {
+          title: `${data.title} – ${info.opengraph.site_name || info.title}`,
+          description: data.description,
+          url: `${info.opengraph.url}/makes/${slug}`,
+          siteName: info.opengraph.site_name || info.title,
+          images: data.thumbnails?.length > 0
+            ? data.thumbnails.map((img) => ({
+                url: `${info.opengraph.url}${img.path}`,
+                alt: img.alt || data.title,
+              }))
+            : [
+                {
+                  url: info.opengraph.image,
+                  alt: info.opengraph.image_alt,
+                },
+              ],
+          locale: info.opengraph.locale,
+          type: "article"
+        },
+        twitter: {
+          card: "summary_large_image",
+          title: data.title,
+          description: data.description,
+          creator: info.twitter.creator,
+          images: data.thumbnails?.length > 0
+            ? [`${info.opengraph.url}${data.thumbnails[0].path}`]
+            : [info.twitter.image]
+        }
+      };
+    } catch (e) {
+      return {
+        title: `Not Found – ${info.title}`,
+        description: "This page could not be found.",
+      };
+    }
+  }
+  
 export async function generateStaticParams() {
   const contentDir = path.join(process.cwd(), "app/makes/content");
   const files = await fs.readdir(contentDir);
@@ -92,14 +147,38 @@ export default async function Page({ params }) {
                   <img
                     src={block.src}
                     alt={block.alt}
-                    className={`rounded-md max-w-3xl 
+                    className={`rounded-md max-w-3xl cursor-crosshair saturate-60 hover:saturate-100
                         ${block.float === "left" ? "w-full md:w-1/3 float-left mr-4 mb-4" : 
                         block.float === "right" ? "w-full md:w-1/3 float-right ml-4 mb-4" : 
-                        "w-full my-4"}`}
+                        "w-full my-4"} md:hover:w-1/2 md:active:w-4/6 transition-all duration-300`}
                     />
                 </div>
               );
             }
+            if (block.type === "code") {
+                return (
+                    <div key={i} className="my-6 text-sm">
+                    <SyntaxHighlighter
+                    language={block.language || "javascript"}
+                    style={atomDark}
+                    customStyle={{
+                        // border:"1px solid #333",
+                        borderRadius: "0.25rem",
+                        padding: "1rem",
+                        background: "oklch(12.9% 0.042 264.695)",
+                        lineHeight: "1.5",
+                        fontSize: "0.875rem",
+                    }}
+                    showLineNumbers
+                    wrapLongLines
+                    >
+                    {block.content}
+                    </SyntaxHighlighter>
+
+                    </div>
+                );
+            }
+              
             return null;
           })}
         </div>

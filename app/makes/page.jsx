@@ -8,7 +8,6 @@ import Header from "@/components/ui/Header";
 import Blockquote from "@/components/ui/Blockquote";
 import SubPageList from "@/components/SubPageList";
 
-
 import info from "@/app/info.config.js";
 
 export const generateMetadata = () => {
