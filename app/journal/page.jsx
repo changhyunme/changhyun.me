@@ -3,6 +3,7 @@ import { getHeaders } from "./getHeaders.js";
 
 import ContentWrapper from "@/components/ContentWrapper";
 import ContentBody from "@/components/ContentBody";
+import PageHeader from "@/components/ui/PageHeader";  
 import PageFooter from "@/components/ui/PageFooter";
 import Header from "@/components/ui/Header";
 import Blockquote from "@/components/ui/Blockquote";
@@ -52,6 +53,7 @@ export default async function Page() {
     return (
         <ContentWrapper>
             <ContentBody className="text-text">
+                <PageHeader title="Journal" />
                 <Header translate="no" depth="1" className="hidden">Makes List</Header>
                     <div className="flex flex-col gap-3 mb-5">
                         {articles.map((article, i) => (

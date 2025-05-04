@@ -1,7 +1,8 @@
 
 import ContentWrapper from "@/components/ContentWrapper";
 import ContentBody from "@/components/ContentBody";
-import Blockquote from "@/components/ui/Blockquote";  
+import Blockquote from "@/components/ui/Blockquote";
+import PageHeader from "@/components/ui/PageHeader";  
 import PageFooter from "@/components/ui/PageFooter";
 import Header from "@/components/ui/Header";
 
@@ -119,89 +120,89 @@ export default function Home()
     <>
       <ContentWrapper>
         <ContentBody className="text-textDefault">
+          <PageHeader title="Welcome" />
           <div>
-          <Header translate="no" depth="1">Welcome</Header>
-            <div className="text-text leading-relaxed space-y-4">
-              <div className="flex flex-col items-center justify-center md:float-right w-full md:w-1/2 aspect-video 
-                            bg-orange-400 rounded-lg md:ml-3 md:mb-3"
-              >
-                <span className="font-black italic text-slate-800 text-3xl select-none">
-                  CHANGHYUN.me
-                </span>
-                <span className="text-slate-800 text-md select-none">
-                  official website
-                </span>
-              </div>  
-              
-              <p>✍️ This site isn’t just a portfolio.</p>
-              <p>
-                It’s a place where I reflect on what I’ve built — and more importantly, why I built it.<br />
-                Tech is just a tool. Direction and intention always come first.
-              </p>
+              <div className="text-text leading-relaxed space-y-4">
+                <div className="flex flex-col items-center justify-center md:float-right w-full md:w-1/2 aspect-video 
+                              bg-orange-400 rounded-lg md:ml-3 md:mb-3"
+                >
+                  <span className="font-black italic text-slate-800 text-3xl select-none">
+                    CHANGHYUN.me
+                  </span>
+                  <span className="text-slate-800 text-md select-none">
+                    official website
+                  </span>
+                </div>  
+                
+                <p>✍️ This site isn’t just a portfolio.</p>
+                <p>
+                  It’s a place where I reflect on what I’ve built — and more importantly, why I built it.<br />
+                  Tech is just a tool. Direction and intention always come first.
+                </p>
 
-              <p>💡 I care more about <strong>why</strong> something should exist than how fast I can build it.</p>
-              <p>
-                Structure over UI, maintainability over speed, context over features.<br />
-                Clean code helps me think clearly — and that’s the real goal.
-              </p>
+                <p>💡 I care more about <strong>why</strong> something should exist than how fast I can build it.</p>
+                <p>
+                  Structure over UI, maintainability over speed, context over features.<br />
+                  Clean code helps me think clearly — and that’s the real goal.
+                </p>
 
-              <p>🛠️ Lately, I’ve been focused on full-stack JavaScript, performance tuning, and UX flow design.</p>
-              <p>
-                I run side projects regularly and rebuild things often, sometimes just to see if I can do it better.
-              </p>
+                <p>🛠️ Lately, I’ve been focused on full-stack JavaScript, performance tuning, and UX flow design.</p>
+                <p>
+                  I run side projects regularly and rebuild things often, sometimes just to see if I can do it better.
+                </p>
 
-              <p>💬 This page isn’t a highlight reel — it’s a record, made to be shared.</p>
-              <p>
-                You’ll find code, context, and probably a few mistakes along the way.<br />
-                Got questions? I’m always up for a conversation. DMs are open 🙌
-              </p>
+                <p>💬 This page isn’t a highlight reel — it’s a record, made to be shared.</p>
+                <p>
+                  You’ll find code, context, and probably a few mistakes along the way.<br />
+                  Got questions? I’m always up for a conversation. DMs are open 🙌
+                </p>
 
-            </div>
-            <Header>History of CHANGHYUN.me</Header>
-            <div className="text-text leading-relaxed space-y-4">
-              <p>
-                <strong className="font-black italic" translate="no">CHANGHYUN.me</strong> has been built, scrapped, and rebuilt probably ten times since 2015 — not even kidding.
-              </p>
-              <p>
-                It all started with just HTML and CSS, until I hit a wall and jumped into PHP.  
-                From there, I wandered through Wordpress and Node.js, and now?  
-                It’s running on <strong>Next.js</strong> with a little help from <strong>Vercel</strong>.
-              </p>
-              <p>
-                Below is a rough timeline of each version — mostly based on memory, so take it with a grain of salt.
-              </p>
-            </div>
-          </div>
-
-          <Header>Version Log</Header>
-
-          <div className="flex flex-col gap-4 my-6">
-            {versions.map(({ version, year, stack, desc, quote }) => (
-              <div
-                key={version}
-                className="flex flex-row gap-2 py-1 text-sm text-textSub hover:bg-white/3"
-              >
-                <h3 className="hidden">{version} · {year} — built using {stack}</h3>
-
-                <div className="relative w-20 md:w-30 flex flex-col gap-1" translate="no">
-                  <div className="flex flex-col md:flex-row">
-                    <span className="w-auto md:w-10 font-bold text-text">{version}</span>
-                    <span className="w-auto md:w-20">{year}</span>
-                  </div>
-                  <div className="flex-1 flex flex-row">
-                    <div className="mt-2 w-[1px] border-1 border-border bg-white/5 rounded-xl"></div>
-                  </div>
-                </div>
-                <div className="flex-1 flex flex-col gap-2">
-                  <div className="font-semibold text-textWhite" translate="no">{stack}</div>
-                  <div className="text-textSub">{desc}</div>
-                  {quote && quote.trim() !== "" && (
-                    <Blockquote className="mt-1">{quote}</Blockquote>
-                  )}
-                </div>
               </div>
-            ))}
-          </div>
+              <Header>History of CHANGHYUN.me</Header>
+              <div className="text-text leading-relaxed space-y-4">
+                <p>
+                  <strong className="font-black italic" translate="no">CHANGHYUN.me</strong> has been built, scrapped, and rebuilt probably ten times since 2015 — not even kidding.
+                </p>
+                <p>
+                  It all started with just HTML and CSS, until I hit a wall and jumped into PHP.  
+                  From there, I wandered through Wordpress and Node.js, and now?  
+                  It’s running on <strong>Next.js</strong> with a little help from <strong>Vercel</strong>.
+                </p>
+                <p>
+                  Below is a rough timeline of each version — mostly based on memory, so take it with a grain of salt.
+                </p>
+              </div>
+            </div>
+
+            <Header>Version Log</Header>
+
+            <div className="flex flex-col gap-4 my-6">
+              {versions.map(({ version, year, stack, desc, quote }) => (
+                <div
+                  key={version}
+                  className="flex flex-row gap-2 py-1 text-sm text-textSub hover:bg-white/3"
+                >
+                  <h3 className="hidden">{version} · {year} — built using {stack}</h3>
+
+                  <div className="relative w-20 md:w-30 flex flex-col gap-1" translate="no">
+                    <div className="flex flex-col md:flex-row">
+                      <span className="w-auto md:w-10 font-bold text-text">{version}</span>
+                      <span className="w-auto md:w-20">{year}</span>
+                    </div>
+                    <div className="flex-1 flex flex-row">
+                      <div className="mt-2 w-[1px] border-1 border-border bg-white/5 rounded-xl"></div>
+                    </div>
+                  </div>
+                  <div className="flex-1 flex flex-col gap-2">
+                    <div className="font-semibold text-textWhite" translate="no">{stack}</div>
+                    <div className="text-textSub">{desc}</div>
+                    {quote && quote.trim() !== "" && (
+                      <Blockquote className="mt-1">{quote}</Blockquote>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
           <PageFooter/>
         </ContentBody>
       </ContentWrapper> 

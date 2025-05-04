@@ -1,6 +1,7 @@
 import ContentWrapper from "@/components/ContentWrapper";
 import ContentSide from "@/components/ContentSide";
 import ContentBody from "@/components/ContentBody";
+import PageHeader from "@/components/ui/PageHeader";  
 import PageFooter from "@/components/ui/PageFooter";
 import Header from "@/components/ui/Header";
 import Blockquote from "@/components/ui/Blockquote";  
@@ -48,6 +49,7 @@ export default function Home()
     <>
         <ContentWrapper>
             <ContentBody>
+                <PageHeader title="Sandbox" />
                 Sandbox no items
                 <br/>.
                 <PageFooter/>

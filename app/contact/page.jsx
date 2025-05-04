@@ -1,6 +1,7 @@
 import ContentWrapper from "@/components/ContentWrapper";
 import ContentSide from "@/components/ContentSide";
 import ContentBody from "@/components/ContentBody";
+import PageHeader from "@/components/ui/PageHeader";  
 import PageFooter from "@/components/ui/PageFooter";
 import NameCard from "@/components/NameCard";
 import PingBtn from "@/components/PingButton";
@@ -54,6 +55,7 @@ export default function Home()
             <PingBtn name="Ping" className="mt-5 md:mt-auto" />
         </ContentSide>
         <ContentBody className="text-text">
+          <PageHeader title="Contact me" />
           Got a question? Got something cool you want to build together? Hit me up through one of the contacts below. 💬
           <ul className="list-disc pl-5 mt-2">
             <li>🖥️ Modern web service builds</li>

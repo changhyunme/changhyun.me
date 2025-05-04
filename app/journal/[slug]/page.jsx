@@ -9,6 +9,7 @@ import { okaidia } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
 import ContentWrapper from "@/components/ContentWrapper";
 import ContentBody from "@/components/ContentBody";
+import PageHeader from "@/components/ui/PageHeader";
 import PageFooter from "@/components/ui/PageFooter";
 import Header from "@/components/ui/Header";
 import Blockquote from "@/components/ui/Blockquote";
@@ -89,6 +90,7 @@ export default async function Page({ params }) {
   return (
     <ContentWrapper>
       <ContentBody className="text-text">
+        <PageHeader title="Journal" />
         <Header translate="no" depth="1">{data.title}</Header>
         <div className="flex flex-col-reverse md:flex-row mb-3">
             <div className="text-sm text-textShadow mb-2">

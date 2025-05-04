@@ -6,6 +6,7 @@ import Grid from "@/components/ui/Grid";
 import GridTechItem from "@/components/ui/GridTechItem";
 import Header from "@/components/ui/Header";
 import Blockquote from "@/components/ui/Blockquote";  
+import PageHeader from "@/components/ui/PageHeader";  
 import PageFooter from "@/components/ui/PageFooter";
 import { useSectionObserver } from "@/hooks/useSectionObserver";
 import { useSectionStore } from "@/store/sectionStore";
@@ -89,6 +90,7 @@ export default function Content() {
             {renderMenu(menuItems)}
         </ContentSide>
         <ContentBody className="text-text">
+            <PageHeader title="About me" />
             <Header depth="1" className="hidden">About Us</Header>
             <p>
               That mindset didn’t come from tech — it came from always wanting to make sense of things by building, not just thinking.
