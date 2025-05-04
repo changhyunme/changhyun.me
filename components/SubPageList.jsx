@@ -13,7 +13,7 @@ const SubPageList = ({ data, href }) => {
                 <div className="flex flex-col-reverse md:flex-row gap-1">
                     <div className="flex-1 px-2 py-2 md:px-3 md:rounded-tl-md bg-ui/50">
                         <div className="">
-                            <h2 className="font-bold">{data.title}</h2>
+                            <h3 className="font-bold">{data.title}</h3>
                         </div>
                         <div className="text-testSub">
                             <p>

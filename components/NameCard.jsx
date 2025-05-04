@@ -35,9 +35,9 @@ const nameCard = () => {
                 />
             </div>
             <div className="mt-3 text-center">
-                <h2 className="text-text text-lg capitalize font-bold">
+                <p className="text-text text-lg capitalize font-bold">
                     changhyun cho
-                </h2>
+                </p>
                 <p className="text-text text-sm capitalize">
                     web developer
                 </p>

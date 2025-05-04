@@ -91,7 +91,6 @@ export default function Content() {
         </ContentSide>
         <ContentBody className="text-text">
             <PageHeader title="About me" />
-            <Header depth="1" className="hidden">About Us</Header>
             <p>
               That mindset didn’t come from tech — it came from always wanting to make sense of things by building, not just thinking.
             </p>

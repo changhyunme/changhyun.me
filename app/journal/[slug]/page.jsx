@@ -19,54 +19,64 @@ import { formatDistanceToNow } from "date-fns";
 
 import info from "@/app/info.config.js";
 export async function generateMetadata({ params }) {
-    const { slug } = params;
-    const filePath = path.join(process.cwd(), "app/makes/content", `${slug}.json`);
-  
-    try {
-      const raw = await fs.readFile(filePath, "utf-8");
-      const data = JSON.parse(raw);
-  
-      return {
-        title: `${data.title} – Makes by ${info.title}`,
-        description: data.description,
-        keywords: data.keywords,
-        openGraph: {
-          title: `${data.title} – ${info.opengraph.site_name || info.title}`,
-          description: data.description,
-          url: `${info.opengraph.url}/makes/${slug}`,
-          siteName: info.opengraph.site_name || info.title,
-          images: data.thumbnails?.length > 0
-            ? data.thumbnails.map((img) => ({
-                url: `${info.opengraph.url}${img.path}`,
-                alt: img.alt || data.title,
-              }))
-            : [
-                {
-                  url: info.opengraph.image,
-                  alt: info.opengraph.image_alt,
-                },
-              ],
-          locale: info.opengraph.locale,
-          type: "article"
-        },
-        twitter: {
-          card: "summary_large_image",
-          title: data.title,
-          description: data.description,
-          creator: info.twitter.creator,
-          images: data.thumbnails?.length > 0
-            ? [`${info.opengraph.url}${data.thumbnails[0].path}`]
-            : [info.twitter.image]
-        }
-      };
-    } catch (e) {
-      return {
-        title: `Not Found – ${info.title}`,
-        description: "This page could not be found.",
-      };
-    }
+  const staticParams = await generateStaticParams();
+  const slug = params.slug;
+
+  const matched = staticParams.find((item) => item.slug === slug);
+  if (!matched) {
+    return {
+      title: `Not Found – ${info.title}`,
+      description: "This page could not be found.",
+    };
   }
-  
+
+  const filePath = path.join(process.cwd(), "app/journal/content", `${slug}.json`);
+
+  try {
+    const raw = await fs.readFile(filePath, "utf-8");
+    const data = JSON.parse(raw);
+
+    return {
+      title: `${data.title} – Journal by ${info.title}`,
+      description: data.description,
+      keywords: data.keywords,
+      openGraph: {
+        title: `${data.title} – ${info.opengraph.site_name || info.title}`,
+        description: data.description,
+        url: `${info.opengraph.url}/journal/${slug}`,
+        siteName: info.opengraph.site_name || info.title,
+        images: data.thumbnails?.length > 0
+          ? data.thumbnails.map((img) => ({
+              url: `${info.opengraph.url}${img.path}`,
+              alt: img.alt || data.title,
+            }))
+          : [
+              {
+                url: info.opengraph.image,
+                alt: info.opengraph.image_alt,
+              },
+            ],
+        locale: info.opengraph.locale,
+        type: "article"
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: data.title,
+        description: data.description,
+        creator: info.twitter.creator,
+        images: data.thumbnails?.length > 0
+          ? [`${info.opengraph.url}${data.thumbnails[0].path}`]
+          : [info.twitter.image]
+      }
+    };
+  } catch (e) {
+    return {
+      title: `Not Found – ${info.title}`,
+      description: "This page could not be found.",
+    };
+  }
+}
+
 export async function generateStaticParams() {
   const contentDir = path.join(process.cwd(), "app/journal/content");
   const files = await fs.readdir(contentDir);
@@ -91,7 +101,7 @@ export default async function Page({ params }) {
     <ContentWrapper>
       <ContentBody className="text-text">
         <PageHeader title="Journal" />
-        <Header translate="no" depth="1">{data.title}</Header>
+        <Header translate="no" depth="2">{data.title}</Header>
         <div className="flex flex-col-reverse md:flex-row mb-3">
             <div className="text-sm text-textShadow mb-2">
             Posted {formatDistanceToNow(new Date(data.datetime), { addSuffix: true })}

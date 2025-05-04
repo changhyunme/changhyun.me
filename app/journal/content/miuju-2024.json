@@ -22,7 +22,7 @@
   ],
   "content": [
     {
-      "type": "h1",
+      "type": "h3",
       "content": "Miuju: A Sip of Code and Plums"
     },
     {
@@ -44,7 +44,7 @@
       "content": "For 12 months, those jars sat in a cool, dark corner, letting time work its magic. No rushing, no shortcuts—just the slow, natural infusion of plum goodness into the soju. It’s like waiting for a long-running script to finish: you trust the process and let it unfold. The result? A liqueur that’s deep, smooth, and full of soul, with the plums’ tart sweetness shining through in every drop."
     },
     {
-      "type": "h2",
+      "type": "h3",
       "content": "The Spark Behind Miuju"
     },
     {
@@ -58,7 +58,7 @@
       "float": "left"
     },
     {
-      "type": "h2",
+      "type": "h3",
       "content": "Design & Packaging: Crafted with Soul"
     },
     {
@@ -70,7 +70,7 @@
       "content": "The labels are my own creation, drawn with the same care I put into coding a clean UI. Each one features a single, striking element: the silhouette of my cat, Miu, gazing out a window, etched in minimalist Korean typography. Printed on water-resistant paper, these labels are hand-applied, one by one, like perfecting the last pixel of a webpage. With only a handful of bottles crafted, each feels like a unique piece of art, whispering Miuju’s story of curiosity and craft."
     },
     {
-      "type": "h2",
+      "type": "h3",
       "content": "Recipe: A JavaScript Vibe"
     },
     {
@@ -87,7 +87,7 @@
       "content": "This code is like Miuju itself: a loop of adding ingredients, a check to make sure everything’s good, and a long wait for the flavors to come together. It’s the same patience I bring to debugging a tricky bug or tweaking a Next.js app. The result is something that feels just right, like a perfectly timed console.log. This page, by the way, was built with Next.js and Tailwind CSS—my go-to tools for bringing ideas to life."
     },
     {
-      "type": "h2",
+      "type": "h3",
       "content": "Flavor Profile & Alcohol Content"
     },
     {
@@ -99,7 +99,7 @@
       "content": "It’s a liquor that sneaks up on you—light and easy on the tongue, but it leaves a warm glow in your mind."
     },
     {
-      "type": "h2",
+      "type": "h3",
       "content": "Serving Suggestions & Pairings"
     },
     {
