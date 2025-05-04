@@ -1,11 +1,15 @@
-// components/FensterToggle.jsx
 "use client";
 
 import useStore from "@/store/uiStore";
-import { Fragment } from "react";
 
 export default function FensterToggle() {
   const { breitbild, toggleBreitbild, lightmode, toggleLightmode } = useStore();
+
+  const btnClass = `hidden md:flex items-center justify-center w-5 h-5
+                    ml-2 p-0.5 uppercase ${lightmode ? "text-neutral-600" : "text-accent"}
+                    bg-ui rounded-full my-1 inset-shadow-sm 
+                    cursor-pointer hover:opacity-70 active:opacity:50 hover:rotate-45 transition-transform duration-300`;
+
   return (
     <div className="flex flex-row items-center ml-auto text-white">
       {/* 다크모드 라이트모드 토글 */}
@@ -25,42 +29,33 @@ export default function FensterToggle() {
           )}
         </div>
       </div>
+      {/* 공유버튼 */}
+      {/*
+      <div className={`${btnClass} p-[1px]`} 
+           onClick={toggleBreitbild}
+      >
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" >
+          <path d="M14.8284 12L16.2426 13.4142L19.071 10.5858C20.6331 9.02365 20.6331 6.49099 19.071 4.9289C17.509 3.3668 14.9763 3.3668 13.4142 4.9289L10.5858 7.75732L12 9.17154L14.8284 6.34311C15.6095 5.56206 16.8758 5.56206 17.6568 6.34311C18.4379 7.12416 18.4379 8.39049 17.6568 9.17154L14.8284 12Z" fill="currentColor" />
+          <path d="M12 14.8285L13.4142 16.2427L10.5858 19.0711C9.02372 20.6332 6.49106 20.6332 4.92896 19.0711C3.36686 17.509 3.36686 14.9764 4.92896 13.4143L7.75739 10.5858L9.1716 12L6.34317 14.8285C5.56212 15.6095 5.56212 16.8758 6.34317 17.6569C7.12422 18.4379 8.39055 18.4379 9.1716 17.6569L12 14.8285Z" fill="currentColor" />
+          <path d="M14.8285 10.5857C15.219 10.1952 15.219 9.56199 14.8285 9.17147C14.4379 8.78094 13.8048 8.78094 13.4142 9.17147L9.1716 13.4141C8.78107 13.8046 8.78107 14.4378 9.1716 14.8283C9.56212 15.2188 10.1953 15.2188 10.5858 14.8283L14.8285 10.5857Z" fill="currentColor" />
+        </svg>
+      </div>
+      */}
       {/* 화면 확대 축소 */}
-      <div className={`hidden md:block ml-2 p-0.5 uppercase ${lightmode ? "text-neutral-600" : "text-accent"}
-                    bg-ui rounded-full my-1 inset-shadow-sm
-                      cursor-pointer hover:opacity-70 active:opacity:50`} onClick={toggleBreitbild}>
-          {breitbild ? (
-              <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M14.567 8.02947L20.9105 1.76929L22.3153 3.19282L15.9916 9.43352L19.5614 9.44772L19.5534 11.4477L12.5535 11.4199L12.5813 4.41992L14.5813 4.42788L14.567 8.02947Z"
-                fill="currentColor"
-              />
-              <path
-                d="M7.97879 14.5429L4.40886 14.5457L4.40729 12.5457L11.4073 12.5402L11.4128 19.5402L9.41277 19.5417L9.40995 15.9402L3.09623 22.2306L1.68463 20.8138L7.97879 14.5429Z"
-                fill="currentColor"
-              />
-            </svg>
-          ) : (
-              <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              >
-              <path
-                  d="M12.3062 16.5933L12.2713 18.593L5.2724 18.4708L5.39457 11.4719L7.39426 11.5068L7.33168 15.092L15.2262 7.46833L11.6938 7.40668L11.7287 5.40698L18.7277 5.52915L18.6055 12.5281L16.6058 12.4932L16.6693 8.85507L8.72095 16.5307L12.3062 16.5933Z"
-                  fill="currentColor"
-              />
-              </svg>
-            )}
-        </div>
+      <div className={btnClass}
+           onClick={toggleBreitbild}
+      >
+        {breitbild ? (
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" >
+            <path d="M14.567 8.02947L20.9105 1.76929L22.3153 3.19282L15.9916 9.43352L19.5614 9.44772L19.5534 11.4477L12.5535 11.4199L12.5813 4.41992L14.5813 4.42788L14.567 8.02947Z" fill="currentColor" />
+            <path d="M7.97879 14.5429L4.40886 14.5457L4.40729 12.5457L11.4073 12.5402L11.4128 19.5402L9.41277 19.5417L9.40995 15.9402L3.09623 22.2306L1.68463 20.8138L7.97879 14.5429Z" fill="currentColor" />
+          </svg>
+        ) : (
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"   >
+            <path d="M12.3062 16.5933L12.2713 18.593L5.2724 18.4708L5.39457 11.4719L7.39426 11.5068L7.33168 15.092L15.2262 7.46833L11.6938 7.40668L11.7287 5.40698L18.7277 5.52915L18.6055 12.5281L16.6058 12.4932L16.6693 8.85507L8.72095 16.5307L12.3062 16.5933Z" fill="currentColor" /> 
+          </svg>
+        )}
+      </div>
     </div>
   );
 }
