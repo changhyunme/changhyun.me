@@ -28,8 +28,8 @@ const PingButton = ({ name, className }) => {
   };
 
   return (
-    <div className={`border-1 border-neutral-800 px-3 py-2 text-center
-                    cursor-pointer hover:border-neutral-700
+    <div className={`border-1 border-border px-3 py-2 text-center
+                    cursor-pointer hover:border-border/50
                     transition-colors duration-300 ${className}`}
          onClick={handleClick}
     >

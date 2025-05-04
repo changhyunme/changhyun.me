@@ -3,7 +3,7 @@ const Header = ({ children, type, id, translate, depth = 2, className }) => {
   
     return (
       <Tag
-        className={`text-lg font-black italic text-white pb-1 my-3 first:mt-0 last:mb-0 border-b-1 border-neutral-800 ${className}`}
+        className={`text-lg font-black italic text-textWhite pb-1 my-3 first:mt-0 last:mb-0 border-b-1 border-border ${className}`}
         id={id}
         translate={translate}
       >

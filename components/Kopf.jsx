@@ -44,9 +44,9 @@ const Kopf = () => {
 
     return (
         <div className="z-50 hidden md:flex flex-row
-                        fixed top-0 left-0 w-screen bg-neutral-900
-                        text-sm text-neutral-400
-                        border-b-1 border-neutral-700/30 shadow-xl"
+                        fixed top-0 left-0 w-screen bg-bgSub
+                        text-sm text-textShadow
+                        border-b-1 border-border/30 shadow-lg"
         >
             <KopfButton>Changhyun.me</KopfButton>
             <KopfButton onClick={handleFullScreen}>

@@ -53,7 +53,7 @@ export default function Home()
             <NameCard />
             <PingBtn name="Ping" className="mt-5 md:mt-auto" />
         </ContentSide>
-        <ContentBody className="text-white/80">
+        <ContentBody className="text-text">
           Got a question? Got something cool you want to build together? Hit me up through one of the contacts below. 💬
           <ul className="list-disc pl-5 mt-2">
             <li>🖥️ Modern web service builds</li>

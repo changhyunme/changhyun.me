@@ -51,9 +51,9 @@ export default async function Page() {
 
     return (
         <ContentWrapper>
-            <ContentBody className="text-white/80">
+            <ContentBody className="text-text">
                 <Header translate="no" depth="1" className="hidden">Makes List</Header>
-                    <div className="flex flex-col gap-3">
+                    <div className="flex flex-col gap-3 mb-5">
                         {articles.map((article, i) => (
                             <SubPageList key={i} data={article} />
                         ))}

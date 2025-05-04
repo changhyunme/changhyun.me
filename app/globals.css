@@ -1,8 +1,39 @@
 @import "tailwindcss";
 
 :root {
-  --background: oklch(0.208 0.042 265.755); /*oklch(14.5% 0 0);*/
-  --foreground: oklch(98.5% 0 0);
+  /* Light & Dark 원본 정의 */
+  --background-light: oklch(0 0 0);
+  --background-dark: oklch(0.208 0.042 265.755);
+  --foreground-light: oklch(0.1 0.02 265);
+  --foreground-dark: oklch(0.985 0.001 265);
+
+
+  /* Light모드 UI */
+  --color-bg-light: oklch(1 0 0);
+  --color-bgSub-light: oklch(1 0 0);
+  --color-ui-light: oklch(0.9 0 0);
+  --color-uiSub-light: oklch(1 0 0);
+  --color-border-light: oklch(0.6 0 0);
+  --color-shadow-light: oklch(0.7 0 0);
+  --color-text-light: oklch(0.2 0 0);
+  --color-textWhite-light: oklch(0 0 0);
+  --color-textSub-light: oklch(0.4 0 0);
+  --color-textShadow-light: oklch(0.6 0 0);
+
+}
+
+.dark {
+  /* Dark모드 UI */
+  --color-bg: oklch(0.279 0.041 260.031);
+  --color-bgSub: oklch(0.208 0.042 265.755);
+  --color-ui: oklch(0.319 0.041 260.031);
+  --color-uiSub: oklch(0.446 0.043 257.281);
+  --color-border: oklch(0.279 0.041 260.031);
+  --color-shadow: oklch(0.985 0.001 265);
+  --color-text: oklch(1 0 0 / 80%);
+  --color-textWhite: oklch(1 0 0);
+  --color-textSub: oklch(0.704 0.04 256.788);
+  --color-textShadow: oklch(0.446 0.043 257.281);
 }
 
 @theme inline {
@@ -11,21 +42,21 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 
-  --color-neutral-50:  oklch(0.984 0.003 247.858);
-  --color-neutral-100: oklch(0.968 0.007 247.896);
-  --color-neutral-200: oklch(0.929 0.013 255.508);
-  --color-neutral-300: oklch(0.869 0.022 252.894);
-  --color-neutral-400: oklch(0.704 0.04 256.788);
-  --color-neutral-500: oklch(0.554 0.046 257.417);
-  --color-neutral-600: oklch(0.446 0.043 257.281);
-  --color-neutral-700: oklch(0.372 0.044 257.287);
-  --color-neutral-800: oklch(0.279 0.041 260.031);
-  --color-neutral-900: oklch(0.208 0.042 265.755);
-  --color-neutral-950: oklch(0.129 0.042 264.695);
-  
-  
+  --color-primary: oklch(0.75 0.183 55.934);
+  --color-accent: oklch(0.75 0.183 55.934);
 
-  --color-primart: oklch(0.985 0 0);
+  /* 최초에는 다크모드 기준 */
+  --color-bg: var(--color-bg);
+  --color-bgSub: var(--color-bgSub);
+  --color-ui: var(--color-ui);
+  --color-uiSub: var(--color-uiSub);
+  --color-border: var(--color-border);
+  --color-shadow: var(--color-shadow);
+  --color-text: var(--color-text);
+  --color-textWhite: var(--color-textWhite);
+  --color-textSub: var(--color-textSub);
+  --color-textShadow: var(--color-textShadow);
+  
 }
 
 /* @media (prefers-color-scheme: dark) {

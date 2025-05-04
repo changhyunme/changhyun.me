@@ -6,6 +6,8 @@ import { Analytics } from "@vercel/analytics/react"
 import Fenster from "../components/Fenster";
 import Szene from "@/components/Szene";
 import Kopf from "@/components/Kopf";
+import TI from "@/components/ui/ThemeInitializer";
+
 
 // export const metadata = {
 //   title: "changhyun.me",
@@ -29,8 +31,9 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${lato.className}`}>
+    <html lang="en" className={`${lato.className} dark`}>
       <body>
+        <TI/>
         <div className="relative w-screen min-h-screen p-0 md:py-5 md:px-2
                         flex md:items-center justify-center"
         >

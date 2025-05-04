@@ -11,15 +11,15 @@ const SubPageList = ({ data, href }) => {
         <Link href={`/journal/${data.slug || ""}`}>
             <div className="flex flex-col gap-1 cursor-pointer hover:opacity-90">
                 <div className="flex flex-col-reverse md:flex-row gap-1">
-                    <div className="flex-1 px-2 py-2 md:px-3 md:rounded-tl-md bg-neutral-700/70">
+                    <div className="flex-1 px-2 py-2 md:px-3 md:rounded-tl-md bg-ui/50">
                         <div className="">
                             <h2 className="font-bold">{data.title}</h2>
                         </div>
-                        <div className="text-white/30">
+                        <div className="text-testSub">
                             <p>
                                 {data.description}
                                 {data.keywords.map((keyword, i) => (
-                                    <span key={i} className="ml-2 italic font-bold text-white/70">#{keyword}</span>
+                                    <span key={i} className="ml-2 italic font-bold text-text/70">#{keyword}</span>
                                 ))}
                             </p>
                         </div>
@@ -42,7 +42,7 @@ const SubPageList = ({ data, href }) => {
                         ))}
                     </div>
                 </div>
-                <div className="flex flex-row items-center bg-neutral-700/40 rounded-b-md text-sm font-light text-white/30">
+                <div className="flex flex-row items-center bg-ui/50 rounded-b-md text-sm font-light text-textSub">
                     <div className="flex-1 flex flex-row gap-2 px-2 py-1 md:px-3 ">
                         <span>Posted {formatDistanceToNow(new Date(data.datetime), { addSuffix: true })}</span>
                         <span>Posted by Changhyun Cho</span>

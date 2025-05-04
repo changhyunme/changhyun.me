@@ -57,7 +57,7 @@ export default function Content() {
         <li key={id} className="list-disc">
           <div
             className={`cursor-pointer ${
-              activeId === id ? "text-orange-400 font-semibold" : "font-medium"
+              activeId === id ? "text-accent font-semibold" : "font-medium"
             }`}
             onClick={() => scrollToSection(id)}
           >
@@ -69,7 +69,7 @@ export default function Content() {
                 <li
                   key={id}
                   className={`cursor-pointer ${
-                    activeId === id ? "text-orange-400 font-semibold" : ""
+                    activeId === id ? "text-accent font-semibold" : ""
                   }`}
                   onClick={() => scrollToSection(id)}
                 >
@@ -88,7 +88,7 @@ export default function Content() {
         <ContentSide className="hidden md:block">
             {renderMenu(menuItems)}
         </ContentSide>
-        <ContentBody className="text-white/80">
+        <ContentBody className="text-text">
             <Header depth="1" className="hidden">About Us</Header>
             <p>
               That mindset didn’t come from tech — it came from always wanting to make sense of things by building, not just thinking.

@@ -118,17 +118,17 @@ export default function Home()
   return (
     <>
       <ContentWrapper>
-        <ContentBody className="text-white/80">
+        <ContentBody className="text-textDefault">
           <div>
           <Header translate="no" depth="1">Welcome</Header>
-            <div className="text-white/80 leading-relaxed space-y-4">
+            <div className="text-text leading-relaxed space-y-4">
               <div className="flex flex-col items-center justify-center md:float-right w-full md:w-1/2 aspect-video 
                             bg-orange-400 rounded-lg md:ml-3 md:mb-3"
               >
-                <span className="font-black italic text-neutral-800 text-3xl select-none">
+                <span className="font-black italic text-slate-800 text-3xl select-none">
                   CHANGHYUN.me
                 </span>
-                <span className="text-neutral-800 text-md select-none">
+                <span className="text-slate-800 text-md select-none">
                   official website
                 </span>
               </div>  
@@ -158,7 +158,7 @@ export default function Home()
 
             </div>
             <Header>History of CHANGHYUN.me</Header>
-            <div className="text-white/80 leading-relaxed space-y-4">
+            <div className="text-text leading-relaxed space-y-4">
               <p>
                 <strong className="font-black italic" translate="no">CHANGHYUN.me</strong> has been built, scrapped, and rebuilt probably ten times since 2015 — not even kidding.
               </p>
@@ -179,22 +179,22 @@ export default function Home()
             {versions.map(({ version, year, stack, desc, quote }) => (
               <div
                 key={version}
-                className="flex flex-row gap-2 py-1 text-sm text-neutral-300 hover:bg-white/3"
+                className="flex flex-row gap-2 py-1 text-sm text-textSub hover:bg-white/3"
               >
                 <h3 className="hidden">{version} · {year} — built using {stack}</h3>
 
                 <div className="relative w-20 md:w-30 flex flex-col gap-1" translate="no">
                   <div className="flex flex-col md:flex-row">
-                    <span className="w-auto md:w-10 font-bold text-neutral-100">{version}</span>
+                    <span className="w-auto md:w-10 font-bold text-text">{version}</span>
                     <span className="w-auto md:w-20">{year}</span>
                   </div>
                   <div className="flex-1 flex flex-row">
-                    <div className="mt-2 w-[1px] border-1 border-white/10 bg-white/5 rounded-xl"></div>
+                    <div className="mt-2 w-[1px] border-1 border-border bg-white/5 rounded-xl"></div>
                   </div>
                 </div>
                 <div className="flex-1 flex flex-col gap-2">
-                  <div className="font-semibold text-white" translate="no">{stack}</div>
-                  <div className="text-neutral-400">{desc}</div>
+                  <div className="font-semibold text-textWhite" translate="no">{stack}</div>
+                  <div className="text-textSub">{desc}</div>
                   {quote && quote.trim() !== "" && (
                     <Blockquote className="mt-1">{quote}</Blockquote>
                   )}

@@ -36,7 +36,7 @@ const NavItem = ({ name, href }) => {
 
     const isActive = pathname === href || pathname.startsWith(`${href}/`);
     const baseClass = "flex-1 md:flex-0 pb-5 md:pb-0 text-center text-[0.7rem] pt-1 mb-2 md:text-left cursor-pointer";
-    const textClass = isActive ? "text-neutral-600 md:text-orange-400 border-t-3 border-orange-400" : "border-t-3 border-transparent text-black/30 md:text-neutral-600 hover:text-neutral-600/50";
+    const textClass = isActive ? "text-textSub md:text-accent border-t-3 border-accent" : "border-t-3 border-transparent text-black/30 md:text-textShadow hover:text-textSub";
 
     return (
         <li className={`${baseClass} ${textClass}`} key={href}>

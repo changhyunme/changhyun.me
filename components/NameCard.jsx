@@ -35,16 +35,16 @@ const nameCard = () => {
                 />
             </div>
             <div className="mt-3 text-center">
-                <h2 className="text-white text-lg capitalize font-bold">
+                <h2 className="text-text text-lg capitalize font-bold">
                     changhyun cho
                 </h2>
-                <p className="text-white/40 text-sm capitalize">
+                <p className="text-text text-sm capitalize">
                     web developer
                 </p>
             </div>
             <div className="py-3 flex flex-row gap-2 justify-center">
                 {sns.map((item, idx) => (
-                    <div className="text-white" key={idx}>
+                    <div className="text-textWhite" key={idx}>
                         <a href={item.href} target="_blank" rel="noopener noreferrer"> 
                             <TechIcon name={item.icon} size={item.iconSize} />
                         </a>

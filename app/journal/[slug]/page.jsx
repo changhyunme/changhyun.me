@@ -88,32 +88,32 @@ export default async function Page({ params }) {
 
   return (
     <ContentWrapper>
-      <ContentBody className="text-white/80">
+      <ContentBody className="text-text">
         <Header translate="no" depth="1">{data.title}</Header>
         <div className="flex flex-col-reverse md:flex-row mb-3">
-            <div className="text-sm text-white/40 mb-2">
+            <div className="text-sm text-textShadow mb-2">
             Posted {formatDistanceToNow(new Date(data.datetime), { addSuffix: true })}
             </div>
 
             {/* Technologies */}
             {data.technologies?.length > 0 && (
-            <div className="flex flex-row gap-2 text-white/30 md:ml-auto mb-3 md:md-0">
+            <div className="flex flex-row gap-2 text-textSub md:ml-auto mb-3 md:md-0">
                 {data.technologies.map((tech, i) => (
                 <div key={i} className="flex flex-row items-center gap-1">
                     <TechIcon name={tech.icon} size={tech.size || 18} />
-                    <span translate="no" className="text-white/70 font-bold text-sm">{tech.name}</span>
+                    <span translate="no" className="text-text font-bold text-sm">{tech.name}</span>
                 </div>
                 ))}
             </div>
             )}
         </div>
 
-        <div className="text-white/50 leading-relaxed space-y-4 mb-6">
+        <div className="text-text leading-relaxed space-y-4 mb-6">
           
           <Blockquote>
             {data.description}
           </Blockquote>
-          <p className="text-white/30">
+          <p className="text-text">
             {data.keywords?.map((kw, i) => (
               <span key={i} translate="no" className="mr-2 italic">#{kw}</span>
             ))}
