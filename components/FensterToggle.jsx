@@ -8,7 +8,7 @@ export default function ClientToggle() {
 
   return (
     <div className="hidden md:block ml-auto uppercase text-orange-400
-                    border-1 border-orange-400 rounded-xs
+                    border-1 border-orange-400 rounded-xs my-1.5
                     cursor-pointer hover:opacity-70 active:opacity:50" onClick={toggleBreitbild}>
         {breitbild ? (
             <svg
