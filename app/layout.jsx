@@ -32,6 +32,9 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${lato.className} dark`}>
+      <head>
+        <link rel="alternate" type="application/rss+xml" title="CHANGHYUN.me Journal" href="/rss.xml" />
+      </head>
       <body>
         <TI/>
         <div className="relative w-screen min-h-screen p-0 md:py-5 md:px-2
