@@ -5,6 +5,8 @@ import Blockquote from "@/components/ui/Blockquote";
 import PageHeader from "@/components/ui/PageHeader";  
 import PageFooter from "@/components/ui/PageFooter";
 import Header from "@/components/ui/Header";
+import TechIcon from "@/components/ui/TechIcon";
+
 
 {/* Metadata */}
 import info from "@/app/info.config.js";
@@ -116,6 +118,9 @@ const versions = [
 
 export default function Home() 
 {
+
+  const code = "text-xs bg-ui px-1 py-0.5 rounded-sm";
+
   return (
     <>
       <ContentWrapper>
@@ -125,12 +130,13 @@ export default function Home()
               <div className="text-text leading-relaxed space-y-4">
                 <div className="flex flex-col items-center justify-center md:float-right w-full md:w-1/2 aspect-video 
                               bg-orange-400 rounded-lg md:ml-3 md:mb-3"
+                     translate="no"
                 >
                   <span className="font-black italic text-slate-800 text-3xl select-none">
                     CHANGHYUN.me
                   </span>
                   <span className="text-slate-800 text-md select-none">
-                    official website
+                    www.changhyun.me
                   </span>
                 </div>  
                 
@@ -158,7 +164,7 @@ export default function Home()
                 </p>
 
               </div>
-              <Header>History of CHANGHYUN.me</Header>
+              <Header><span className="not-italic">📖</span> History of CHANGHYUN.me</Header>
               <div className="text-text leading-relaxed space-y-4">
                 <p>
                   <strong className="font-black italic" translate="no">CHANGHYUN.me</strong> has been built, scrapped, and rebuilt probably ten times since 2015 — not even kidding.
@@ -173,8 +179,55 @@ export default function Home()
                 </p>
               </div>
             </div>
+            <Header><span className="not-italic">💬</span> How It’s Built — And Why That Matters</Header>
+            <div className="space-y-3 text-text leading-relaxed">
+              <p>
+                This version of <strong className="font-black italic">CHANGHYUN.me</strong> is built with <strong>React</strong> and styled using <strong>TailwindCSS</strong>.  
+                It’s fast, minimal, and flexible enough to keep evolving without starting over.
+              </p>
+              <p>
+                I made a conscious decision to avoid traditional CSS altogether — no SCSS, no BEM.  
+                Instead, I chose to stay fully within the Tailwind ecosystem, pushing its utility-first model to the edge.  
+                That constraint actually made things more fun and deliberate.
+              </p>
+              <Blockquote>
+                I used to split my editor just to keep up with my own CSS.  
+                With Tailwind, I finally reclaimed half my screen.
+              </Blockquote>
+              <p>
+  The site runs on <strong>Next.js</strong> — mostly because it handles routing and rendering cleanly out of the box,  
+  and I’ve gotten used to how it balances flexibility with convention.
+</p>
+<p>
+  Hosting is handled by <strong>Vercel</strong>.  
+  The free tier covers everything I need for now, and I’m totally fine paying once it doesn’t.  
+  I chose it because it saves me from hours of server setup (which always feels minor but ends up eating time),  
+  deployment is literally just <code className={code}>git push</code>, and things like SSL and basic security are pre-configured.
+</p>
 
-            <Header>Version Log</Header>
+              <p>
+                For blog content, I built a custom parser that structures content into reusable objects —  
+                making it easy to support multiple formats later (like Markdown, HTML, YAML) via clean imports.  
+                I could’ve gone with an off-the-shelf MD parser, but I wanted something more purpose-built and minimal —  
+                with less magic and more control.
+              </p>
+              <p>
+                This makes the <strong>Journal</strong> and <strong>Sandbox</strong> sections more than static blogs —  
+                they’re rendered from structured data that I can query, transform, or re-render any way I want.
+              </p>
+              <p className="text-textSub italic">
+                (For now, all content is managed directly on the file system — no database involved.  
+                So please, no hacking attempts 😅.)
+              </p>
+
+              <p>
+                Syntax highlighting is done via <strong>Prism</strong>, and the layout components are fully modular,  
+                making it easy to inject new sections or switch styles as needed.
+              </p>
+            </div>
+
+
+            <Header><span className="not-italic">🗒️</span> Version Log</Header>
 
             <div className="flex flex-col gap-4 my-6">
               {versions.map(({ version, year, stack, desc, quote }) => (

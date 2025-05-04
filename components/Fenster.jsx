@@ -19,7 +19,7 @@ const Fenster = ({ children, className }) => {
                 </ul>
                 <FensterToggle />
             </div>
-            <div className="relative flex-1 flex md:h-full py-2">
+            <div className="relative flex-1 flex md:h-full py-0">
                 {children}
             </div>
         </FensterBewegt>

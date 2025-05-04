@@ -30,7 +30,7 @@ const nameCard = () => {
                     placeholder="blur"
                     blurDataURL="/thumbs/temp/profile.jpeg"
                     loading="lazy"
-                    className={`saturate-60`}
+                    className={`saturate-50 brightness-150`}
                     unoptimized
                 />
             </div>
