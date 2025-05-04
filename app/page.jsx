@@ -120,10 +120,20 @@ export default function Home()
       <ContentWrapper>
         <ContentBody className="text-white/80">
           <div>
-            <Header translate="no" depth="1">Welcome</Header>
+          <Header translate="no" depth="1">Welcome</Header>
             <div className="text-white/80 leading-relaxed space-y-4">
-
-            <p>✍️ This site isn’t just a portfolio.</p>
+              <div className="flex flex-col items-center justify-center md:float-right w-full md:w-1/2 aspect-video 
+                            bg-orange-400 rounded-lg md:ml-3 md:mb-3"
+              >
+                <span className="font-black italic text-neutral-800 text-3xl select-none">
+                  CHANGHYUN.me
+                </span>
+                <span className="text-neutral-800 text-md select-none">
+                  official website
+                </span>
+              </div>  
+              
+              <p>✍️ This site isn’t just a portfolio.</p>
               <p>
                 It’s a place where I reflect on what I’ve built — and more importantly, why I built it.<br />
                 Tech is just a tool. Direction and intention always come first.
@@ -179,7 +189,7 @@ export default function Home()
                     <span className="w-auto md:w-20">{year}</span>
                   </div>
                   <div className="flex-1 flex flex-row">
-                    <div className="mt-2 w-[5px] border-1 border-white/10 bg-white/5 rounded-xl"></div>
+                    <div className="mt-2 w-[1px] border-1 border-white/10 bg-white/5 rounded-xl"></div>
                   </div>
                 </div>
                 <div className="flex-1 flex flex-col gap-2">
