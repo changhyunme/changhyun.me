@@ -7,7 +7,7 @@ const FensterBewegt = ({ children, className }) => {
 
     return (
 
-        <div className={`relative w-full ${breitbild ? "mt-[16px] md:w-6xl md:min-h-[719px]" : "md:w-3xl md:min-h-[519px]"}
+        <div className={`relative w-full ${breitbild ? "md:mt-[16px] md:w-6xl md:min-h-[719px]" : "md:w-3xl md:min-h-[519px]"}
                         flex flex-col transition-all duration-300
                         border-1 border-border/30 md:rounded-lg shadow-inner-2xl shadow-xl
                         bg-bgSub ${className}`}

@@ -44,6 +44,10 @@
 
   --color-primary: oklch(0.75 0.183 55.934);
   --color-accent: oklch(0.75 0.183 55.934);
+  --color-error: oklch(70.4% 0.191 22.216);
+  --color-info: oklch(74.6% 0.16 232.661);
+  --color-success: oklch(79.2% 0.209 151.711);
+  --color-warning: oklch(85.2% 0.199 91.936);
 
   /* 최초에는 다크모드 기준 */
   --color-bg: var(--color-bg);
