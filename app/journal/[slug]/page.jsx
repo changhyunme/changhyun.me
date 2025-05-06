@@ -156,25 +156,41 @@ export default async function Page({ params }) {
             if (block.type === "blockquote") return <Blockquote key={i}>{block.content}</Blockquote>;
             if (block.type === "image") {
               return (
-                <div key={i} className="my-4">
+                <div key={i} translate="no" className={`select-none my-4 ${!block.position && "flex flex-col justify-center"}`}>
                   
-                <Image
-                  src={block.src}
-                  alt={block.alt}
-                  width={800} // 실제 이미지 비율에 맞춰 조정 필요
-                  height={800}
-                  placeholder="blur"
-                  blurDataURL={block.blur || `/thumbs/temp/${block.src.split('/').pop()}`}
-                  loading="lazy"
-                  className={`rounded-md max-w-3xl cursor-crosshair saturate-60 hover:saturate-100
-                    ${block.float === "left" ? "w-full md:w-1/3 float-left mr-4 mb-4" : 
-                    block.float === "right" ? "w-full md:w-1/3 float-right ml-4 mb-4" : 
-                    "w-full my-4"} md:hover:w-1/2 md:active:w-4/6 transition-all duration-300`}
-                  unoptimized
-                />
+                  <div className={`${!block.position && "flex justify-center"}`}>
+                    <Image
+                      src={`/thumbs/temp/${block.src.split('/').pop().replace(/\.[^/.]+$/, '.webp')}`}
+                      alt={block.alt}
+                      width={800} // 실제 이미지 비율에 맞춰 조정 필요
+                      height={800}
+                      placeholder="blur"
+                      blurDataURL={block.blur || `/thumbs/temp/${block.src.split('/').pop()}`}
+                      loading="lazy"
+                      className={`rounded-md cursor-crosshair saturate-60 hover:saturate-100
+                        ${block.position === "left" ? "w-full md:max-w-3xl md:hover:w-1/2 md:active:w-4/6 md:w-1/3 float-left mr-4 mb-4" : 
+                        block.position === "right" ? "w-full md:max-w-3xl md:hover:w-1/2 md:active:w-4/6 md:w-1/3 float-right ml-4 mb-4" : 
+                        block.position === "full" ? "w-full " :
+                        "w-full md:w-4/7"} transition-all duration-300`}
+                      unoptimized
+                    />
+                  </div>
+                  {block.caption && (
+                    <figure className={`text-xs text-center italic mt-3 text-text/50 ${(block.position === "full" || !block.position) ? "block" : "md:hidden"}`}>
+                      <div className="mb-2">
+                        {block.gear} / {block.caption} <br /> 
+                        Taken in {block.location}
+                      </div>
+                      <span>
+                        {block.copyright}
+                      </span>
+                    </figure>
+                  )}
+
                 </div>
               );
             }
+            if (block.type === "clear") return <div key={i} className="clear-both"></div>;
             if (block.type === "code") {
                 return (
                     <div key={i} className="my-6 text-sm">
@@ -197,6 +213,20 @@ export default async function Page({ params }) {
 
                     </div>
                 );
+            }
+            if (block.type === "info") {
+              return (
+                <div key={i} className="hidden md:flex flex-row gap-3 items-center border-1 border-info bg-info/10 text-text p-3 rounded-sm text-slate-800">
+                  <div className="text-text">
+                    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path fill="currentColor" fill-rule="evenodd" d="M12 1C5.925 1 1 5.925 1 12s4.925 11 11 11s11-4.925 11-11S18.075 1 12 1m-.5 5a1 1 0 1 0 0 2h.5a1 1 0 1 0 0-2zM10 10a1 1 0 1 0 0 2h1v3h-1a1 1 0 1 0 0 2h4a1 1 0 1 0 0-2h-1v-4a1 1 0 0 0-1-1z" clip-rule="evenodd"/>
+                    </svg>
+                  </div>
+                  <div className="">
+                    {block.content}
+                  </div>
+                </div>
+              )
             }
               
             return null;

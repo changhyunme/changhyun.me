@@ -6,11 +6,11 @@
   "datetime": "2025-05-01T12:08:27Z",
   "thumbnails": [
     {
-      "path": "/thumbs/miuju24_3.jpg",
+      "src": "/thumbs/miuju24_3.jpg",
       "alt": "Miuju 2024 bottle with minimalist Korean label"
     },
     {
-      "path": "/thumbs/miuju24_1.jpg",
+      "src": "/thumbs/miuju24_1.jpg",
       "alt": "Miuju 2024 bottle in a cozy setting"
     }
   ],
@@ -33,7 +33,7 @@
       "type": "image",
       "src": "/thumbs/miuju24_3.jpg",
       "alt": "Miuju 2024 bottle with minimalist Korean label",
-      "float": "right"
+      "position": "right"
     },
     {
       "type": "p",
@@ -55,7 +55,7 @@
       "type": "image",
       "src": "/thumbs/miuju24_2.jpg",
       "alt": "Miuju 2024 bottle in a cozy setting",
-      "float": "left"
+      "position": "left"
     },
     {
       "type": "h3",

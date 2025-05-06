@@ -12,6 +12,8 @@ fs.mkdirSync(destDir, { recursive: true });
 
 fs.readdirSync(srcDir).forEach(file => {
   const ext = path.extname(file).toLowerCase();
+  const baseName = path.basename(file, ext);
+  
   if (!supportedFormats.includes(ext)) {
     console.log(`⏩ Skipped unsupported file: ${file}`);
     return;
@@ -19,6 +21,7 @@ fs.readdirSync(srcDir).forEach(file => {
 
   const input = path.join(srcDir, file);
   const output = path.join(destDir, file);
+  const webpOutput = path.join(destDir, `${baseName}.webp`);
 
   sharp(input)
     .resize(20)
@@ -26,4 +29,11 @@ fs.readdirSync(srcDir).forEach(file => {
     .toFile(output)
     .then(() => console.log(`✅ Generated thumbnail for ${file}`))
     .catch(err => console.error(`❌ Error with ${file}: ${err.message}`));
+
+  sharp(input)
+    .blur()
+    .toFormat('webp')
+    .toFile(webpOutput)
+    .then(() => console.log(`✅ WebP blurred saved for ${file}`))
+    .catch(err => console.error(`❌ Error generating WebP for ${file}: ${err.message}`));
 });

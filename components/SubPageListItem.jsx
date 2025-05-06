@@ -37,12 +37,12 @@ const SubPageList = ({ data, href }) => {
                                             ${i===1 && "hidden md:block"}`}
                             >
                                 <Image
-                                    src={thumb.path}
+                                    src={`/thumbs/temp/${thumb.src.split('/').pop().replace(/\.[^/.]+$/, '.webp')}`}
                                     alt={thumb.alt}
                                     width={800} // 실제 이미지 비율에 맞춰 조정 필요
                                     height={800}
                                     placeholder="blur"
-                                    blurDataURL={thumb.blur || `/thumbs/temp/${thumb.path.split('/').pop()}`}
+                                    blurDataURL={thumb.blur || `/thumbs/temp/${thumb.src.split('/').pop()}`}
                                     loading="lazy"
                                     className={`saturate-60 object-cover`}
                                     unoptimized
