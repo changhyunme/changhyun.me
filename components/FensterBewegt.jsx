@@ -1,22 +1,32 @@
 "use client";
 
 import useStore from "@/store/uiStore";
+import { motion } from "framer-motion";
 
 const FensterBewegt = ({ children, className }) => {
-    const { breitbild, toggleBreitbild } = useStore();
+    const { breitbild } = useStore();
 
     return (
-
-        <div className={`relative w-full ${breitbild ? "md:mt-[16px] md:w-6xl md:min-h-[719px]" : "md:w-3xl md:min-h-[519px]"}
-                        flex flex-col transition-all duration-300
+        <motion.div
+            className={`relative w-full 
+                        flex flex-col 
                         border-1 border-border/30 md:rounded-lg shadow-inner-2xl shadow-xl
+                        mt-0 ${breitbild ? "md:mt-4" : "md:mt-0"}
                         bg-bgSub ${className}`}
+            initial={false}
+            animate={{
+                width: breitbild ? "72rem" : "48rem",
+                minHeight: breitbild ? "719px" : "519px"
+            }}
+            transition={{
+                type: "spring",
+                stiffness: 400,
+                damping: 18,
+            }}
         >
-
             {children}
-        </div>
-
+        </motion.div>
     );
-}
+};
 
 export default FensterBewegt;

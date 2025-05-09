@@ -33,7 +33,8 @@
       "type": "image",
       "src": "/thumbs/miuju24_3.jpg",
       "alt": "Miuju 2024 bottle with minimalist Korean label",
-      "position": "right"
+      "position": "right",
+      "copyright" : "ⓒ 2024 CHANGHYUN.me. All rights reserved"
     },
     {
       "type": "p",
@@ -55,7 +56,7 @@
       "type": "image",
       "src": "/thumbs/miuju24_2.jpg",
       "alt": "Miuju 2024 bottle in a cozy setting",
-      "position": "left"
+      "position": "full"
     },
     {
       "type": "h3",
