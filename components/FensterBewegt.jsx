@@ -8,7 +8,7 @@ const FensterBewegt = ({ children, className }) => {
 
     return (
         <motion.div
-            className={`relative w-full 
+            className={`relative w-full max-w-full 
                         flex flex-col 
                         border-1 border-border/30 md:rounded-lg shadow-inner-2xl shadow-xl
                         mt-0 ${breitbild ? "md:mt-4" : "md:mt-0"}

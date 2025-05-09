@@ -166,12 +166,11 @@ export default async function Page({ params }) {
                     language={block.language || "javascript"}
                     style={atomDark}
                     customStyle={{
-                        // border:"1px solid #333",
-                        width : "100%",
-                        borderRadius: "0.25rem",
-                        padding: "1rem",
-                        background: "oklch(12.9% 0.042 264.695)",
-                        lineHeight: "1.5",
+                      // border:"1px solid #333",
+                      maxWidth : "100%",
+                      borderRadius: "0.25rem",
+                      background: "oklch(12.9% 0.042 264.695)",
+                      lineHeight: "1.5",
                     }}
                     showLineNumbers
                     wrapLongLines
