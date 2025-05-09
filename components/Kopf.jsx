@@ -6,14 +6,15 @@ import KopfButton from "@/components/KopfButton";
 const Kopf = () => {
     const [dateTime, setDateTime] = useState("");
     const [isFullScreen, setIsFullScreen] = useState(false);
+    const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
     const updateDateTime = () => {
         const now = new Date();
 
         const pad = (num, size = 2) => String(num).padStart(size, "0");
         const formatted = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())} ` +
-                            `${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}.` +
-                            `${pad(now.getMilliseconds(), 3)}`;
+                          `${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}.` +
+                          `${pad(now.getMilliseconds(), 3)}`;
 
         setDateTime(formatted);
     };
@@ -21,19 +22,25 @@ const Kopf = () => {
     useEffect(() => {
         updateDateTime();
         const interval = setInterval(updateDateTime, 1);
-    
+
         const onFullScreenChange = () => {
             setIsFullScreen(!!document.fullscreenElement);
         };
-    
+
+        const onMouseMove = (e) => {
+            setMousePos({ x: e.clientX, y: e.clientY });
+        };
+
         document.addEventListener("fullscreenchange", onFullScreenChange);
-    
+        window.addEventListener("mousemove", onMouseMove);
+
         return () => {
             clearInterval(interval);
             document.removeEventListener("fullscreenchange", onFullScreenChange);
+            window.removeEventListener("mousemove", onMouseMove);
         };
     }, []);
-    
+
     const handleFullScreen = () => {
         if (!document.fullscreenElement) {
             document.documentElement.requestFullscreen?.();
@@ -51,8 +58,9 @@ const Kopf = () => {
             <KopfButton>Changhyun.me</KopfButton>
             <KopfButton onClick={handleFullScreen}>
                 {isFullScreen ? "ExitScr" : "FullScr"}
-                
             </KopfButton>
+            <KopfButton>X : {mousePos.x} Y : {mousePos.y}</KopfButton>
+
             <KopfButton className="ml-auto">
                 {dateTime}
             </KopfButton>
@@ -60,4 +68,5 @@ const Kopf = () => {
         </div>
     );
 }
+
 export default Kopf;

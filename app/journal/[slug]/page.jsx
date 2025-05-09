@@ -16,6 +16,7 @@ import TechIcon from "@/components/ui/TechIcon";
 import ImageBlock from "@/components/ImageBlock";
 
 import info from "@/app/info.config.js";
+
 export async function generateMetadata({ params }) {
   const staticParams = await generateStaticParams();
   const slug = params.slug;
