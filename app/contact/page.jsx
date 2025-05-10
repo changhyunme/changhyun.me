@@ -7,6 +7,7 @@ import NameCard from "@/components/NameCard";
 import PingBtn from "@/components/PingButton";
 import Header from "@/components/ui/Header";
 import Blockquote from "@/components/ui/Blockquote";  
+import ContactForm from "@/components/ContactForm";
 
 {/* Metadata */}
 import info from "@/app/info.config.js";
@@ -66,7 +67,9 @@ export default function Home()
           <Blockquote>
             Things get messy, especially in web dev. I do my best to cut through the noise with fresh perspective and build clean solutions.
           </Blockquote>
-          <Header>Contact</Header>
+          <Header>Contact me</Header>
+          <ContactForm />
+          <Header>Contact Information</Header>
           <div className="grid gap-1 text-sm">
             <div className="grid grid-cols-[90px_1fr]">
               <span className="font-bold">Location</span>

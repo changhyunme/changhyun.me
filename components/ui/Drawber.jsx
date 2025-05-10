@@ -25,7 +25,7 @@ const Drawber = ({ children }) => {
                         }}
                         transition={{ type: "spring", damping: 20, stiffness: 200 }}
             >
-                <div className={`w-full md:w-3xl mx-auto my-10 px-3 md:px-0`}
+                <div className={`w-full mx-auto my-0 px-3 md:px-0`}
                 >  
                     {children}
                 </div>

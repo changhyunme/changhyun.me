@@ -7,9 +7,9 @@ import useStore from "@/store/uiStore";
 const DrawberContact = ({}) => {
     const { toggleDrawber } = useStore();
     return(
-        <div className="flex flex-col md:flex-row gap-10 justify-center">
+        <div className="flex flex-col md:flex-row gap-10 justify-center items-center md:items-start lg:items-end w-full md:w-3xl lg:w-5xl mx-auto">
             <div className="">
-                <div className="max-w-36 md:max-w-24 mx-auto rounded-full overflow-hidden">
+                <div className="lg:hidden max-w-36 md:max-w-36 mx-auto mt-10 rounded-full overflow-hidden">
                     <Image
                         src="/thumbs/temp/profile.webp"
                         alt="profile image"
@@ -23,7 +23,7 @@ const DrawberContact = ({}) => {
                     />
                 </div>
             </div>
-            <div className="flex flex-col gap-3 text-center md:text-left">
+            <div className="flex flex-col gap-3 text-center md:text-left my-0 md:my-10 lg:mb-20">
                 <h3 className="text-xl font-black italic">Have a question or a project in mind?</h3>
                 <div className="flex flex-col gap-3">
                     <div className="">
@@ -37,7 +37,7 @@ const DrawberContact = ({}) => {
                             <li>🤔 Projects that seem simple — but somehow cost way too much</li>
                         </ul> */}
                     </div>
-                    <div className="flex justify-center md:justify-start" translate="no">
+                    <div className="flex justify-center md:justify-start mb-10 md:mb-0" translate="no">
                         <Link href="/contact" onClick={()=>toggleDrawber(false)}>
                             <div className="flex flex-row gap-1 w-36 justify-center items-center pl-2 pr-4 py-2 border-1 rounded-sm select-none cursor-pointer
                                             bg-bgSub border-text hover:opacity-70 hover:rounded-xl transition-all duration-300 active:scale-98"
@@ -51,6 +51,21 @@ const DrawberContact = ({}) => {
                             </div>
                         </Link>
                     </div>
+                </div>
+            </div>
+            <div className="hidden lg:block w-sm">
+                <div className="">
+                    <Image
+                        src="/thumbs/profile.png"
+                        alt="profile image"
+                        width={800} 
+                        height={800}
+                        placeholder="blur"
+                        blurDataURL="/thumbs/temp/profile.jpeg"
+                        loading="lazy"
+                        className={`saturate-50 brightness-150`}
+                        unoptimized
+                    />
                 </div>
             </div>
         </div>
