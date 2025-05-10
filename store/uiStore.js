@@ -37,6 +37,8 @@ function applyTheme(lightmode) {
 }
 
 const useStore = create((set) => ({
+  drawber: false,
+  toggleDrawber: () => set((state) => ({ drawber: !state.drawber })),
   breitbild: false,
   toggleBreitbild: () => set((state) => ({ breitbild: !state.breitbild })),
 

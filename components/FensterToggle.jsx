@@ -4,7 +4,7 @@ import { useState } from "react";
 import useStore from "@/store/uiStore";
 
 export default function FensterToggle() {
-  const { breitbild, toggleBreitbild, lightmode, toggleLightmode } = useStore();
+  const { breitbild, toggleBreitbild, lightmode, toggleLightmode, drawber, toggleDrawber } = useStore();
   
   const [showTranslateTooltip, setShowTranslateTooltip] = useState(false);
   const [showRssTooltip, setShowRssTooltip] = useState(false);
@@ -18,7 +18,7 @@ export default function FensterToggle() {
 
   const TooltipClass = `absolute text-center 
                         ${breitbild ? "-bottom-8" : "-top-8"} left-1/2 -translate-x-1/2 text-xs px-2 py-1 
-                        rounded-md font-bold shadow-xl`;
+                        rounded-md font-bold shadow-xl select-none`;
 
   return (
     <div className=" flex flex-row items-center ml-auto text-white">
@@ -53,6 +53,7 @@ export default function FensterToggle() {
       {/* 번역 */}
       <div className="relative">
         <div className={`${btnClass}`}
+             onClick={() => toggleDrawber(true)}
              onMouseEnter={() => setShowTranslateTooltip(true)}
              onMouseLeave={() => setShowTranslateTooltip(false)}
         >

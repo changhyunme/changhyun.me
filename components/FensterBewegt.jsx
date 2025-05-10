@@ -21,7 +21,8 @@ const FensterBewegt = ({ children, className }) => {
             transition={{
                 type: "spring",
                 stiffness: 400,
-                damping: 18,
+                damping: 20,
+                mass:1.2
             }}
         >
             {children}
