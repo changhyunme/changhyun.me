@@ -1,6 +1,8 @@
 "use client"
 
 import { useState } from "react"
+import confetti from "canvas-confetti";
+
 
 const ContactWrapper = ({ children }) => {
     return (
@@ -40,6 +42,52 @@ const ContactTextarea = ({ label, placeholder, value, onChange }) => {
         </ContactWrapper>
     )
 }
+
+
+function firePersistentConfetti() {
+    const duration = 5 * 1000;
+    const animationEnd = Date.now() + duration;
+    const defaults = {
+        startVelocity: 30,
+        spread: 360,
+        ticks: 60,
+        zIndex: 0,
+    };
+
+    const interval = setInterval(() => {
+        const timeLeft = animationEnd - Date.now();
+
+        if (timeLeft <= 0) {
+            clearInterval(interval);
+            return;
+        }
+
+        const particleCount = 50 * (timeLeft / duration);
+
+        // 좌/우 랜덤 포인트에서 뿌림
+        confetti({
+            ...defaults,
+            particleCount,
+            origin: {
+                x: randomInRange(0.1, 0.3),
+                y: Math.random() - 0.2,
+            },
+        });
+        confetti({
+            ...defaults,
+            particleCount,
+            origin: {
+                x: randomInRange(0.7, 0.9),
+                y: Math.random() - 0.2,
+            },
+        });
+    }, 250);
+}
+
+function randomInRange(min, max) {
+    return Math.random() * (max - min) + min;
+}
+
 
 const ContactForm = () => {
     const [name, setName] = useState("")
@@ -87,7 +135,16 @@ const ContactForm = () => {
             const result = await res.json();
     
             if (result.success) {
-                alert("Your message has been sent successfully!");
+                // alert("Your message has been sent successfully!");
+
+                 // 🎉 여기서 폭죽 터뜨림
+                // confetti({
+                //     particleCount: 150,
+                //     spread: 100,
+                //     origin: { y: 0.6 },
+                // })
+                firePersistentConfetti();
+
                 setName("");
                 setEmail("");
                 setTitle("");
@@ -120,7 +177,7 @@ const ContactForm = () => {
                 />
                 <ContactField
                     label="Subject"
-                    placeholder="Title (optional)"
+                    placeholder="Enter Subject (optional)"
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
                 />
