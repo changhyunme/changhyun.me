@@ -2,6 +2,7 @@ import "./globals.css";
 
 import { Lato } from 'next/font/google';
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 import Fenster from "../components/Fenster";
 import Szene from "@/components/Szene";
@@ -52,6 +53,7 @@ export default function RootLayout({ children }) {
           </Fenster>
         </div>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
