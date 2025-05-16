@@ -10,6 +10,7 @@
     "genthumbs": "node scripts/genThumbs.js"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.810.0",
     "@mdx-js/loader": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
     "@next/mdx": "^15.3.1",
@@ -17,9 +18,11 @@
     "@vercel/speed-insights": "^1.2.0",
     "canvas-confetti": "^1.9.3",
     "date-fns": "^4.1.0",
+    "dotenv": "^16.5.0",
     "fs": "^0.0.1-security",
     "gray-matter": "^4.0.3",
     "immer": "^10.1.1",
+    "mime-types": "^3.0.1",
     "motion": "^12.10.5",
     "next": "15.2.4",
     "next-mdx-remote": "^5.0.0",
