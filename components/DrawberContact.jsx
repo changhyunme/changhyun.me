@@ -11,12 +11,12 @@ const DrawberContact = ({}) => {
             <div className="">
                 <div className="lg:hidden max-w-36 md:max-w-36 mx-auto mt-10 rounded-full overflow-hidden">
                     <Image
-                        src="/thumbs/temp/profile.webp"
+                        src="https://asset.changhyun.me/img/temp/profile.webp"
                         alt="profile image"
                         width={800} 
                         height={800}
                         placeholder="blur"
-                        blurDataURL="/thumbs/temp/profile.jpeg"
+                        blurDataURL="https://asset.changhyun.me/img/temp/profile.jpeg"
                         loading="lazy"
                         className={`saturate-50 brightness-150`}
                         unoptimized
@@ -61,7 +61,7 @@ const DrawberContact = ({}) => {
                         width={800} 
                         height={800}
                         placeholder="blur"
-                        blurDataURL="/thumbs/temp/profile.jpeg"
+                        blurDataURL="https://asset.changhyun.me/img/temp/profile.jpeg"
                         loading="lazy"
                         className={`saturate-50 brightness-150`}
                         unoptimized
