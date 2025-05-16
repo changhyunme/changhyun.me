@@ -60,7 +60,7 @@ export default async function Page() {
             </ContentSide>
             <ContentBody className="text-text">
                 <PageHeader title="Journal" />
-                <Header translate="no" depth="2" className="hidden">Makes List</Header>
+                <Header translate="no" depth="2" className="hidden">Journal List</Header>
                 <SubPageList data={articles} />
                 <PageFooter/>
             </ContentBody>
