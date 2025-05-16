@@ -41,3 +41,13 @@ yarn-error.log*
 next-env.d.ts
 
 .env.local
+
+# 1. 먼저 thumbs 폴더 안의 이미지 파일들 무시
+/public/thumbs/*.jpeg
+/public/thumbs/*.jpg
+/public/thumbs/*.png
+/public/thumbs/*.webp
+
+# 2. temp 폴더 안의 jpeg, jpg는 추적 예외
+!/public/thumbs/temp/*.jpeg
+!/public/thumbs/temp/*.jpg

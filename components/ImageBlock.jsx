@@ -8,7 +8,7 @@ const ImageBlock = ({ block, index }) => {
     const isMobile = useMediaQuery({ maxWidth: 767 }); // md 기준
 
     const imageName = block.src.split('/').pop().replace(/\.[^/.]+$/, '.webp');
-    const blurThumb = block.blur || `https://asset.changhyun.me/img/temp/${block.src.split('/').pop()}`;
+    const blurThumb = block.blur || `/thumbs/temp/${block.src.split('/').pop()}`;
 
     const containerClass = `select-none my-4 ${!block.position ? "flex flex-col justify-center" : ""}`;
     const innerWrapperClass = `${!block.position ? "flex justify-center" : ""}`;

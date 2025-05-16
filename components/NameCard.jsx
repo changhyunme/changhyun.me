@@ -28,7 +28,7 @@ const nameCard = () => {
                     width={800} // 실제 이미지 비율에 맞춰 조정 필요
                     height={800}
                     placeholder="blur"
-                    blurDataURL="https://asset.changhyun.me/img/temp/profile.jpeg"
+                    blurDataURL="/thumbs/temp/profile.jpeg"
                     loading="lazy"
                     className={`saturate-50 brightness-150`}
                     unoptimized

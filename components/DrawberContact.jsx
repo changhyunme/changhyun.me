@@ -16,7 +16,7 @@ const DrawberContact = ({}) => {
                         width={800} 
                         height={800}
                         placeholder="blur"
-                        blurDataURL="https://asset.changhyun.me/img/temp/profile.jpeg"
+                        blurDataURL="/thumbs/temp/profile.jpeg"
                         loading="lazy"
                         className={`saturate-50 brightness-150`}
                         unoptimized
@@ -61,7 +61,7 @@ const DrawberContact = ({}) => {
                         width={800} 
                         height={800}
                         placeholder="blur"
-                        blurDataURL="https://asset.changhyun.me/img/temp/profile.jpeg"
+                        blurDataURL="/thumbs/temp/profile.jpeg"
                         loading="lazy"
                         className={`saturate-50 brightness-150`}
                         unoptimized
