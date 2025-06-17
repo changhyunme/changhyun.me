@@ -52,8 +52,10 @@ export default function RootLayout({ children }) {
           <Kopf />
           <Fenster>
             {children}
-          <Turnstile />
           </Fenster>
+          <div className="fixed bottom-3 right-3">
+            <Turnstile />
+          </div>
         </div>
         <Analytics />
         <SpeedInsights />
