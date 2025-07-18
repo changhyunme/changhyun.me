@@ -14,6 +14,7 @@ import Header from "@/components/ui/Header";
 import Blockquote from "@/components/ui/Blockquote";
 import TechIcon from "@/components/ui/TechIcon";
 import ImageBlock from "@/components/ImageBlock";
+import { ContentParserFactory } from "@/lib/content-parsers.js";
 
 import info from "@/app/info.config.js";
 
@@ -29,70 +30,92 @@ export async function generateMetadata({ params }) {
     };
   }
 
-  const filePath = path.join(process.cwd(), "app/journal/content", `${slug}.json`);
+  // Try both .json and .md files
+  const contentDir = path.join(process.cwd(), "app/journal/content");
+  let data = null;
+  
+  for (const ext of ['.json', '.md']) {
+    try {
+      const filePath = path.join(contentDir, `${slug}${ext}`);
+      const raw = await fs.readFile(filePath, "utf-8");
+      const parser = ContentParserFactory.createParser(`${slug}${ext}`);
+      data = await parser.parse(`${slug}${ext}`, raw);
+      break;
+    } catch (e) {
+      // Continue to next extension
+    }
+  }
 
-  try {
-    const raw = await fs.readFile(filePath, "utf-8");
-    const data = JSON.parse(raw);
-
-    return {
-      title: `${data.title} – Journal by ${info.title}`,
-      description: data.description,
-      keywords: data.keywords,
-      openGraph: {
-        title: `${data.title} – ${info.opengraph.site_name || info.title}`,
-        description: data.description,
-        url: `${info.opengraph.url}/journal/${slug}`,
-        siteName: info.opengraph.site_name || info.title,
-        images: data.thumbnails?.length > 0
-          ? data.thumbnails.map((img) => ({
-              url: `${info.opengraph.url}${img.path}`,
-              alt: img.alt || data.title,
-            }))
-          : [
-              {
-                url: info.opengraph.image,
-                alt: info.opengraph.image_alt,
-              },
-            ],
-        locale: info.opengraph.locale,
-        type: "article"
-      },
-      twitter: {
-        card: "summary_large_image",
-        title: data.title,
-        description: data.description,
-        creator: info.twitter.creator,
-        images: data.thumbnails?.length > 0
-          ? [`${info.opengraph.url}${data.thumbnails[0].path}`]
-          : [info.twitter.image]
-      }
-    };
-  } catch (e) {
+  if (!data) {
     return {
       title: `Not Found – ${info.title}`,
       description: "This page could not be found.",
     };
   }
+
+  return {
+    title: `${data.title} – Journal by ${info.title}`,
+    description: data.description,
+    keywords: data.keywords,
+    openGraph: {
+      title: `${data.title} – ${info.opengraph.site_name || info.title}`,
+      description: data.description,
+      url: `${info.opengraph.url}/journal/${slug}`,
+      siteName: info.opengraph.site_name || info.title,
+      images: data.thumbnails?.length > 0
+        ? data.thumbnails.map((img) => ({
+            url: `${info.opengraph.url}${img.src}`,
+            alt: img.alt || data.title,
+          }))
+        : [
+            {
+              url: info.opengraph.image,
+              alt: info.opengraph.image_alt,
+            },
+          ],
+      locale: info.opengraph.locale,
+      type: "article"
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: data.title,
+      description: data.description,
+      creator: info.twitter.creator,
+      images: data.thumbnails?.length > 0
+        ? [`${info.opengraph.url}${data.thumbnails[0].src}`]
+        : [info.twitter.image]
+    }
+  };
 }
 
 export async function generateStaticParams() {
   const contentDir = path.join(process.cwd(), "app/journal/content");
   const files = await fs.readdir(contentDir);
   return files
-    .filter((f) => f.endsWith(".json"))
-    .map((file) => ({ slug: file.replace(".json", "") }));
+    .filter((f) => f.endsWith(".json") || f.endsWith(".md"))
+    .map((file) => ({ slug: file.replace(/\.(json|md)$/, "") }));
 }
 
 export default async function Page({ params }) {
   const { slug } = params;
-  const filePath = path.join(process.cwd(), "app/journal/content", `${slug}.json`);
+  const contentDir = path.join(process.cwd(), "app/journal/content");
+  
+  let data = null;
+  
+  // Try both .json and .md files
+  for (const ext of ['.json', '.md']) {
+    try {
+      const filePath = path.join(contentDir, `${slug}${ext}`);
+      const raw = await fs.readFile(filePath, "utf-8");
+      const parser = ContentParserFactory.createParser(`${slug}${ext}`);
+      data = await parser.parse(`${slug}${ext}`, raw);
+      break;
+    } catch (e) {
+      // Continue to next extension
+    }
+  }
 
-  let data;
-  try {
-    const raw = await fs.readFile(filePath, "utf-8");
-    data = JSON.parse(raw);
-  } catch (e) {
+  if (!data) {
     return notFound();
   }
 

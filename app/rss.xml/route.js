@@ -9,11 +9,22 @@ export async function GET() {
     const link = `${siteUrl}/journal/${post.slug}`;
     const pubDate = new Date(post.datetime).toUTCString();
     const description = post.description || "No description available.";
-    const thumbnail = post.thumbnail?.startsWith("http")
-      ? post.thumbnail
-      : `${siteUrl}${post.thumbnail || "/default-thumb.jpg"}`;
+    
+    // Handle thumbnails from both JSON and markdown formats
+    let thumbnail = "/default-thumb.jpg";
+    if (post.thumbnails && post.thumbnails.length > 0) {
+      thumbnail = post.thumbnails[0].src;
+    } else if (post.thumbnail) {
+      thumbnail = post.thumbnail;
+    }
+    
+    const thumbnailUrl = thumbnail.startsWith("http")
+      ? thumbnail
+      : `${siteUrl}${thumbnail}`;
 
-    const categories = post.tags?.map((tag) => `<category><![CDATA[${tag}]]></category>`).join("\n") || "";
+    // Handle keywords/tags from both formats
+    const keywords = post.keywords || post.tags || [];
+    const categories = keywords.map((tag) => `<category><![CDATA[${tag}]]></category>`).join("\n");
 
     return `
       <item>
@@ -23,7 +34,7 @@ export async function GET() {
         <pubDate>${pubDate}</pubDate>
         <description><![CDATA[${description}]]></description>
         <author>changhyun@changhyun.me (Changhyun)</author>
-        <media:thumbnail url="${thumbnail}" />
+        <media:thumbnail url="${thumbnailUrl}" />
         ${categories}
       </item>
     `;

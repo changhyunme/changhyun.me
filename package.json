@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "genthumbs": "node scripts/genThumbs.js"
+    "genthumbs": "node scripts/genThumbs.js",
+    "migrate": "node scripts/migrate-to-markdown.js",
+    "test:integration": "node scripts/test-integration.js"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.810.0",
@@ -22,6 +24,7 @@
     "fs": "^0.0.1-security",
     "gray-matter": "^4.0.3",
     "immer": "^10.1.1",
+    "js-yaml": "^4.1.0",
     "mime-types": "^3.0.1",
     "motion": "^12.10.5",
     "next": "15.2.4",
@@ -32,6 +35,10 @@
     "react-responsive": "^10.0.1",
     "react-syntax-highlighter": "^15.6.1",
     "react-turnstile": "^1.1.4",
+    "remark": "^15.0.1",
+    "remark-gfm": "^4.0.1",
+    "remark-html": "^16.0.1",
+    "remark-parse": "^11.0.0",
     "sharp": "^0.34.1",
     "zustand": "^5.0.3"
   },
