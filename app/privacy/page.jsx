@@ -1,8 +1,11 @@
 // app/privacy/page.jsx
+"use client";
+
 import ContentWrapper from "@/components/ContentWrapper";
 import ContentBody from "@/components/ContentBody";
 import PageHeader from "@/components/ui/PageHeader";
 import Header from "@/components/ui/Header";
+import useTranslation from "@/hooks/useTranslation";
 
 {/* Metadata */}
 import info from "@/app/info.config.js";
@@ -43,102 +46,99 @@ export const generateMetadata = () => {
 {/* Page Start */}
 
 export default function PrivacyPage() {
+  const { t } = useTranslation();
+
   return (
     <ContentWrapper>
       <ContentBody>
-        <PageHeader>Privacy Policy</PageHeader>
+        <PageHeader>{t("pages.privacy.pageTitle")}</PageHeader>
 
         <div className="space-y-6 text-text/80 leading-relaxed">
           <section>
-            <Header depth={2}>Data Collection Notice</Header>
+            <Header depth={2}>{t("pages.privacy.dataCollectionTitle")}</Header>
             <p className="mt-3">
-              This website collects minimal personal information to provide services and respond to inquiries.
-              Your privacy is important, and we are committed to protecting your personal data.
+              {t("pages.privacy.dataCollectionText")}
             </p>
           </section>
 
           <section>
-            <Header depth={2}>Information We Collect</Header>
+            <Header depth={2}>{t("pages.privacy.infoWeCollectTitle")}</Header>
             <div className="mt-3 space-y-3">
               <div>
-                <Header depth={3}>1. Contact Form</Header>
+                <Header depth={3}>{t("pages.privacy.contactFormTitle")}</Header>
                 <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
-                  <li><strong>Name:</strong> To identify who is contacting me</li>
-                  <li><strong>Email Address:</strong> To respond to your inquiry</li>
-                  <li><strong>Subject & Message:</strong> To understand your inquiry</li>
+                  <li><strong>{t("pages.privacy.contactFormName")}</strong></li>
+                  <li><strong>{t("pages.privacy.contactFormEmail")}</strong></li>
+                  <li><strong>{t("pages.privacy.contactFormMessage")}</strong></li>
                 </ul>
               </div>
 
               <div>
-                <Header depth={3}>2. Visitor Analytics</Header>
+                <Header depth={3}>{t("pages.privacy.visitorAnalyticsTitle")}</Header>
                 <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
-                  <li><strong>IP Address & Location:</strong> General geographic information (city, region, country)</li>
-                  <li><strong>Browser Information:</strong> User agent, platform, language</li>
-                  <li><strong>Device Information:</strong> Screen size, timezone</li>
-                  <li><strong>Visit Information:</strong> Referrer URL, current page URL</li>
+                  <li><strong>{t("pages.privacy.visitorIP")}</strong></li>
+                  <li><strong>{t("pages.privacy.visitorBrowser")}</strong></li>
+                  <li><strong>{t("pages.privacy.visitorDevice")}</strong></li>
+                  <li><strong>{t("pages.privacy.visitorVisit")}</strong></li>
                 </ul>
               </div>
             </div>
           </section>
 
           <section>
-            <Header depth={2}>Purpose of Collection</Header>
+            <Header depth={2}>{t("pages.privacy.purposeTitle")}</Header>
             <ul className="list-disc list-inside ml-4 mt-3 space-y-1">
-              <li>To respond to contact form inquiries</li>
-              <li>To understand visitor demographics and improve website experience</li>
-              <li>To monitor website traffic and performance</li>
+              <li>{t("pages.privacy.purpose1")}</li>
+              <li>{t("pages.privacy.purpose2")}</li>
+              <li>{t("pages.privacy.purpose3")}</li>
             </ul>
           </section>
 
           <section>
-            <Header depth={2}>Data Storage & Retention</Header>
+            <Header depth={2}>{t("pages.privacy.storageTitle")}</Header>
             <p className="mt-3">
-              Contact form submissions are sent to me via Pushover notification service and are retained for up to
-              <strong> 1 year</strong> unless you request deletion.
+              {t("pages.privacy.storage1")}
             </p>
             <p className="mt-2">
-              Visitor analytics data is stored temporarily for monitoring purposes and automatically expires
-              within <strong>30 days</strong>.
+              {t("pages.privacy.storage2")}
             </p>
           </section>
 
           <section>
-            <Header depth={2}>Third-Party Services</Header>
+            <Header depth={2}>{t("pages.privacy.thirdPartyTitle")}</Header>
             <p className="mt-3">
-              This website uses the following third-party services:
+              {t("pages.privacy.thirdPartyText")}
             </p>
             <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
-              <li><strong>Vercel Analytics:</strong> Anonymous website performance monitoring</li>
-              <li><strong>Pushover:</strong> Notification delivery for contact forms and visitor tracking</li>
-              <li><strong>ipapi.co:</strong> IP-based geolocation service</li>
+              <li><strong>{t("pages.privacy.thirdPartyVercel")}</strong></li>
+              <li><strong>{t("pages.privacy.thirdPartyPushover")}</strong></li>
+              <li><strong>{t("pages.privacy.thirdPartyIPAPI")}</strong></li>
             </ul>
           </section>
 
           <section>
-            <Header depth={2}>Your Rights</Header>
-            <p className="mt-3">You have the right to:</p>
+            <Header depth={2}>{t("pages.privacy.rightsTitle")}</Header>
+            <p className="mt-3">{t("pages.privacy.rightsText")}</p>
             <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
-              <li><strong>Refuse consent:</strong> You may choose not to use the contact form</li>
-              <li><strong>Request deletion:</strong> Contact me to delete your submitted information</li>
-              <li><strong>Access your data:</strong> Request what information we have about you</li>
+              <li><strong>{t("pages.privacy.rightsRefuse")}</strong></li>
+              <li><strong>{t("pages.privacy.rightsDelete")}</strong></li>
+              <li><strong>{t("pages.privacy.rightsAccess")}</strong></li>
             </ul>
             <p className="mt-3 text-sm text-text/60">
-              Note: Refusing consent may restrict access to certain services (e.g., contact form).
+              {t("pages.privacy.rightsNote")}
             </p>
           </section>
 
           <section>
-            <Header depth={2}>Contact for Privacy Inquiries</Header>
+            <Header depth={2}>{t("pages.privacy.contactTitle")}</Header>
             <p className="mt-3">
-              If you have questions about this privacy policy or wish to exercise your rights,
-              please contact me via the <a href="/contact" className="underline hover:text-text">contact page</a> or
-              email directly at <a href={`mailto:${info.author_email}`} className="underline hover:text-text">{info.author_email}</a>.
+              {t("pages.privacy.contactText")} <a href="/contact" className="underline hover:text-text">{t("pages.privacy.contactLink")}</a> {t("pages.privacy.contactEmail")} <a href={`mailto:${info.author_email}`} className="underline hover:text-text">{info.author_email}</a>.
             </p>
           </section>
 
           <section className="text-sm text-text/50 pt-4 border-t border-text/10">
-            <p>Last Updated: October 22, 2025</p>
-            <p className="mt-1">This policy may be updated periodically. Please check back for changes.</p>
+            <p>{t("pages.privacy.lastUpdated")}</p>
+            <p className="mt-1">{t("pages.privacy.mayUpdate")}</p>
           </section>
         </div>
       </ContentBody>

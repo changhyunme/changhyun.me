@@ -45,7 +45,7 @@ const NavItem = ({ name, href }) => {
             <Link href={href}>
                 <div className="pt-1 md:py-0 flex flex-col items-center gap-2">
                     {navIcon[name]}
-                    <span>{t(`nav.${name}`)}</span>
+                    <span className="[writing-mode:horizontal-tb]">{t(`nav.${name}`)}</span>
                 </div>
             </Link>
         </li>

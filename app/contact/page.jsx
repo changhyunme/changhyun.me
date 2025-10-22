@@ -1,13 +1,16 @@
+"use client";
+
 import ContentWrapper from "@/components/ContentWrapper";
 import ContentSide from "@/components/ContentSide";
 import ContentBody from "@/components/ContentBody";
-import PageHeader from "@/components/ui/PageHeader";  
+import PageHeader from "@/components/ui/PageHeader";
 import PageFooter from "@/components/ui/PageFooter";
 import NameCard from "@/components/NameCard";
 import PingBtn from "@/components/PingButton";
 import Header from "@/components/ui/Header";
-import Blockquote from "@/components/ui/Blockquote";  
+import Blockquote from "@/components/ui/Blockquote";
 import ContactForm from "@/components/ContactForm";
+import useTranslation from "@/hooks/useTranslation";
 
 {/* Metadata */}
 import info from "@/app/info.config.js";
@@ -46,8 +49,10 @@ export const generateMetadata = () => {
 };
 
 {/* Page Start */}
-export default function Home() 
+export default function Home()
 {
+  const { t } = useTranslation();
+
   return (
     <>
       <ContentWrapper>
@@ -56,36 +61,36 @@ export default function Home()
             <PingBtn name="Ping" className="mt-5 md:mt-auto" />
         </ContentSide>
         <ContentBody className="text-text">
-          <PageHeader title="Contact me" />
-          Got a question? Got something cool you want to build together? Hit me up through one of the contacts below. 💬
+          <PageHeader title={t("pages.contact.title")} />
+          {t("pages.contact.intro")}
           <ul className="list-disc pl-5 mt-2">
-            <li>🖥️ Modern web service builds</li>
-            <li>🧪 Experimental feature development</li>
-            <li>⚡ Rapid prototyping</li>
-            <li>🤔 Projects that seem simple — but somehow cost way too much</li>
+            <li>{t("pages.contact.service1")}</li>
+            <li>{t("pages.contact.service2")}</li>
+            <li>{t("pages.contact.service3")}</li>
+            <li>{t("pages.contact.service4")}</li>
           </ul>
           <Blockquote>
-            Things get messy, especially in web dev. I do my best to cut through the noise with fresh perspective and build clean solutions.
+            {t("pages.contact.quote1")}
           </Blockquote>
-          <Header>Contact me</Header>
+          <Header>{t("pages.contact.formTitle")}</Header>
           <ContactForm />
-          <Header>Contact Information</Header>
+          <Header>{t("pages.contact.infoTitle")}</Header>
           <div className="grid gap-1 text-sm">
             <div className="grid grid-cols-[90px_1fr]">
-              <span className="font-bold">Location</span>
-              <span>Seoul, Republic of Korea</span>
+              <span className="font-bold">{t("pages.contact.location")}</span>
+              <span>{t("pages.contact.locationValue")}</span>
             </div>
             <div className="grid grid-cols-[90px_1fr]">
-              <span className="font-bold"> E-mail</span>
+              <span className="font-bold">{t("pages.contact.email")}</span>
               <a className="hover:underline" href="mailto:changhyun.me@gmail.com">changhyun.me@gmail.com</a>
             </div>
           </div>
           <Blockquote>
-            If it sounds interesting, let's talk — even if it's just to bounce some ideas around.
+            {t("pages.contact.quote2")}
           </Blockquote>
           <PageFooter/>
         </ContentBody>
-      </ContentWrapper> 
+      </ContentWrapper>
     </>
   );
 }

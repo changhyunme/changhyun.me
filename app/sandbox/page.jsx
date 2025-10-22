@@ -1,10 +1,10 @@
+"use client";
+
 import ContentWrapper from "@/components/ContentWrapper";
-import ContentSide from "@/components/ContentSide";
 import ContentBody from "@/components/ContentBody";
-import PageHeader from "@/components/ui/PageHeader";  
+import PageHeader from "@/components/ui/PageHeader";
 import PageFooter from "@/components/ui/PageFooter";
-import Header from "@/components/ui/Header";
-import Blockquote from "@/components/ui/Blockquote";  
+import useTranslation from "@/hooks/useTranslation";
 
 {/* Metadata */}
 import info from "@/app/info.config.js";
@@ -43,18 +43,20 @@ export const generateMetadata = () => {
 };
 
 {/* Page Start */}
-export default function Home() 
+export default function Home()
 {
+  const { t } = useTranslation();
+
   return (
     <>
         <ContentWrapper>
             <ContentBody>
-                <PageHeader title="Sandbox" />
-                Sandbox no items
+                <PageHeader title={t("pages.sandbox.title")} />
+                {t("pages.sandbox.noItems")}
                 <br/>.
                 <PageFooter/>
             </ContentBody>
-        </ContentWrapper> 
+        </ContentWrapper>
     </>
   );
 }
