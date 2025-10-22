@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import { detectLocale } from '@/lib/i18n';
 
 const colorKeys = [
   '--color-bg',
@@ -54,6 +55,15 @@ const useStore = create((set) => ({
   setLightmode: (val) => {
     applyTheme(val);
     set({ lightmode: val });
+  },
+
+  // Language state
+  language: typeof window !== 'undefined' ? (localStorage.getItem('language') || detectLocale()) : 'en',
+  setLanguage: (lang) => {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('language', lang);
+    }
+    set({ language: lang });
   },
 }));
 

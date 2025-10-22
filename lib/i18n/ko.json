@@ -1,0 +1,68 @@
+{
+  "nav": {
+    "home": "홈",
+    "about": "소개",
+    "journal": "저널",
+    "contact": "연락"
+  },
+  "header": {
+    "fullscreen": "전체화면",
+    "exitFullscreen": "전체화면 종료",
+    "https": "보안연결"
+  },
+  "form": {
+    "name": "이름",
+    "namePlaceholder": "이름을 입력하세요",
+    "email": "이메일 주소",
+    "emailPlaceholder": "이메일을 입력하세요",
+    "subject": "제목",
+    "subjectPlaceholder": "제목 입력 (선택사항)",
+    "message": "메시지",
+    "messagePlaceholder": "메시지를 작성하세요...",
+    "send": "동의 및 전송",
+    "sending": "전송 중...",
+    "required": "이름, 이메일, 메시지는 필수 항목입니다.",
+    "invalidEmail": "올바른 이메일 주소를 입력하세요.",
+    "consentRequired": "개인정보 수집에 동의해야 합니다.",
+    "success": "메시지가 성공적으로 전송되었습니다!",
+    "error": "메시지 전송에 실패했습니다. 나중에 다시 시도해주세요."
+  },
+  "cookie": {
+    "title": "쿠키 동의",
+    "description": "이 웹사이트는 쿠키와 분석 도구를 사용하여 사용자 경험을 개선하고 방문자 행동을 이해합니다.",
+    "weCollect": "수집 항목:",
+    "analytics": "분석 데이터 (Vercel Analytics)",
+    "performance": "성능 지표 (Vercel Speed Insights)",
+    "visitor": "방문자 정보 (IP, 위치, 브라우저)",
+    "contactData": "연락처 양식 제출 (이름, 이메일, 메시지)",
+    "consent": "\"모두 수락\"을 클릭하면 다음에 설명된 쿠키 및 데이터 수집에 동의하는 것입니다:",
+    "privacyPolicy": "개인정보 처리방침",
+    "accept": "모든 쿠키 수락",
+    "reject": "거부",
+    "required": "EU GDPR 준수 필수",
+    "accessDenied": "접근 거부",
+    "accessDeniedText": "쿠키 및 분석 사용을 거부하셨습니다. 이 웹사이트는 쿠키 동의가 필요합니다.",
+    "changeMyMind": "마음이 바뀌셨다면 브라우저 데이터를 삭제하고 다시 방문해주세요.",
+    "reset": "초기화 및 재시도"
+  },
+  "privacy": {
+    "title": "개인정보 처리방침",
+    "dataCollection": "개인정보 수집 안내",
+    "viewPrivacy": "개인정보 처리방침 보기"
+  },
+  "tooltip": {
+    "translate": "언어 선택",
+    "rss": "RSS 피드 보기",
+    "expandedView": "확장 보기",
+    "condensedView": "축소 보기",
+    "disableDarkMode": "다크 모드 끄기",
+    "disableLightMode": "라이트 모드 끄기"
+  },
+  "language": {
+    "select": "언어 선택",
+    "en": "English",
+    "ko": "한국어",
+    "jp": "日本語",
+    "de": "Deutsch"
+  }
+}

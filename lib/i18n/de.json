@@ -1,0 +1,68 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "about": "Über",
+    "journal": "Journal",
+    "contact": "Kontakt"
+  },
+  "header": {
+    "fullscreen": "Vollbild",
+    "exitFullscreen": "Vollbild beenden",
+    "https": "Sichere Verbindung"
+  },
+  "form": {
+    "name": "Vollständiger Name",
+    "namePlaceholder": "Geben Sie Ihren Namen ein",
+    "email": "E-Mail-Adresse",
+    "emailPlaceholder": "Geben Sie Ihre E-Mail ein",
+    "subject": "Betreff",
+    "subjectPlaceholder": "Betreff eingeben (optional)",
+    "message": "Nachricht",
+    "messagePlaceholder": "Schreiben Sie Ihre Nachricht hier...",
+    "send": "Zustimmen & Senden",
+    "sending": "Wird gesendet...",
+    "required": "Name, E-Mail und Nachricht sind Pflichtfelder.",
+    "invalidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+    "consentRequired": "Sie müssen der Datenerfassungsrichtlinie zustimmen.",
+    "success": "Ihre Nachricht wurde erfolgreich gesendet!",
+    "error": "Ihre Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es später erneut."
+  },
+  "cookie": {
+    "title": "Cookie-Zustimmung",
+    "description": "Diese Website verwendet Cookies und Analysetools, um Ihre Erfahrung zu verbessern und das Besucherverhalten zu verstehen.",
+    "weCollect": "Wir sammeln:",
+    "analytics": "Analysedaten (über Vercel Analytics)",
+    "performance": "Leistungsmetriken (über Vercel Speed Insights)",
+    "visitor": "Besucherinformationen (IP, Standort, Browser)",
+    "contactData": "Kontaktformular-Übermittlungen (Name, E-Mail, Nachricht)",
+    "consent": "Durch Klicken auf \"Alle akzeptieren\" stimmen Sie unserer Verwendung von Cookies und Datenerfassung zu, wie in unserer",
+    "privacyPolicy": "Datenschutzerklärung",
+    "accept": "Alle Cookies akzeptieren",
+    "reject": "Ablehnen",
+    "required": "Erforderlich für EU-DSGVO-Konformität",
+    "accessDenied": "Zugriff verweigert",
+    "accessDeniedText": "Sie haben die Verwendung von Cookies und Analysen abgelehnt. Diese Website erfordert die Cookie-Zustimmung, um ordnungsgemäß zu funktionieren.",
+    "changeMyMind": "Wenn Sie Ihre Meinung ändern, löschen Sie bitte Ihre Browserdaten und besuchen Sie diese Seite erneut.",
+    "reset": "Zurücksetzen & erneut versuchen"
+  },
+  "privacy": {
+    "title": "Datenschutzerklärung",
+    "dataCollection": "Hinweis zur Datenerfassung",
+    "viewPrivacy": "Datenschutzerklärung ansehen"
+  },
+  "tooltip": {
+    "translate": "Sprache wählen",
+    "rss": "RSS-Feed anzeigen",
+    "expandedView": "Erweiterte Ansicht",
+    "condensedView": "Kompakte Ansicht",
+    "disableDarkMode": "Dunkelmodus deaktivieren",
+    "disableLightMode": "Hellmodus deaktivieren"
+  },
+  "language": {
+    "select": "Sprache wählen",
+    "en": "English",
+    "ko": "한국어",
+    "jp": "日本語",
+    "de": "Deutsch"
+  }
+}

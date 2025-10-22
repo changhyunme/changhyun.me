@@ -2,8 +2,10 @@
 
 import { useState, useEffect } from "react";
 import KopfButton from "@/components/KopfButton";
+import useTranslation from "@/hooks/useTranslation";
 
 const Kopf = () => {
+    const { t } = useTranslation();
     const [dateTime, setDateTime] = useState("");
     const [isFullScreen, setIsFullScreen] = useState(false);
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -59,14 +61,14 @@ const Kopf = () => {
         >
             <KopfButton>Changhyun.me</KopfButton>
             <KopfButton onClick={handleFullScreen}>
-                {isFullScreen ? "ExitScr" : "FullScr"}
+                {isFullScreen ? t("header.exitFullscreen") : t("header.fullscreen")}
             </KopfButton>
             <KopfButton>X : {mousePos.x} Y : {mousePos.y}</KopfButton>
 
             <KopfButton className="ml-auto">
                 {dateTime}
             </KopfButton>
-            <KopfButton>HTTPS</KopfButton>
+            <KopfButton>{t("header.https")}</KopfButton>
         </header>
     );
 }

@@ -1,0 +1,68 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "journal": "Journal",
+    "contact": "Contact"
+  },
+  "header": {
+    "fullscreen": "FullScr",
+    "exitFullscreen": "ExitScr",
+    "https": "HTTPS"
+  },
+  "form": {
+    "name": "Full Name",
+    "namePlaceholder": "Enter Your Name",
+    "email": "E-mail Address",
+    "emailPlaceholder": "Enter Your E-mail",
+    "subject": "Subject",
+    "subjectPlaceholder": "Enter Subject (optional)",
+    "message": "Message",
+    "messagePlaceholder": "Write your message here...",
+    "send": "Agree & Send",
+    "sending": "Sending...",
+    "required": "Name, E-mail, and Content are required.",
+    "invalidEmail": "Please enter a valid email address.",
+    "consentRequired": "You must agree to the data collection policy.",
+    "success": "Your message has been sent successfully!",
+    "error": "Failed to send your message. Please try again later."
+  },
+  "cookie": {
+    "title": "Cookie Consent",
+    "description": "This website uses cookies and analytics to improve your experience and understand visitor behavior.",
+    "weCollect": "We collect:",
+    "analytics": "Analytics data (via Vercel Analytics)",
+    "performance": "Performance metrics (via Vercel Speed Insights)",
+    "visitor": "Visitor information (IP, location, browser)",
+    "contactData": "Contact form submissions (name, email, message)",
+    "consent": "By clicking \"Accept\", you consent to our use of cookies and data collection as described in our",
+    "privacyPolicy": "Privacy Policy",
+    "accept": "Accept All Cookies",
+    "reject": "Reject",
+    "required": "Required for EU GDPR compliance",
+    "accessDenied": "Access Denied",
+    "accessDeniedText": "You have declined the use of cookies and analytics. This website requires cookie consent to function properly.",
+    "changeMyMind": "If you change your mind, please clear your browser data and revisit this page.",
+    "reset": "Reset & Try Again"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "dataCollection": "Data Collection Notice",
+    "viewPrivacy": "View Privacy Policy"
+  },
+  "tooltip": {
+    "translate": "Language / 言語 / Sprache / 언어",
+    "rss": "Show RSS Feed",
+    "expandedView": "Expanded View",
+    "condensedView": "Condensed View",
+    "disableDarkMode": "Disable Dark Mode",
+    "disableLightMode": "Disable Light Mode"
+  },
+  "language": {
+    "select": "Select Language",
+    "en": "English",
+    "ko": "한국어",
+    "jp": "日本語",
+    "de": "Deutsch"
+  }
+}

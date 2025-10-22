@@ -1,8 +1,10 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import useTranslation from '@/hooks/useTranslation';
 
 export default function CookieConsent({ children }) {
+  const { t } = useTranslation();
   const [consentStatus, setConsentStatus] = useState(null); // null = loading, 'accepted' = 동의, 'rejected' = 거부
   const [showModal, setShowModal] = useState(false);
 
@@ -38,13 +40,12 @@ export default function CookieConsent({ children }) {
       <div className="fixed inset-0 bg-bg flex items-center justify-center p-4 z-50">
         <div className="max-w-md text-center space-y-4">
           <div className="text-6xl mb-4">🍪</div>
-          <h1 className="text-2xl font-bold text-text">Access Denied</h1>
+          <h1 className="text-2xl font-bold text-text">{t("cookie.accessDenied")}</h1>
           <p className="text-text/70 leading-relaxed">
-            You have declined the use of cookies and analytics.
-            This website requires cookie consent to function properly.
+            {t("cookie.accessDeniedText")}
           </p>
           <p className="text-sm text-text/50">
-            If you change your mind, please clear your browser data and revisit this page.
+            {t("cookie.changeMyMind")}
           </p>
           <button
             onClick={() => {
@@ -53,7 +54,7 @@ export default function CookieConsent({ children }) {
             }}
             className="mt-6 px-6 py-3 bg-text/10 hover:bg-text/20 rounded-md transition-colors"
           >
-            Reset & Try Again
+            {t("cookie.reset")}
           </button>
         </div>
       </div>
@@ -79,27 +80,27 @@ export default function CookieConsent({ children }) {
           <div className="bg-bgSub border border-text/20 rounded-lg max-w-lg w-full p-6 md:p-8 shadow-2xl">
             <div className="flex items-center gap-3 mb-4">
               <span className="text-4xl">🍪</span>
-              <h2 className="text-xl md:text-2xl font-bold text-text">Cookie Consent</h2>
+              <h2 className="text-xl md:text-2xl font-bold text-text">{t("cookie.title")}</h2>
             </div>
 
             <div className="space-y-4 text-text/80 text-sm md:text-base leading-relaxed mb-6">
               <p>
-                This website uses cookies and analytics to improve your experience and understand visitor behavior.
+                {t("cookie.description")}
               </p>
 
               <div className="bg-bg/50 rounded-md p-4 space-y-2 text-xs md:text-sm">
-                <p className="font-semibold text-text">We collect:</p>
+                <p className="font-semibold text-text">{t("cookie.weCollect")}</p>
                 <ul className="list-disc list-inside ml-2 space-y-1 text-text/70">
-                  <li>Analytics data (via Vercel Analytics)</li>
-                  <li>Performance metrics (via Vercel Speed Insights)</li>
-                  <li>Visitor information (IP, location, browser)</li>
-                  <li>Contact form submissions (name, email, message)</li>
+                  <li>{t("cookie.analytics")}</li>
+                  <li>{t("cookie.performance")}</li>
+                  <li>{t("cookie.visitor")}</li>
+                  <li>{t("cookie.contactData")}</li>
                 </ul>
               </div>
 
               <p className="text-xs text-text/60">
-                By clicking "Accept", you consent to our use of cookies and data collection as described in our{' '}
-                <a href="/privacy" className="underline hover:text-text">Privacy Policy</a>.
+                {t("cookie.consent")}{' '}
+                <a href="/privacy" className="underline hover:text-text">{t("cookie.privacyPolicy")}</a>.
               </p>
             </div>
 
@@ -108,18 +109,18 @@ export default function CookieConsent({ children }) {
                 onClick={handleReject}
                 className="flex-1 px-6 py-3 border border-error/50 text-error/90 rounded-md hover:bg-error/10 transition-all font-medium"
               >
-                Reject
+                {t("cookie.reject")}
               </button>
               <button
                 onClick={handleAccept}
                 className="flex-1 px-6 py-3 bg-gradient-to-r from-primary to-accent text-white rounded-md font-semibold hover:opacity-90 hover:scale-105 transition-all shadow-lg"
               >
-                Accept All Cookies
+                {t("cookie.accept")}
               </button>
             </div>
 
             <p className="text-xs text-text/40 text-center mt-4">
-              Required for EU GDPR compliance
+              {t("cookie.required")}
             </p>
           </div>
         </div>

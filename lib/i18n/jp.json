@@ -1,0 +1,68 @@
+{
+  "nav": {
+    "home": "ホーム",
+    "about": "概要",
+    "journal": "ジャーナル",
+    "contact": "お問い合わせ"
+  },
+  "header": {
+    "fullscreen": "全画面",
+    "exitFullscreen": "全画面解除",
+    "https": "安全な接続"
+  },
+  "form": {
+    "name": "お名前",
+    "namePlaceholder": "お名前を入力してください",
+    "email": "メールアドレス",
+    "emailPlaceholder": "メールアドレスを入力してください",
+    "subject": "件名",
+    "subjectPlaceholder": "件名を入力（任意）",
+    "message": "メッセージ",
+    "messagePlaceholder": "メッセージを入力してください...",
+    "send": "同意して送信",
+    "sending": "送信中...",
+    "required": "お名前、メールアドレス、メッセージは必須項目です。",
+    "invalidEmail": "有効なメールアドレスを入力してください。",
+    "consentRequired": "データ収集ポリシーに同意する必要があります。",
+    "success": "メッセージが正常に送信されました！",
+    "error": "メッセージの送信に失敗しました。後でもう一度お試しください。"
+  },
+  "cookie": {
+    "title": "Cookie 同意",
+    "description": "このウェブサイトは、ユーザー体験を向上させ、訪問者の行動を理解するために Cookie と分析ツールを使用しています。",
+    "weCollect": "収集する情報:",
+    "analytics": "分析データ（Vercel Analytics経由）",
+    "performance": "パフォーマンス指標（Vercel Speed Insights経由）",
+    "visitor": "訪問者情報（IP、場所、ブラウザ）",
+    "contactData": "お問い合わせフォームの送信（名前、メール、メッセージ）",
+    "consent": "「すべて許可」をクリックすると、以下に記載されている Cookie とデータ収集の使用に同意したことになります:",
+    "privacyPolicy": "プライバシーポリシー",
+    "accept": "すべての Cookie を許可",
+    "reject": "拒否",
+    "required": "EU GDPR準拠のため必須",
+    "accessDenied": "アクセス拒否",
+    "accessDeniedText": "Cookie と分析の使用を拒否されました。このウェブサイトは Cookie の同意が必要です。",
+    "changeMyMind": "お考えが変わった場合は、ブラウザのデータを消去してこのページに再度アクセスしてください。",
+    "reset": "リセットして再試行"
+  },
+  "privacy": {
+    "title": "プライバシーポリシー",
+    "dataCollection": "データ収集に関するお知らせ",
+    "viewPrivacy": "プライバシーポリシーを見る"
+  },
+  "tooltip": {
+    "translate": "言語選択",
+    "rss": "RSSフィードを表示",
+    "expandedView": "拡張表示",
+    "condensedView": "縮小表示",
+    "disableDarkMode": "ダークモードを無効化",
+    "disableLightMode": "ライトモードを無効化"
+  },
+  "language": {
+    "select": "言語を選択",
+    "en": "English",
+    "ko": "한국어",
+    "jp": "日本語",
+    "de": "Deutsch"
+  }
+}
