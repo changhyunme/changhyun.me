@@ -11,6 +11,7 @@ import TI from "@/components/ui/ThemeInitializer";
 import Drawber from "@/components/ui/Drawber";
 import DrawberContact from "@/components/DrawberContact";
 import VisitorTracker from "@/components/VisitorTracker";
+import CookieConsent from "@/components/CookieConsent";
 
 
 // export const metadata = {
@@ -40,22 +41,24 @@ export default function RootLayout({ children }) {
         <link rel="alternate" type="application/rss+xml" title="CHANGHYUN.me Journal" href="/rss.xml" />
       </head>
       <body>
-        <TI/>
-        <VisitorTracker />
-        <div className="relative w-screen min-h-screen p-0 md:py-5 md:px-2
-                        flex md:items-center justify-center"
-        >
-          <Drawber>
-            <DrawberContact />
-          </Drawber>
-          <Szene />
-          <Kopf />
-          <Fenster>
-            {children}
-          </Fenster>
-        </div>
-        <Analytics />
-        <SpeedInsights />
+        <CookieConsent>
+          <TI/>
+          <VisitorTracker />
+          <div className="relative w-screen min-h-screen p-0 md:py-5 md:px-2
+                          flex md:items-center justify-center"
+          >
+            <Drawber>
+              <DrawberContact />
+            </Drawber>
+            <Szene />
+            <Kopf />
+            <Fenster>
+              {children}
+            </Fenster>
+          </div>
+          <Analytics />
+          <SpeedInsights />
+        </CookieConsent>
       </body>
     </html>
   );
