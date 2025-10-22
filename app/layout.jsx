@@ -10,6 +10,7 @@ import Kopf from "@/components/Kopf";
 import TI from "@/components/ui/ThemeInitializer";
 import Drawber from "@/components/ui/Drawber";
 import DrawberContact from "@/components/DrawberContact";
+import VisitorTracker from "@/components/VisitorTracker";
 
 
 // export const metadata = {
@@ -40,6 +41,7 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <TI/>
+        <VisitorTracker />
         <div className="relative w-screen min-h-screen p-0 md:py-5 md:px-2
                         flex md:items-center justify-center"
         >

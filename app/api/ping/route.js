@@ -1,15 +1,29 @@
 export async function POST(request) {
-  const clientInfo = await request.json();
+  try {
+    const clientInfo = await request.json();
 
-  // Extract IP address from headers
-  const ip =
-    request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || 'Unknown IP';
+    // Extract IP address from headers
+    const ip =
+      request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || 'Unknown IP';
 
-  // Fetch geo data
-  const geoRes = await fetch(`https://ipapi.co/${ip}/json/`);
-  const geoData = await geoRes.json();
-  const locationInfo = `${geoData.city}, ${geoData.region}, ${geoData.country_name}`;
-  const isp = geoData.org;
+    // Fetch geo data with error handling
+    let locationInfo = 'Unknown Location';
+    let isp = 'Unknown ISP';
+
+    try {
+      const geoRes = await fetch(`https://ipapi.co/${ip}/json/`, {
+        signal: AbortSignal.timeout(10000) // 10초 타임아웃
+      });
+
+      if (geoRes.ok) {
+        const geoData = await geoRes.json();
+        locationInfo = `${geoData.city || 'Unknown'}, ${geoData.region || 'Unknown'}, ${geoData.country_name || 'Unknown'}`;
+        isp = geoData.org || 'Unknown ISP';
+      }
+    } catch (geoError) {
+      console.error('Geo API error:', geoError.message);
+      // Fallback: 위치 정보 없이 계속 진행
+    }
 
   // Get current server time
   const timestamp = new Date().toISOString();
@@ -47,18 +61,27 @@ Network: ${network}
     sound: 'bugle'
   });
 
-  const response = await fetch('https://api.pushover.net/1/messages.json', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
-    },
-    body: formData,
-  });
+    const response = await fetch('https://api.pushover.net/1/messages.json', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: formData,
+      signal: AbortSignal.timeout(10000) // 10초 타임아웃
+    });
 
-  if (response.ok) {
-    return new Response(JSON.stringify({ success: true }), { status: 200 });
-  } else {
-    const error = await response.text();
-    return new Response(JSON.stringify({ success: false, error }), { status: 500 });
+    if (response.ok) {
+      return new Response(JSON.stringify({ success: true }), { status: 200 });
+    } else {
+      const error = await response.text();
+      console.error('Pushover API error:', error);
+      return new Response(JSON.stringify({ success: false, error }), { status: 500 });
+    }
+  } catch (error) {
+    console.error('Ping route error:', error.message);
+    return new Response(
+      JSON.stringify({ success: false, error: error.message }),
+      { status: 500 }
+    );
   }
 }
