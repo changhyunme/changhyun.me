@@ -18,8 +18,14 @@ module.exports = {
           text: 'var(--color-text)',
           textSub: 'var(--color-textSub)',
           textShadow: 'var(--color-textShadow)',
-          primary: 'var(--color-primary)', // 추가 가능
-          accent: 'var(--color-accent)',   // 추가 가능
+          primary: 'var(--color-primary)',
+          accent: 'var(--color-accent)',
+          error: 'var(--color-error)',
+          info: 'var(--color-info)',
+          success: 'var(--color-success)',
+          warning: 'var(--color-warning)',
+          purple: 'var(--color-purple)',
+          cyan: 'var(--color-cyan)',
         },
       },
     },

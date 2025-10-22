@@ -2,38 +2,38 @@
 
 :root {
   /* Light & Dark 원본 정의 */
-  --background-light: oklch(0 0 0);
+  --background-light: oklch(0.97 0.01 80);
   --background-dark: oklch(0.208 0.042 265.755);
-  --foreground-light: oklch(0.1 0.02 265);
+  --foreground-light: oklch(0.25 0.03 50);
   --foreground-dark: oklch(0.985 0.001 265);
 
 
-  /* Light모드 UI */
-  --color-bg-light: oklch(1 0 0);
-  --color-bgSub-light: oklch(1 0 0);
-  --color-ui-light: oklch(0.9 0 0);
-  --color-uiSub-light: oklch(1 0 0);
-  --color-border-light: oklch(0.8 0 0);
-  --color-shadow-light: oklch(0.7 0 0);
-  --color-text-light: oklch(0.2 0 0);
-  --color-textWhite-light: oklch(0 0 0);
-  --color-textSub-light: oklch(0.4 0 0);
-  --color-textShadow-light: oklch(0.6 0 0);
+  /* Light모드 UI - 웜톤 (크림/베이지/브라운) */
+  --color-bg-light: oklch(0.97 0.012 85);           /* 크림 배경 */
+  --color-bgSub-light: oklch(0.94 0.018 80);        /* 베이지 서브 배경 */
+  --color-ui-light: oklch(0.88 0.025 75);           /* 따뜻한 회색 UI */
+  --color-uiSub-light: oklch(0.82 0.03 70);         /* 진한 베이지 UI */
+  --color-border-light: oklch(0.78 0.025 70);       /* 따뜻한 보더 */
+  --color-shadow-light: oklch(0.65 0.02 65);        /* 그림자 */
+  --color-text-light: oklch(0.28 0.035 50);         /* 다크 브라운 텍스트 */
+  --color-textWhite-light: oklch(0.15 0.04 45);     /* 거의 블랙 */
+  --color-textSub-light: oklch(0.48 0.03 60);       /* 미디엄 브라운 */
+  --color-textShadow-light: oklch(0.58 0.025 65);   /* 연한 브라운 */
 
 }
 
 .dark {
-  /* Dark모드 UI */
-  --color-bg: oklch(0.279 0.041 260.031);
-  --color-bgSub: oklch(0.208 0.042 265.755);
-  --color-ui: oklch(0.319 0.041 260.031);
-  --color-uiSub: oklch(0.446 0.043 257.281);
-  --color-border: oklch(0.279 0.041 260.031);
-  --color-shadow: oklch(0.985 0.001 265);
-  --color-text: oklch(1 0 0 / 80%);
-  --color-textWhite: oklch(1 0 0);
-  --color-textSub: oklch(0.704 0.04 256.788);
-  --color-textShadow: oklch(0.446 0.043 257.281);
+  /* Dark모드 UI - 현대적 보라 + 컬러풀 */
+  --color-bg: oklch(0.22 0.055 270);                /* 깊은 인디고 블랙 (더 어둡고 채도 높임) */
+  --color-bgSub: oklch(0.18 0.06 275);              /* 진한 보라 블랙 */
+  --color-ui: oklch(0.35 0.08 268);                 /* 생동감 있는 보라 UI */
+  --color-uiSub: oklch(0.48 0.09 265);              /* 밝은 보라 UI */
+  --color-border: oklch(0.32 0.07 270);             /* 보라빛 보더 */
+  --color-shadow: oklch(0.95 0.015 280 / 90%);      /* 약간 보라빛 흰색 */
+  --color-text: oklch(0.98 0.01 280 / 85%);         /* 약간 보라빛 흰색 텍스트 */
+  --color-textWhite: oklch(1 0 0);                  /* 순백 */
+  --color-textSub: oklch(0.75 0.08 265);            /* 밝은 보라 텍스트 */
+  --color-textShadow: oklch(0.55 0.08 268);         /* 중간 보라 */
 }
 
 @theme inline {
@@ -42,12 +42,15 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 
-  --color-primary: oklch(0.75 0.183 55.934);
-  --color-accent: oklch(0.75 0.183 55.934);
-  --color-error: oklch(70.4% 0.191 22.216);
-  --color-info: oklch(74.6% 0.16 232.661);
-  --color-success: oklch(79.2% 0.209 151.711);
-  --color-warning: oklch(85.2% 0.199 91.936);
+  /* 컬러풀한 Accent 색상들 */
+  --color-primary: oklch(0.72 0.24 330);        /* 생동감 있는 핑크/마젠타 */
+  --color-accent: oklch(0.78 0.18 195);         /* 밝은 사이안/터키색 */
+  --color-error: oklch(0.65 0.25 25);           /* 선명한 레드 */
+  --color-info: oklch(0.70 0.20 240);           /* 밝은 블루 */
+  --color-success: oklch(0.75 0.22 150);        /* 생동감 있는 그린 */
+  --color-warning: oklch(0.80 0.20 85);         /* 밝은 오렌지/골드 */
+  --color-purple: oklch(0.68 0.26 285);         /* 생동감 있는 보라 */
+  --color-cyan: oklch(0.80 0.16 200);           /* 밝은 사이안 */
 
   /* 최초에는 다크모드 기준 */
   --color-bg: var(--color-bg);

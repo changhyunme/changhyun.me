@@ -106,13 +106,13 @@ export default function CookieConsent({ children }) {
             <div className="flex flex-col md:flex-row gap-3">
               <button
                 onClick={handleReject}
-                className="flex-1 px-6 py-3 border border-text/30 rounded-md text-text/70 hover:bg-text/5 transition-all"
+                className="flex-1 px-6 py-3 border border-error/50 text-error/90 rounded-md hover:bg-error/10 transition-all font-medium"
               >
                 Reject
               </button>
               <button
                 onClick={handleAccept}
-                className="flex-1 px-6 py-3 bg-text text-bg rounded-md font-semibold hover:opacity-90 transition-all"
+                className="flex-1 px-6 py-3 bg-gradient-to-r from-primary to-accent text-white rounded-md font-semibold hover:opacity-90 hover:scale-105 transition-all shadow-lg"
               >
                 Accept All Cookies
               </button>
