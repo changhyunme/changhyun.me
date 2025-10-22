@@ -30,7 +30,7 @@ export const viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  userScalable: false,
+  userScalable: true, // Allow zooming for accessibility
   viewportFit: "cover",
 };
 
@@ -50,10 +50,12 @@ export default function RootLayout({ children }) {
             <Drawber>
               <DrawberContact />
             </Drawber>
-            <Szene />
+            <Szene aria-hidden="true" />
             <Kopf />
             <Fenster>
-              {children}
+              <main>
+                {children}
+              </main>
             </Fenster>
           </div>
           <Analytics />
