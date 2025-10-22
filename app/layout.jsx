@@ -11,8 +11,6 @@ import TI from "@/components/ui/ThemeInitializer";
 import Drawber from "@/components/ui/Drawber";
 import DrawberContact from "@/components/DrawberContact";
 
-import Turnstile from "@/components/security/turnstile";
-
 
 // export const metadata = {
 //   title: "changhyun.me",
@@ -53,9 +51,6 @@ export default function RootLayout({ children }) {
           <Fenster>
             {children}
           </Fenster>
-          <div className="fixed bottom-3 right-3">
-            <Turnstile />
-          </div>
         </div>
         <Analytics />
         <SpeedInsights />
