@@ -26,6 +26,8 @@ module.exports = {
           warning: 'var(--color-warning)',
           purple: 'var(--color-purple)',
           cyan: 'var(--color-cyan)',
+          'neon-pink': 'var(--color-neon-pink)',
+          'neon-green': 'var(--color-neon-green)',
         },
       },
     },
