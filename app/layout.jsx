@@ -10,8 +10,8 @@ import Kopf from "@/components/Kopf";
 import TI from "@/components/ui/ThemeInitializer";
 import Drawber from "@/components/ui/Drawber";
 import DrawberContact from "@/components/DrawberContact";
-
-import Turnstile from "@/components/security/turnstile";
+import VisitorTracker from "@/components/VisitorTracker";
+import CookieConsent from "@/components/CookieConsent";
 
 
 // export const metadata = {
@@ -30,7 +30,7 @@ export const viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  userScalable: false,
+  userScalable: true, // Allow zooming for accessibility
   viewportFit: "cover",
 };
 
@@ -41,24 +41,26 @@ export default function RootLayout({ children }) {
         <link rel="alternate" type="application/rss+xml" title="CHANGHYUN.me Journal" href="/rss.xml" />
       </head>
       <body>
-        <TI/>
-        <div className="relative w-screen min-h-screen p-0 md:py-5 md:px-2
-                        flex md:items-center justify-center"
-        >
-          <Drawber>
-            <DrawberContact />
-          </Drawber>
-          <Szene />
-          <Kopf />
-          <Fenster>
-            {children}
-          </Fenster>
-          <div className="fixed bottom-3 right-3">
-            <Turnstile />
+        <CookieConsent>
+          <TI/>
+          <VisitorTracker />
+          <div className="relative w-screen min-h-screen p-0 md:py-5 md:px-2
+                          flex md:items-center justify-center"
+          >
+            <Drawber>
+              <DrawberContact />
+            </Drawber>
+            <Szene aria-hidden="true" />
+            <Kopf />
+            <Fenster>
+              <main>
+                {children}
+              </main>
+            </Fenster>
           </div>
-        </div>
-        <Analytics />
-        <SpeedInsights />
+          <Analytics />
+          <SpeedInsights />
+        </CookieConsent>
       </body>
     </html>
   );

@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import useTranslation from '@/hooks/useTranslation';
 
 const navIcon = {
     home: (
@@ -33,6 +34,7 @@ const navIcon = {
 
 const NavItem = ({ name, href }) => {
     const pathname = usePathname();
+    const { t } = useTranslation();
 
     const isActive = pathname === href || pathname.startsWith(`${href}/`);
     const baseClass = "flex-1 md:flex-0 pb-5 md:pb-0 text-center text-[0.7rem] pt-1 mb-2 md:text-left cursor-pointer";
@@ -40,10 +42,10 @@ const NavItem = ({ name, href }) => {
 
     return (
         <li className={`${baseClass} ${textClass}`} key={href}>
-            <Link href={href} translate="no">
+            <Link href={href}>
                 <div className="pt-1 md:py-0 flex flex-col items-center gap-2">
                     {navIcon[name]}
-                    <span>{name}</span>
+                    <span className="[writing-mode:horizontal-tb]">{t(`nav.${name}`)}</span>
                 </div>
             </Link>
         </li>
