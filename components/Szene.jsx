@@ -29,7 +29,7 @@ const Szene = () => {
             return {
                 x: Math.random() * canvas.width,
                 y: Math.random() * canvas.height,
-                size: depth * 2.5 + 0.3, // Bigger particles are further away
+                size: depth * 1.8 + 0.2, // 0.2px ~ 2.0px (smaller range)
                 speedX: 0,
                 speedY: 0,
                 depth: depth,
@@ -62,9 +62,9 @@ const Szene = () => {
 
             // Update and draw particles
             particlesRef.current.forEach(particle => {
-                // Apply force based on mouse direction and depth
-                const baseForce = Math.min(distance / 500, 1) * 0.5;
-                const depthMultiplier = particle.depth * 10 + 0.5; // 0.5x ~ 10.5x speed based on depth
+                // Apply force based on mouse direction and depth (reduced speed)
+                const baseForce = Math.min(distance / 500, 1) * 0.3;
+                const depthMultiplier = particle.depth * 4 + 0.3; // 0.3x ~ 4.3x speed based on depth
                 const force = baseForce * depthMultiplier;
 
                 particle.speedX = normalizedDx * force;
@@ -74,11 +74,22 @@ const Szene = () => {
                 particle.x += particle.speedX;
                 particle.y += particle.speedY;
 
-                // Wrap around screen edges - respawn near center
-                if (particle.x < -10 || particle.x > canvas.width + 10 ||
-                    particle.y < -10 || particle.y > canvas.height + 10) {
-                    particle.x = centerX + (Math.random() - 0.5) * 100;
-                    particle.y = centerY + (Math.random() - 0.5) * 100;
+                // Wrap around screen edges - respawn from opposite side
+                const margin = 20;
+                if (particle.x < -margin) {
+                    particle.x = canvas.width + margin;
+                    particle.y = Math.random() * canvas.height;
+                } else if (particle.x > canvas.width + margin) {
+                    particle.x = -margin;
+                    particle.y = Math.random() * canvas.height;
+                }
+
+                if (particle.y < -margin) {
+                    particle.y = canvas.height + margin;
+                    particle.x = Math.random() * canvas.width;
+                } else if (particle.y > canvas.height + margin) {
+                    particle.y = -margin;
+                    particle.x = Math.random() * canvas.width;
                 }
 
                 // Draw particle with depth-based opacity
