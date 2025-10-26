@@ -72,7 +72,7 @@ export default function FensterToggle() {
             <div className="px-3 py-2 text-xs font-bold text-textSub border-b border-border/30">
               {t('language.select')}
             </div>
-            {['en', 'ko', 'jp', 'de'].map((lang) => (
+            {['en', 'de'].map((lang) => (
               <button
                 key={lang}
                 onClick={() => {
