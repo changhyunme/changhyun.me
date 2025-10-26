@@ -1,10 +1,5 @@
-"use client";
-
 import ContentWrapper from "@/components/ContentWrapper";
-import ContentBody from "@/components/ContentBody";
-import PageHeader from "@/components/ui/PageHeader";
-import PageFooter from "@/components/ui/PageFooter";
-import useTranslation from "@/hooks/useTranslation";
+import SandboxPageContent from "./SandboxPageContent";
 
 {/* Metadata */}
 import info from "@/app/info.config.js";
@@ -45,17 +40,10 @@ export const generateMetadata = () => {
 {/* Page Start */}
 export default function Home()
 {
-  const { t } = useTranslation();
-
   return (
     <>
         <ContentWrapper>
-            <ContentBody>
-                <PageHeader title={t("pages.sandbox.title")} />
-                {t("pages.sandbox.noItems")}
-                <br/>.
-                <PageFooter/>
-            </ContentBody>
+            <SandboxPageContent />
         </ContentWrapper>
     </>
   );
