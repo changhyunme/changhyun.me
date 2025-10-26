@@ -22,16 +22,20 @@ const Szene = () => {
         resizeCanvas();
         window.addEventListener('resize', resizeCanvas);
 
-        // Initialize particles
+        // Initialize particles with depth
         const particleCount = 80;
-        particlesRef.current = Array.from({ length: particleCount }, () => ({
-            x: Math.random() * canvas.width,
-            y: Math.random() * canvas.height,
-            size: Math.random() * 2 + 0.5,
-            speedX: 0,
-            speedY: 0,
-            opacity: Math.random() * 0.3 + 0.1
-        }));
+        particlesRef.current = Array.from({ length: particleCount }, () => {
+            const depth = Math.random(); // 0 = close (slow, transparent), 1 = far (fast, opaque)
+            return {
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                size: depth * 2.5 + 0.3, // Bigger particles are further away
+                speedX: 0,
+                speedY: 0,
+                depth: depth,
+                baseOpacity: depth * 0.8 + 0.05 // 0.05 ~ 0.85 based on depth
+            };
+        });
 
         // Mouse move handler
         const handleMouseMove = (e) => {
@@ -58,8 +62,11 @@ const Szene = () => {
 
             // Update and draw particles
             particlesRef.current.forEach(particle => {
-                // Apply force based on mouse direction
-                const force = Math.min(distance / 500, 1) * 0.5;
+                // Apply force based on mouse direction and depth
+                const baseForce = Math.min(distance / 500, 1) * 0.5;
+                const depthMultiplier = particle.depth * 10 + 0.5; // 0.5x ~ 10.5x speed based on depth
+                const force = baseForce * depthMultiplier;
+
                 particle.speedX = normalizedDx * force;
                 particle.speedY = normalizedDy * force;
 
@@ -74,12 +81,13 @@ const Szene = () => {
                     particle.y = centerY + (Math.random() - 0.5) * 100;
                 }
 
-                // Draw particle
+                // Draw particle with depth-based opacity
                 ctx.beginPath();
                 ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+                const opacity = particle.baseOpacity;
                 ctx.fillStyle = lightmode
-                    ? `rgba(100, 100, 100, ${particle.opacity * 0.4})`
-                    : `rgba(255, 255, 255, ${particle.opacity})`;
+                    ? `rgba(100, 100, 100, ${opacity * 0.4})`
+                    : `rgba(255, 255, 255, ${opacity})`;
                 ctx.fill();
             });
 
