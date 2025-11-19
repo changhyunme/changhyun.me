@@ -4,7 +4,7 @@ import { getHeaders } from "./getHeaders.js";
 import ContentWrapper from "@/components/ContentWrapper";
 import ContentBody from "@/components/ContentBody";
 import ContentSide from "@/components/ContentSide";
-import PageHeader from "@/components/ui/PageHeader";  
+import PageHeader from "@/components/ui/PageHeader";
 import PageFooter from "@/components/ui/PageFooter";
 import Header from "@/components/ui/Header";
 import SubPageList from "@/components/SubPageList";
@@ -12,7 +12,7 @@ import SubPageListItem from "@/components/SubPageListItem";
 import SubPageListItemWrapper from "@/components/SubPageListItemWrapper";
 import JournalSide from "@/components/JournalSide";
 
-import info from "@/app/info.config.js";
+import info from "@/app/(legacy)/legacy/info.config.js";
 
 export const generateMetadata = () => {
   return {
@@ -47,23 +47,23 @@ export const generateMetadata = () => {
   };
 };
 
-{/* Page Start */}
+{/* Page Start */ }
 
 export default async function Page() {
 
-    const articles = await getHeaders();
+  const articles = await getHeaders();
 
-    return (
-        <ContentWrapper>
-            <ContentSide>
-              <JournalSide client />
-            </ContentSide>
-            <ContentBody className="text-text">
-                <PageHeader title="Journal" />
-                <Header translate="no" depth="2" className="hidden">Journal List</Header>
-                <SubPageList data={articles} />
-                <PageFooter/>
-            </ContentBody>
-        </ContentWrapper>
-    );
+  return (
+    <ContentWrapper>
+      <ContentSide>
+        <JournalSide client />
+      </ContentSide>
+      <ContentBody className="text-text">
+        <PageHeader title="Journal" />
+        <Header translate="no" depth="2" className="hidden">Journal List</Header>
+        <SubPageList data={articles} />
+        <PageFooter />
+      </ContentBody>
+    </ContentWrapper>
+  );
 }

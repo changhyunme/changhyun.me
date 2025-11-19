@@ -1,8 +1,8 @@
 import fs from "fs/promises";
 import path from "path";
-import { ContentParserFactory } from "../../lib/content-parsers.js";
+import { ContentParserFactory } from "@/lib/content-parsers.js";
 
-const contentDir = path.join(process.cwd(), "app/journal/content");
+const contentDir = path.join(process.cwd(), "app/(legacy)/legacy/journal/content");
 
 export async function getHeaders() {
   const files = await fs.readdir(contentDir);
@@ -13,15 +13,15 @@ export async function getHeaders() {
       if (file.startsWith(".") || (!file.endsWith(".json") && !file.endsWith(".md"))) {
         return null;
       }
-      
+
       try {
         const filePath = path.join(contentDir, file);
         const content = await fs.readFile(filePath, "utf-8");
-        
+
         // Use ContentParserFactory to parse both JSON and markdown files
         const parser = ContentParserFactory.createParser(file);
         const parsedContent = await parser.parse(file, content);
-        
+
         return parsedContent;
       } catch (error) {
         console.error(`Error parsing file ${file}:`, error);

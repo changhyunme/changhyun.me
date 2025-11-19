@@ -4,7 +4,7 @@ import ContentBody from "@/components/ContentBody";
 import PageHeader from "@/components/ui/PageHeader";
 import Header from "@/components/ui/Header";
 import useTranslation from "@/hooks/useTranslation";
-import info from "@/app/info.config.js";
+import info from "@/app/(legacy)/legacy/info.config.js";
 
 export default function PrivacyPageContent() {
   const { t } = useTranslation();
@@ -92,7 +92,7 @@ export default function PrivacyPageContent() {
         <section>
           <Header depth={2}>{t("pages.privacy.contactTitle")}</Header>
           <p className="mt-3">
-            {t("pages.privacy.contactText")} <a href="/contact" className="underline hover:text-text">{t("pages.privacy.contactLink")}</a> {t("pages.privacy.contactEmail")} <a href={`mailto:${info.author_email}`} className="underline hover:text-text">{info.author_email}</a>.
+            {t("pages.privacy.contactText")} <a href="/legacy/contact" className="underline hover:text-text">{t("pages.privacy.contactLink")}</a> {t("pages.privacy.contactEmail")} <a href={`mailto:${info.author_email}`} className="underline hover:text-text">{info.author_email}</a>.
           </p>
         </section>
 

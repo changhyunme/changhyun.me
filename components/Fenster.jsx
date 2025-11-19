@@ -1,4 +1,4 @@
-import navItems from '@/app/nav.config.js';
+import nav from "@/app/(legacy)/legacy/nav.config.js";
 import FensterBewegt from '@/components/FensterBewegt';
 import FensterToggle from '@/components/FensterToggle';
 import NavItem from '@/components/ui/NavItem';
@@ -15,8 +15,8 @@ const Fenster = ({ children, className }) => {
                 aria-label="Main navigation"
             >
                 <ul className="flex-1 md:flex-0 flex flex-row gap-2 uppercase font-bold jus">
-                    {navItems.map((item) => (
-                        <NavItem key={item.href} name={item.name} href={item.href}/>
+                    {nav.map((item) => (
+                        <NavItem key={item.href} name={item.name} href={item.href} />
                     ))}
                 </ul>
                 <FensterToggle />

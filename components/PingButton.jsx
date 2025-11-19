@@ -3,7 +3,7 @@
 const PingButton = ({ name, className }) => {
   const handleClick = async () => {
     const connection = navigator.connection || navigator.webkitConnection || {};
-    
+
     const clientInfo = {
       userAgent: navigator.userAgent,
       platform: navigator.platform,
@@ -14,7 +14,7 @@ const PingButton = ({ name, className }) => {
       network: `${connection.effectiveType || 'unknown'}, ${connection.downlink || 'unknown'} Mbps`,
     };
 
-    const res = await fetch('/api/ping', {
+    const res = await fetch('/legacy/api/ping', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(clientInfo),
@@ -31,9 +31,9 @@ const PingButton = ({ name, className }) => {
     <div className={`border-1 border-border px-3 py-2 text-center
                     cursor-pointer hover:border-border/50
                     transition-colors duration-300 ${className}`}
-         onClick={handleClick}
+      onClick={handleClick}
     >
-        {name}
+      {name}
     </div>
   );
 };

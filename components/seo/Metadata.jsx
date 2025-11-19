@@ -1,5 +1,5 @@
 import Head from "next/head";
-import info from "@/app/info.config.js";
+import info from "@/app/(legacy)/legacy/info.config.js";
 
 const Metadata = ({ pagename, href, type = "website", locale = "en_US" }) => {
   const title = pagename ? `${pagename} | ${info.title}` : info.title;

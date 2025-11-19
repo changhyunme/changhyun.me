@@ -1,21 +1,22 @@
+// app/about/page.jsx
 import ContentWrapper from "@/components/ContentWrapper";
-import SandboxPageContent from "./SandboxPageContent";
+import Content from "@/app/(legacy)/legacy/about/Content";
 
-{/* Metadata */}
-import info from "@/app/info.config.js";
+{/* Metadata */ }
+import info from "@/app/(legacy)/legacy/info.config.js";
 
 export const generateMetadata = () => {
   return {
-    title: `Sandbox: ${info.title}`,
+    title: `About: ${info.title}`,
     description: info.description,
     keywords: info.keywords,
     robots: info.robots,
     copyright: info.copyright,
     authors: [{ name: info.author, url: `mailto:${info.author_email}` }],
     openGraph: {
-      title: `Sandbox: ${info.title}`,
+      title: `About: ${info.title}`,
       description: info.opengraph.description,
-      url: `${info.opengraph.url}/sandbox`,
+      url: `${info.opengraph.url}/contact`,
       siteName: info.opengraph.site_name || info.title,
       images: [
         {
@@ -28,23 +29,21 @@ export const generateMetadata = () => {
     },
     twitter: {
       card: info.twitter.card,
-      title: `Sandbox: ${info.title}`,
+      title: `About: ${info.title}`,
       description: info.twitter.description,
       creator: info.twitter.creator,
       images: [info.twitter.image],
     },
-    metadataBase: new URL("https://changhyun.me/sandbox"), // 이거 없으면 절대경로 에러 남
+    metadataBase: new URL("https://changhyun.me/about"), // 이거 없으면 절대경로 에러 남
   };
 };
 
-{/* Page Start */}
-export default function Home()
-{
+{/* Page Start */ }
+
+export default function AboutPage() {
   return (
-    <>
-        <ContentWrapper>
-            <SandboxPageContent />
-        </ContentWrapper>
-    </>
+    <ContentWrapper>
+      <Content />
+    </ContentWrapper>
   );
 }
